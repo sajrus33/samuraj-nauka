@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        button {
+            display: block;
+            margin: 20px auto 50px;
+            background-color: #9CC2AF;
+
+            border: 10px solid;
+            border-color: rgb(86, 146, 126)rgb(68, 127, 112) rgb(86, 146, 126) rgb(68, 127, 112);
+
+            padding: 20px 50px;
+            font-size: 22px;
+            transition: .2s;
+        }
+
+        button:active {
+            border-color: rgb(68, 127, 112) rgb(86, 146, 126) rgb(68, 127, 112) rgb(86, 146, 126);
+            /* background-color: #C5DFC5; */
+
+        }
+
+        div {
+            padding: 5%;
+            background-color: cadetblue;
+            text-align: center;
+            font-size: 40px;
+            font-weight: bold;
+            color: azure;
+        }
+    </style>
+</head>
+
+<body>
+    <button>LOSUJ KODY </button>
+    <div></div>
+    <script>
+        const btn = document.querySelector("button");
+        const divG = document.querySelector("div");
+
+        const chars = "abcdefghijklmno0123456789";
+        const codesNr = 1000;
+        const charsNr = 10;
+        const codesGen = () => {
+            for (let i = 0; i < codesNr; i++) {
+                let code = "";
+                for (let i = 0; i < charsNr; i++) {
+                    const index = Math.floor(Math.random() * chars.length);
+                    code += chars[index];
+                }
+                const div = document.createElement("div");
+                div.textContent = code;
+                divG.appendChild(div);
+            }
+        }
+
+        btn.addEventListener("click", codesGen);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .div {
+            position: fixed;
+            width: 200px;
+            height: 200px;
+            cursor: pointer;
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="div"></div>
+    <script>
+        let myDom = {
+            div: {
+                element: window.document.querySelector(".div"),
+                selected: false,
+                catchX: undefined,
+                catchY: undefined
+            }
+        }
+
+        function catchElement() {
+            this.style.backgroundColor = "gray";
+            myDom.div.catchX = event.offsetX;
+            myDom.div.catchY = event.offsetY;
+            myDom.div.selected = true;
+        }
+
+        function leaveElement() {
+            this.style.backgroundColor = "black";
+            myDom.div.selected = false;
+
+        }
+
+        function dragElement() {
+            if (myDom.div.selected) {
+                let x = event.clientX - myDom.div.catchX;
+                let y = event.clientY - myDom.div.catchY;
+                myDom.div.element.style.left = x + "px";
+                myDom.div.element.style.top = y + "px";
+                console.log("in");
+            }
+        }
+        console.log(myDom);
+        myDom.div.element.addEventListener("mousedown", catchElement);
+        myDom.div.element.addEventListener("mouseup", leaveElement);
+        myDom.div.element.addEventListener("mousemove", dragElement);
+        //samuraj sam ponizej
+
+        // const div = document.querySelector(".div");
+        // let divY = 5;
+        // let divX = 2;
+        // div.style.left = divX + "px";
+        // div.style.top = divY + "px";
+
+        // let drawActive = false;
+
+        // let insertDivX;
+        // let insertDivY;
+
+        // div.addEventListener("mousedown", (e) => {
+        //     div.style.backgroundColor = "gray";
+        //     insertDivX = e.offsetX;
+        //     insertDivY = e.offsetY;
+        //     drawActive = true;
+        // });
+        // div.addEventListener("mousemove", (e) => {
+        //     if (drawActive) {
+        //         console.log(event);
+        //         divX = e.clientX - insertDivX;
+        //         divY = e.clientY - insertDivY;
+
+
+
+        //         div.style.left = divX + "px";
+        //         div.style.top = divY + "px";
+        //     }
+        // });
+
+        // div.addEventListener("mouseup", () => {
+        //     div.style.backgroundColor = "black";
+        //     drawActive = false;
+
+        // });
+    </script>
+</body>
+
+</html>
