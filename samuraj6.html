@@ -11,92 +11,90 @@
             margin: 0;
             padding: 0;
         }
-
-        .div {
-            position: fixed;
-            width: 200px;
-            height: 200px;
-            cursor: pointer;
-            background-color: green;
+        .header{
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
         }
+        img{
+            position: absolute;
+            min-width: 100%;
+            min-height: 100%;
+            position: absolute;
+            top: 50%;
+            left: 50%; 
+            transform: translate(-50%,-50%);
+           opacity: 0.6;
+        }
+        h1 {
+            position: absolute;
+           top: 50%;
+           left:50%;
+           transform: translate(-50%,-50%);
+           font-size: 40px;
+           font-family: Tahoma, sans-serif;
+           text-shadow: 0 0 6px white;
+        }
+        .dots{
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .dots span{
+            display: inline-block;
+            background-color: #000;
+            margin: 0 20px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            box-shadow: 0 0 0 5px white;
+        }
+        .dots span.active {
+            box-shadow: 0 0 0 5px white, 0 0 3px 10px black;
+        }
+        
     </style>
 </head>
 
 <body>
-    <div class="div"></div>
+    
+    <header class="header">
+        <img src="png/img1.jpg" alt="background" class="slider">
+        <h1 class="slider"> Pierwszy</h1>
+        <div class="dots">
+            <span id="one"></span>
+            <span id="two"></span>
+            <span id="three"></span>
+        </div>
+    </header>
+
     <script>
-        let myDom = {
-            div: {
-                element: window.document.querySelector(".div"),
-                selected: false,
-                catchX: undefined,
-                catchY: undefined
-            }
+        const slideList = [{
+            img: "png/img1.jpg",
+            text: "Pierwszy tekst"
+        },
+        { 
+            img: "png/img2.jpg",
+            text: "Drugi tekst"
+        },
+            { 
+            img: "png/img3.jpg",
+            text: "Trzeci tekst"
+        }];
+        const image = document.querySelector("img.slider");
+        const h1 = document.querySelector("h1.slider");
+        // 
+        const time = 5000;
+        let active =0;
+        const changesSlide = () =>{
+            active++;
+            if(active==slideList.length)active=0;
+            image.src = slideList[active].img;
+            h1.textContent = slideList[active].text;
         }
-
-        function catchElement() {
-            this.style.backgroundColor = "gray";
-            myDom.div.catchX = event.offsetX;
-            myDom.div.catchY = event.offsetY;
-            myDom.div.selected = true;
-        }
-
-        function leaveElement() {
-            this.style.backgroundColor = "black";
-            myDom.div.selected = false;
-
-        }
-
-        function dragElement() {
-            if (myDom.div.selected) {
-                let x = event.clientX - myDom.div.catchX;
-                let y = event.clientY - myDom.div.catchY;
-                myDom.div.element.style.left = x + "px";
-                myDom.div.element.style.top = y + "px";
-                console.log("in");
-            }
-        }
-        console.log(myDom);
-        myDom.div.element.addEventListener("mousedown", catchElement);
-        myDom.div.element.addEventListener("mouseup", leaveElement);
-        myDom.div.element.addEventListener("mousemove", dragElement);
-        //samuraj sam ponizej
-
-        // const div = document.querySelector(".div");
-        // let divY = 5;
-        // let divX = 2;
-        // div.style.left = divX + "px";
-        // div.style.top = divY + "px";
-
-        // let drawActive = false;
-
-        // let insertDivX;
-        // let insertDivY;
-
-        // div.addEventListener("mousedown", (e) => {
-        //     div.style.backgroundColor = "gray";
-        //     insertDivX = e.offsetX;
-        //     insertDivY = e.offsetY;
-        //     drawActive = true;
-        // });
-        // div.addEventListener("mousemove", (e) => {
-        //     if (drawActive) {
-        //         console.log(event);
-        //         divX = e.clientX - insertDivX;
-        //         divY = e.clientY - insertDivY;
-
-
-
-        //         div.style.left = divX + "px";
-        //         div.style.top = divY + "px";
-        //     }
-        // });
-
-        // div.addEventListener("mouseup", () => {
-        //     div.style.backgroundColor = "black";
-        //     drawActive = false;
-
-        // });
+        setInterval(changesSlide,time);
     </script>
 </body>
 
