@@ -42,7 +42,7 @@
             left: 50%;
             transform: translateX(-50%);
         }
-        .dots span{
+        .dots__span{
             display: inline-block;
             background-color: #000;
             margin: 0 20px;
@@ -51,7 +51,7 @@
             border-radius: 50%;
             box-shadow: 0 0 0 5px white;
         }
-        .dots span.active {
+        .dots__span--active {
             box-shadow: 0 0 0 5px white, 0 0 3px 10px black;
         }
         
@@ -64,9 +64,9 @@
         <img src="png/img1.jpg" alt="background" class="slider">
         <h1 class="slider"> Pierwszy</h1>
         <div class="dots">
-            <span id="one"></span>
-            <span id="two"></span>
-            <span id="three"></span>
+            <span class="dots__span dots__span--active"></span>
+            <span class="dots__span"></span>
+            <span class="dots__span"></span>
         </div>
     </header>
 
