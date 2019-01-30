@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Projekt 11 - zadanie 2 - odliczanie do startu</title>
+	<style>
+		body {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			background-color: black;
+			font-family: arial;
+			color: white;
+			align-items: center;
+			height: 100vh;
+		}
+
+		h1 {
+			font-size: 40px;
+		}
+
+		p {
+			font-family: monospace;
+			font-size: 22px;
+		}
+	</style>
+</head>
+
+<body>
+
+	<p>Statek doleci do Jowisza za:</p>
+	<h1>
+		<span class="d">.</span> d:
+		<span class="h">.</span> h:
+		<span class="m">.</span> m:
+		<span class="s">.</span>s
+	</h1>
+
+	<script>
+		const endTime = new Date("2021-01-25 22:34:00")
+			.getTime();
+
+		const spanD = document.querySelector("span.d");
+		const spanH = document.querySelector("span.h");
+		const spanM = document.querySelector("span.m");
+		const spanS = document.querySelector("span.s");
+
+		function howMuchTimeLeft(arg, since, untill) {
+			// return number = how long that's gonna take 
+			const myTime = new Date().getTime();
+			switch (arg) {
+				case "hours":
+					return Math.floor((untill / (1000 * 60 * 60) - since / (1000 * 60 * 60)) % 24);
+					break;
+				case "days":
+					return Math.floor((untill / (1000 * 60 * 60 * 24)) - (since / (1000 * 60 * 60 * 24)));
+					break;
+				case "minutes":
+					return Math.floor((untill / (1000 * 60) - since / (1000 * 60)) % 60);
+					break;
+				case "seconds":
+					return Math.floor((untill / 1000 - since / 1000) % 60)
+					break;
+			}
+		}
+
+		setInterval(() => {
+			const nowTime = new Date().getTime(); //milisekundy
+			// const time = Math.floor((endTime - nowTime) / 1000); //odejmowanie sekund całkowitych
+
+			const hours = howMuchTimeLeft("hours", nowTime, endTime);
+			const days = howMuchTimeLeft("days", nowTime, endTime);
+			const minutes = howMuchTimeLeft("minutes", nowTime, endTime);
+			const seconds = howMuchTimeLeft("seconds", nowTime, endTime);
+
+
+
+			spanD.textContent = days;
+			spanH.textContent = hours;
+			spanM.textContent = minutes;
+			spanS.textContent = seconds;
+
+
+			console.log(hours, days, "lol");
+		}, 1000)
+	</script>
+</body>
+
+</html>
