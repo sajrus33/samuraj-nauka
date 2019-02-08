@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>sass</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        div{
+           background-color: black;
+            border: solid black 1px;
+        }
+        .parent{
+            width: 100%;
+            height: 30vh;
+            background-color: transparent;
+
+            position: relative;
+
+        }
+        .color{
+            
+            background-color: black;
+            width: 100%;
+            height: 100%;
+        }
+        .child{
+            background-color:white;
+            width: 30%;
+            float: left;
+        }
+        .child:hover{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+   
+    <div class="parent">
+        <div class="color"></div>
+        <div class="child">fdhdfhdf</div>
+        <div class="child">hfdhdff</div>
+        <div class="child">dfhdfdf</div>
+    </div>
+
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+
+    <script src="script.js"></script>
+</body>
+</html>

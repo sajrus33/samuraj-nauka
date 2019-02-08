@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-size: 26px;
+        }
+
+        .div {
+            font-family: roboto;
+            max-width: 80%;
+            margin:  20 px auto;
+        letter-spacing: 1px;
+        }
+        .cursor{
+            opacity: 1;
+
+            transition: .2s;
+        }
+        .active{
+            opacity: 0;
+
+        }
+        
+    </style>
+</head>
+
+<body>
+
+    <div class="div">
+        <span class="text"></span>
+        <span class="cursor">|</span>
+    </div>
+
+
+    <script>
+        const spnText = document.querySelector(".text");
+        const spnCursor = document.querySelector(".cursor");
+        const txt = ["tekst1","tekst2","tekst3"];
+
+        let activeLetter = -5;
+        let activeText = 0;
+
+        const addLetter = () => {
+            console.log(activeLetter);
+
+            if(activeLetter >= 0){
+                spnText.textContent += txt[activeText][activeLetter];
+
+            }
+            activeLetter++;
+            console.log(activeLetter);
+
+            if(activeLetter === txt[activeText].length){
+                activeText++;
+
+                if(activeText === txt.length) return;
+
+                return setTimeout(() => {   
+                activeLetter = -5;
+                spnText.textContent = "";   
+                addLetter();
+                }, 2000);
+            }
+            setTimeout(addLetter,400);
+        }
+
+        addLetter();
+        
+        const cursorAnimation = () => {
+            spnCursor.classList.toggle("active");
+        }
+        setInterval(cursorAnimation,200);
+    </script>
+</body>
+
+</html>

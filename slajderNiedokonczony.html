@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .header{
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+        img{
+            position: absolute;
+            min-width: 100%;
+            min-height: 100%;
+            position: absolute;
+            top: 50%;
+            left: 50%; 
+            transform: translate(-50%,-50%);
+           opacity: 0.6;
+        }
+        h1 {
+            position: absolute;
+           top: 50%;
+           left:50%;
+           transform: translate(-50%,-50%);
+           font-size: 40px;
+           font-family: Tahoma, sans-serif;
+           text-shadow: 0 0 6px white;
+        }
+        .dots{
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .dots__span{
+            display: inline-block;
+            background-color: #000;
+            margin: 0 20px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            box-shadow: 0 0 0 5px white;
+        }
+        .dots__span--active {
+            box-shadow: 0 0 0 5px white, 0 0 3px 10px black;
+        }
+        
+    </style>
+</head>
+
+<body>
+    
+    <header class="header">
+        <img src="png/img1.jpg" alt="background" class="slider">
+        <h1 class="slider"> Pierwszy</h1>
+        <div class="dots">
+            <span class="dots__span dots__span--active"></span>
+            <span class="dots__span"></span>
+            <span class="dots__span"></span>
+        </div>
+    </header>
+
+    <script>
+        const slideList = [{
+            img: "png/img1.jpg",
+            text: "Pierwszy tekst"
+        },
+        { 
+            img: "png/img2.jpg",
+            text: "Drugi tekst"
+        },
+            { 
+            img: "png/img3.jpg",
+            text: "Trzeci tekst"
+        }];
+        const image = document.querySelector("img.slider");
+        const h1 = document.querySelector("h1.slider");
+        // 
+        const time = 5000;
+        let active =0;
+        const changesSlide = () =>{
+            active++;
+            if(active==slideList.length)active=0;
+            image.src = slideList[active].img;
+            h1.textContent = slideList[active].text;
+        }
+        setInterval(changesSlide,time);
+    </script>
+</body>
+
+</html>

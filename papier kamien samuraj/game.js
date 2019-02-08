@@ -71,7 +71,7 @@ function startGame() {
 
         hands.forEach(hand => hand.style.boxShadow = "");
         game.playerHand = "";
-    } else console.log("pick ya hand");
+    } else alert("pick your hand");
 }
 
 hands.forEach(hand => hand.addEventListener("click", handSelect));

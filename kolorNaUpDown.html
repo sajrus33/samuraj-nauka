@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>colors rgb% while keydown</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <script>
+        let colors = {
+            red: 100,
+            green: 100,
+            blue: 100
+        }
+        document.body.style.backgroundColor = "rgb(" + colors.red + "," + colors.green + "," + colors.blue + ")"
+
+        const changeColor = () => {
+            console.log(event.keyCode, event.which);
+            //38 up
+            //40 down
+            switch (event.keyCode) {
+                case 38:
+                    for (let i of Object.keys(colors)) {
+                        colors[i] += 1;
+                        console.log(colors[i], i);
+                        document.body.style.backgroundColor = "rgb(" + colors.red + "," + colors.green + "," +
+                            colors.blue + ")"
+                    }
+                    break;
+                case 40:
+                    for (let i of Object.keys(colors)) {
+                        colors[i] -= 1;
+                        document.body.style.backgroundColor = "rgb(" + colors.red + "," + colors.green + "," +
+                            colors.blue + ")"
+
+                    }
+                    break;
+            }
+        }
+        window.addEventListener("keydown", changeColor);
+        //samuraj ponizej
+        // let red = 100,
+        //     green = 100,
+        //     blue = 100;
+
+        // window.addEventListener("keydown", function () {
+        //     switch (event.keyCode) {
+        //         case 38:
+        //             document.body.style.backgroundColor = "rgb(" + (red < 255 ? ++red : red) + "," + (green <
+        //                 255 ? ++green :
+        //                 green) + "," + (blue < 255 ? ++blue : blue) + ")";
+        //             break;
+        //     }
+        // });
+    </script>
+
+</body>
+
+</html>

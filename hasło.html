@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>pass check</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            margin: 5vw;
+            text-align: center;
+            font-family: arial;
+        }
+        label,input{
+            height: 40px;
+            line-height: 40px;
+            font-size: 30px;
+        }
+        div{
+            border: 2px solid black;
+            font-size: 40px;
+            margin: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- label for,input id =pass wiec są jakby połączone z naszym focusem ??lolsamuraj -->
+    <label for="pass">haslo:</label><input id="pass" type="text">
+    <div class="message"></div>
+    <script>
+        const input = document.getElementById("pass");
+        const password = "user";
+        input.addEventListener("keydown", (e) => {
+            console.log(e.target.value);
+            if (password === e.target.value) {
+
+            }
+        });
+    </script>
+</body>
+
+</html>
