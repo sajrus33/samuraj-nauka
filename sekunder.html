@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>closures 2</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <script>
+        const clock = () => {
+            let sec = 0;
+            document.body.textContent = sec + "sekund";
+
+            const timer = () => {
+                sec++;
+                document.body.textContent = sec + "sekund";
+
+            }
+            return timer;
+        }
+
+
+
+        const start = clock();
+        // start();
+        setInterval(start, 1000);
+    </script>
+</body>
+
+</html>

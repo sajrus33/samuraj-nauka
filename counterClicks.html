@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>closures</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <script>
+        const add = (start = 0) => {
+            let number = start;
+            return () => {
+                number++;
+                document.body.textContent = `aktualny stan licznika to ${number}`;
+            }
+        }
+
+        const counter = add();
+        document.addEventListener("click", counter);
+    </script>
+</body>
+
+</html>
