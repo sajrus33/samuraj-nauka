@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+        margin: 0;
+        padding: 0;
+    }
+    .btn{
+
+    }
+    
+    .ul>li{
+        border: 1px solid black;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+    }
+    .ul>li:nth-of-type(5n+0){
+        border-radius: 50%;
+
+    }
+    </style>
+</head>
+<body>
+<button class="btn">add element</button>
+<ul class="ul"></ul>
+<script>
+    let main={
+        number: 1,
+        add: 2,
+        li: document.createElement("li"),
+        init: function(){
+            main.li = document.createElement("li");
+            main.li.textContent = main.number;
+
+        },
+        adding: function(){
+            main.li = document.createElement("li");
+
+            document.querySelector(".ul").appendChild(main.li);
+            main.li.textContent = main.number;
+            main.number+=main.add;
+        }
+    }
+    main.init();
+document.querySelector(".btn").addEventListener("click",main.adding)
+
+</script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    body{
+        min-height: 200vh;
+    }
+    .h1{
+        position: fixed;
+        top:50%;
+        left:50%;
+        transform: translate(-50%,-50%);
+        font-size: 40px;
+        font-family: arial;
+        color: inherit;
+    }
+    </style>
+</head>
+<body>
+    <h1 class="h1">Rusz sie</h1>
+    <script>
+        // document.body.addEventListener("mousemove",()=>{
+        //     console.log(event.clientX, event.clientY);
+        // })
+        // document.body.addEventListener("mousemove",(zdarzenie)=>{
+        //     console.log(zdarzenie.clientX, zdarzenie.clientY);
+        //     document.querySelector("h1").textContent=zdarzenie.clientY+","+zdarzenie.clientX;
+        // });
+        document.body.addEventListener("mousemove",(e)=>{
+            // (clientY *100)/document.body.inn
+            const width = innerWidth;
+            const height = innerHeight;
+           let xPerce =Math.floor((e.clientX*100)/width) ;
+           let yPerc =Math.floor((e.clientY*100)/height) ;
+           document.querySelector(".h1").textContent="rgb("+(xPerce)+"%,"+(yPerc)+"%,"+(xPerce)+"%)";
+          
+           document.body.style.color = "rgb("+(Math.abs(xPerce-100))+"%,"+(Math.abs(yPerc-100))+"%,"+(Math.abs(xPerce-100))+"%)";
+
+            document.body.style.backgroundColor = "rgb("+(xPerce)+"%,"+(yPerc)+"%,"+(xPerce)+"%)";
+        });
+    </script>
+</body>
+</html>

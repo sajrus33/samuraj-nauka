@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            min-height: 100vh;
+        }
+        .main{
+            position: absolute;
+            width: 10%;
+            height: 10%;
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+            text-align: center;
+            line-height: 10vh;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">Kliknij</div>
+
+    <script>
+        window.document.body.addEventListener("click",function(e){
+            let x = e.clientX;
+            let y = e.clientY;
+            console.log(e,"ready");
+            let color;
+            function isDouble(arg){
+                if((arg%2)==0){
+                    return true;
+                }else return false;
+            }
+            if(isDouble(x)&&isDouble(y)){
+                color = "red";
+            }else if(isDouble(x)||isDouble(y)){
+                color = "green"
+            }else{
+                color = "blue";
+            }
+
+            document.body.style.backgroundColor = color;
+            document.body.style.color = color;
+
+
+        });
+
+    </script>
+</body>
+</html>
