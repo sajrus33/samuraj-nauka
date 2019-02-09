@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>To Do List</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            /* background-color: rgb(226, 253, 153); */
+            background-color: rgb(129, 148, 62);
+            background-color: cadetblue;
+            background-color: dimgray;
+
+
+        }
+        .editor{
+            height: 20vh;
+            background-color: rgb(129, 148, 62);
+            background: rgb(46, 48, 48);
+
+        }
+        .main{
+            min-height: 80vh;
+            width: 80%;
+            /* margin: 0 auto; */
+            min-height: 320px;
+            background: rgb(46, 48, 48);
+            font-size: 1.2em;
+            text-align: left;
+
+            color: whitesmoke;
+            /* flex C */
+            display: flex;
+            flex-direction: column;
+            /* justify-content: space-around; */
+            align-items: flex-start;
+
+            box-sizing: border-box;
+            padding:0 5%;
+        }
+        .main__li{
+            padding: 5%;
+            background-color: dimgray;
+            background-color: cadetblue;
+
+            width: 100%;
+        }
+        .main__li:nth-of-type(even){
+            background: rgb(46, 48, 48);
+        }
+        .main__button{
+            height: 100%;
+            text-align: center;
+            padding: .2em;
+        }
+
+        
+
+    </style>
+</head>
+<body>
+    <section class="editor">
+        <form action="" class="editor__new editor__new--task">
+            <select name="editor__category" class="editor__category">
+                <option value="Sport">Sport</option>
+                <option value="School">School</option>
+                <option value="Important">Important</option>
+            </select>
+            <input type="text" class="editor__describe" value="My task">
+            <input type="submit" class="editor__submit--task" value="submit">
+        </form>
+        <form action="" class="editor__new editor__new--category">
+
+        </form>
+
+
+    </section>
+    <ol class="main">
+        <li class="main__li">zadanie-1 
+            <button class="main__button main__button--done">done</button> <button class="main__button main__button--delete">delete</button>   
+        </li>
+        <li class="main__li">zadanie-2 
+            <button class="main__button main__button--done">done</button> <button class="main__button main__button--delete">delete</button>   
+        </li>
+        <li class="main__li">zadanie-3 
+            <button class="main__button main__button--done">done</button> <button class="main__button main__button--delete">delete</button>   
+        </li>
+        <li class="main__li">zadanie-4 
+            <button class="main__button main__button--done">done</button> <button class="main__button main__button--delete">delete</button>   
+        </li>
+        <li class="main__li">zadanie-5 
+            <button class="main__button main__button--done">done</button> <button class="main__button main__button--delete">delete</button>   
+        </li>
+        <li class="main__li">zadanie-6 
+            <button class="main__button main__button--done">done</button> <button class="main__button main__button--delete">delete</button>   
+        </li>
+        <li class="main__li">zadanie-7 
+            <button class="main__button main__button--done">done</button> <button class="main__button main__button--delete">delete</button>   
+        </li>
+        <li class="main__li">zadanie-8 
+            <button class="main__button main__button--done">done</button> <button class="main__button main__button--delete">delete</button>   
+        </li>
+        <li class="main__li">zadanie-9 
+            <button class="main__button main__button--done">done</button> <button class="main__button main__button--delete">delete</button>   
+        </li>
+        <li class="main__li">zadanie-10
+            <button class="main__button main__button--done">done</button> <button class="main__button main__button--delete">delete</button>   
+        </li>
+    </ol>
+
+    <script>
+        const doneTask = (e) =>{
+            e.target.parentNode.style.textDecoration = "line-through";
+            e.target.remove();
+        }
+        const deleteTask= (e) =>{
+            e.target.parentNode.remove();
+        }
+
+        document.querySelectorAll("li.main__li button.main__button--done").forEach(item => 
+        item.addEventListener("click",doneTask));
+        document.querySelectorAll("li.main__li button.main__button--delete").forEach(item => 
+        item.addEventListener("click",deleteTask));
+    </script>
+</body>
+</html>
