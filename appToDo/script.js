@@ -22,7 +22,9 @@ const btnsDone = document.querySelectorAll(
 
 const doneTask = e => {
   e.target.parentNode.style.transform = "translate(50%,0)";
-  e.target.parentNode.style.textDecoration = "line-through";
+  e.target.parentNode.style.backgroundColor = "black";
+
+  // e.target.parentNode.style.textDecoration = "line-through";
   e.target.remove();
 };
 const deleteTask = e => {
