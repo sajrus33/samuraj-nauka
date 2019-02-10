@@ -12,25 +12,146 @@
             box-sizing: border-box;
         }
         body{
-            /* background-color: rgb(226, 253, 153); */
+            /* background-color: rgb(226, 253, 153);
             background-color: rgb(129, 148, 62);
-            background-color: cadetblue;
-            background-color: dimgray;
-
-            overflow: hidden;
+            background-color: cadetblue; */
+            /* background-color: dimgray;
+             */
+             background-color: rgba(16,55,84);
+             background-color: rgba(51,171,177,1);
+            
+            overflow-x: hidden;
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
         }
+        /*                                                                                            EDITOR */
+        /* <section class="editor__wrapper editor__wrapper--task">
+            <form action="" class="editor__new editor__new--task">
+                <select name="editor__category" class="editor__category">
+                    <option value="Sport">Sport</option>
+                    <option value="School">School</option>
+                    <option value="Important">Important</option>
+                </select>
+                <input type="text" class="editor__describe" value="My task">
+                <input type="submit" class="editor__submit--task" value="Add">
+            </form>
+        </section> */
+        /*                                                                   EDITOR                                               */
         .editor{
+            width: 100%;
+
             height: 20vh;
-            background-color: rgb(129, 148, 62);
-            background: rgb(46, 48, 48);
+            min-height: 150px;
+
+            background-color: rgba(16,55,84);
+            /* flex C */
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            
 
         }
+
+        .editor__wrapper{
+            height: 100%;
+            flex-basis: 50%;
+             /* flex C */
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            box-shadow:inset 0 0 5px #000000;
+
+
+
+        }
+        /*                                                                  new task */
+
+        .editor__wrapper--task{
+            /* background: rgb(46, 48, 48); */
+            background-color: rgba(51,171,177,1);
+            /* box-shadow:inset 0 0 10px #000000; */
+
+
+        }
+        .editor__panel{
+            height: 100%;
+             /* flex C */
+             display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+        }
+        /* edit task */
+        .editor__panel--task{
+            flex-direction: column;
+            
+        }
+
+
+
+        /*                                                                  new category */
+        .editor__wrapper--category{
+            /* background: cadetblue;*/
+            display: none;
+
+        }
+
+        .editor__panel--category{
+            flex-basis: 30%;
+            width: 30%;
+             /* flex C */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: space-between;
+        }
+        .editor__category{
+            
+        }
+        
+        .editor__label{
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        .editor__color{
+            height: 80%;
+            flex-basis: 30%;
+            flex-shrink: 0;
+            background-color: rgb(2,2,2);
+        }
+        .editor__range{
+            width: 100%;
+        }
+        /*                                                                     search panel*/
+        .editor__wrapper--search{
+            box-shadow:inset 0 0 10px #8a8888;
+
+            /* flex C */
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .editor__panel--search{
+            height: auto;
+        }
+        /*                             
+             
+                      
+                
+                            
+                            
+                            
+                            
+                            
+                            
+                            
+                                                                                MAIN LIST */
         .main{
             min-height: 80vh;
-            height: 80vh;
-            width: 70%;
+            width: 100%;
             margin: 0 auto;
-            min-height: 320px;
+            /* min-width: 370px; */
+
             /* background: rgb(46, 48, 48); */
             font-size: 1.2em;
             text-align: left;
@@ -46,22 +167,67 @@
             /* padding:0 5%; */
         }
         .main__li{
-            padding: 5%;
-            background-color: dimgray;
-            background-color: cadetblue;
+            background-color: rgba(239,171,31);
 
+            height: 10vh;
             width: 100%;
             list-style-type: none;
+            box-shadow: inset 0px -20px 10px -15px rgba(0,0,0,0.75);
+            box-shadow: inset 0px 20px 10px -15px rgba(0,0,0,0.75);
+
+
 
             transition: .5s;
+
+             /* flex C */
+             display: flex;
+            /* justify-content: stretch; */
+            align-items: center;
+
+            box-sizing: border-box;
         }
-        .main__li:nth-of-type(even){
-            background: rgb(46, 48, 48);
+        
+        .main__li:nth-of-type(2n){
+            /* background: rgb(46, 48, 48); */
+            background-color: rgba(254,95,27,1);
+
+        }
+        .main__li:nth-of-type(3n){
+            /* /* background: rgb(46, 48, 48);  */
+            background-color: rgba(213,61,19,1);
+           
+            
         }
         .main__button{
             height: 100%;
+            flex-basis: 10%;
             text-align: center;
             padding: .2em;
+
+            box-shadow: inset 0px -20px 10px -15px rgba(0,0,0,0.75);
+            box-shadow: inset 0px 20px 10px -15px rgba(0,0,0,0.75);
+
+            
+            border: none;
+
+        }
+        .main__button--done{
+
+        }
+        .main__button--done::after{
+            content: "";
+            background-color: green;
+            width: 50px;
+            height: 20px;
+            z-index: 3;
+        }
+        .main__button--done::before{
+            content: "";
+            background-color: green;
+            width: 50px;
+            height: 20px;
+            z-index: 3;
+
         }
 
         
@@ -69,52 +235,87 @@
     </style>
 </head>
 <body>
-    <section class="editor">
-        <form action="" class="editor__new editor__new--task">
-            <select name="editor__category" class="editor__category">
-                <option value="Sport">Sport</option>
-                <option value="School">School</option>
-                <option value="Important">Important</option>
-            </select>
-            <input type="text" class="editor__describe" value="My task">
-            <input type="submit" class="editor__submit--task" value="submit">
-        </form>
-        <form action="" class="editor__new editor__new--category">
+    <article class="editor">
 
-        </form>
+        <section class="editor__wrapper editor__wrapper--task">
+            <form action="" class="editor__panel editor__panel--task">
+                <label class="editor__label--search" for="editor__category">Choose category:</label>
+                <select name="editor__category" class="editor__category">
+                    <option value="Sport">Sport</option>
+                    <option value="School">School</option>
+                    <option value="Important">Important</option>
+                    Category:
+                </select>
+                <label class="editor__label--describe" for="editor__describe">Write your task:</label>
+                <input type="text" class="editor__describe" value="My task">
+                <input type="submit" class="editor__submit--task" value="Add">
+            </form>
+        </section>
 
+        <section class="editor__wrapper editor__wrapper--search">
+            <form action="" class="editor__panel editor__panel--search">
+                <input class="editor__search" type="text">
+                <input type="submit" value="Search">
+            </form>
+            <button class="editor__create">Create Category</button>
+        </section>
 
-    </section>
+        <section class="editor__wrapper editor__wrapper--category">
+            <form action="" class="editor__panel editor__panel--category">
+                <label class="editor__label" for="editor__red">Red</label>
+                <input class="editor__red editor__range" type="range" min="0" max="255">
+
+                <label class="editor__label" for="editor__green">Green</label>
+                <input class="editor__green editor__range" type="range" min="0" max="255">
+
+                <label class="editor__label" for="editor__blue">Blue</label>
+                <input class="editor__blue editor__range" type="range" min="0" max="255">
+            </form>
+            <div class="editor__color"></div>
+        </section>
+
+    </article>
+
     <ul class="main">
-        <li class="main__li">zadanie-1 
+        <li class="main__li">
             <button class="main__button main__button--done">done</button> <button class="main__button main__button--delete">delete</button>   
+            zadanie-1 
         </li>
-        <li class="main__li">zadanie-2 
+        <li class="main__li"> 
             <button class="main__button main__button--done">done</button> <button class="main__button main__button--delete">delete</button>   
+            zadanie-2
         </li>
-        <li class="main__li">zadanie-3 
+        <li class="main__li"> 
             <button class="main__button main__button--done">done</button> <button class="main__button main__button--delete">delete</button>   
+            zadanie-3
         </li>
-        <li class="main__li">zadanie-4 
+        <li class="main__li">
             <button class="main__button main__button--done">done</button> <button class="main__button main__button--delete">delete</button>   
+            zadanie-4 
         </li>
-        <li class="main__li">zadanie-5 
+        <li class="main__li"> 
             <button class="main__button main__button--done">done</button> <button class="main__button main__button--delete">delete</button>   
+            zadanie-5
         </li>
-        <li class="main__li">zadanie-6 
+        <li class="main__li"> 
             <button class="main__button main__button--done">done</button> <button class="main__button main__button--delete">delete</button>   
+            zadanie-6
         </li>
-        <li class="main__li">zadanie-7 
+        <li class="main__li"> 
             <button class="main__button main__button--done">done</button> <button class="main__button main__button--delete">delete</button>   
+            zadanie-7
         </li>
-        <li class="main__li">zadanie-8 
+        <li class="main__li"> 
             <button class="main__button main__button--done">done</button> <button class="main__button main__button--delete">delete</button>   
+            zadanie-8
         </li>
-        <li class="main__li">zadanie-9 
+        <li class="main__li"> 
             <button class="main__button main__button--done">done</button> <button class="main__button main__button--delete">delete</button>   
+            zadanie-9
         </li>
-        <li class="main__li">zadanie-10
+        <li class="main__li">
             <button class="main__button main__button--done">done</button> <button class="main__button main__button--delete">delete</button>   
+            zadanie-10
         </li>
     </ul>
 
@@ -124,18 +325,15 @@
         const btnsDone = document.querySelectorAll("li.main__li button.main__button--done");
 
         const doneTask = (e) =>{
-            e.target.parentNode.style.transform = "translate(100%,0)";
-
+            e.target.parentNode.style.transform = "translate(50%,0)";
             e.target.parentNode.style.textDecoration = "line-through";
             e.target.remove();
         }
         const deleteTask= (e) =>{
-            // e.target.parentNode.style.transform = "translateX(100%)";
-            e.target.parentNode.style.transform = "translate(100%," + (100*btnsDone.length) + "%)";
+            e.target.parentNode.style.transform = "translate(150%," + 0 + "%)";
             setTimeout(function(){
                 e.target.parentNode.remove();
             },500);
-            // e.target.parentNode.remove();
         }
 
         btnsDone.forEach(item => item.addEventListener("click",doneTask));
