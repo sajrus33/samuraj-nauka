@@ -1,3 +1,9 @@
+const taskSubmit = document.querySelector(".editor__submit--task");
+
+const searchPanel = document.querySelector(".editor__wrapper--search");
+const createBtn = document.querySelector(".editor__create");
+const createPanel = document.querySelector(".editor__wrapper--category")
+
 const searchInput = document.querySelector(".editor__search");
 const tasks = document.querySelectorAll(".main__task");
 const list = document.querySelector(".main");
@@ -31,7 +37,7 @@ const deleteTask = e => {
   e.target.parentNode.style.transform = "translate(150%," + 0 + "%)";
   setTimeout(function () {
     e.target.parentNode.remove();
-  }, 500);
+  }, 350);
 };
 searchInput.addEventListener("input", searchTask);
 
@@ -39,3 +45,13 @@ btnsDone.forEach(item => item.addEventListener("click", doneTask));
 
 document.querySelectorAll("li.main__li button.main__button--delete")
   .forEach(item => item.addEventListener("click", deleteTask));
+
+createBtn.addEventListener("click", function () {
+  searchPanel.classList.toggle("off");
+  createPanel.classList.toggle("off");
+
+});
+
+taskSubmit.addEventListener("submit", function () {
+  console.log("yeeeeeeeeee");
+});
