@@ -1,4 +1,6 @@
 const taskSubmit = document.querySelector(".editor__submit--task");
+const taskDescribe = document.querySelector(".editor__describe--task");
+
 
 const searchPanel = document.querySelector(".editor__wrapper--search");
 const createBtn = document.querySelector(".editor__create");
@@ -8,6 +10,8 @@ const searchInput = document.querySelector(".editor__search");
 const tasks = document.querySelectorAll(".main__task");
 const list = document.querySelector(".main");
 console.log(tasks);
+
+let newTaskDescribe = "My task";
 
 const searchTask = e => {
   const searchText = e.target.value.toLowerCase();
@@ -26,6 +30,14 @@ const btnsDone = document.querySelectorAll(
   "li.main__li button.main__button--done"
 );
 
+const getTaskDescribe = e => {
+  newTaskDescribe = e.target.value;
+}
+
+const createTask = (describe) => {
+  list.
+}
+
 const doneTask = e => {
   e.target.parentNode.style.transform = "translate(50%,0)";
   e.target.parentNode.style.backgroundColor = "black";
@@ -39,6 +51,10 @@ const deleteTask = e => {
     e.target.parentNode.remove();
   }, 350);
 };
+
+
+taskDescribe.addEventListener("input", getTaskDescribe);
+
 searchInput.addEventListener("input", searchTask);
 
 btnsDone.forEach(item => item.addEventListener("click", doneTask));
@@ -52,6 +68,9 @@ createBtn.addEventListener("click", function () {
 
 });
 
-taskSubmit.addEventListener("submit", function () {
-  console.log("yeeeeeeeeee");
-});
+
+
+
+taskSubmit.addEventListener("click", createTask(newTaskDescribe), false);
+
+
