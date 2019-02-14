@@ -12,7 +12,7 @@
 <body>
   <article class="editor">
     <section class="editor__wrapper editor__wrapper--task">
-      <form action="" class="editor__panel editor__panel--task">
+      <div class="editor__panel editor__panel--task">
         <!-- <label class="editor__label--task" for="editor__category">Choose category:</label> -->
         <select name="editor__category" class="editor__category">
           <option value="Sport">Sport</option>
@@ -21,9 +21,9 @@
           Category:
         </select>
         <!-- <label class="editor__label--task" for="editor__describe--task">Write your task:</label> -->
-        <input type="text" class="editor__describe--task" value="My task" />
-        <input type="submit" class="editor__submit--task" value="Add" />
-      </form>
+        <div class="editor__describe--task">My task</div>
+        <button class="editor__submit--task">Add</button>
+      </div>
     </section>
 
     <section class="editor__wrapper editor__wrapper--search ">
