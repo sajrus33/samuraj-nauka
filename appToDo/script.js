@@ -1,18 +1,82 @@
 "use strict";
+
+ 
+//      COMUNICAT
+// if (!typeof(Storage) !== 'undefined') {
+//   $('#yay').fadeIn('slow');
+// } else {
+//   $('#ooh').fadeIn('slow');
+// }
+
+function testLocalStorage(){
+  try{
+    localStorage.setItem("foo","foo");
+    localStorage.removeItem("foo");
+    return true;
+  }catch(e){
+    return false;
+  }
+}
+function init(){
+  if(!testLocalStorage){
+    alert("We are sorry but you cannot use localStorage");
+  }else{
+    console.log("great local storage working");
+    localStorage.setItem("whatever","ye");
+  }
+}
+init();
+
+// if(localData){
+//   console.log("u have local");
+// }else{
+//   let localData = [];
+// }
+// console.log(localData==true);
+// Put the object into storage
+// localStorage.setItem('localData', JSON.stringify(localData));
+
+// // Retrieve the object from storage
+// var retrievedObject = JSON.parse(localStorage.getItem('localData'));
+
+// console.log('retrievedObject: ', retrievedObject);
+
 const taskSubmit = document.querySelector(".editor__submit--task");
 const taskDescribe = document.querySelector(".editor__describe--task");
-
 
 const searchPanel = document.querySelector(".editor__wrapper--search");
 const createBtn = document.querySelector(".editor__create");
 const createPanel = document.querySelector(".editor__wrapper--category")
-
 const searchInput = document.querySelector(".editor__search");
-let tasks = document.querySelectorAll(".main__task");
-const list = document.querySelector(".main");
-console.log(tasks);
 
+const list = document.querySelector(".main");
+let tasks = document.querySelectorAll(".main__task");
 let newTaskDescribe = "";
+let btnsDone = document.querySelectorAll(
+  "li.main__li button.main__button--done"
+);
+let btnsDelete = document.querySelectorAll(
+  "li.main__li button.main__button--delete"
+);
+//                                                   fun
+// 
+// 
+// 
+// 
+// 
+// 
+function reoladList(){
+  tasks = document.querySelectorAll(".main__task");
+  btnsDone = document.querySelectorAll(
+    "li.main__li button.main__button--done"
+  );
+  btnsDone.forEach(item => item.addEventListener("click", doneTask));
+  btnsDelete = document.querySelectorAll(
+    "li.main__li button.main__button--delete"
+  );
+  btnsDelete.forEach(item => item.addEventListener("click", deleteTask));
+}
+
 
 const searchTask = e => {
   const searchText = e.target.value.toLowerCase();
@@ -22,9 +86,9 @@ const searchTask = e => {
   activeTasks = activeTasks.filter(task =>
     task.textContent.toLowerCase().includes(searchText)
   );
-  // remove complete li element1
+  // hide LIST elements
   tasks.forEach(task => task.parentNode.style.display = "none");
-
+  // show LIST elements
   tasks.forEach((task) => {
     activeTasks.forEach(active => {
       if (task == active) {
@@ -32,10 +96,8 @@ const searchTask = e => {
       }
     });
   });
-  // activeTasks.forEach(task => task.parentNode.style.display = "flex");
 
 }
-
 
 const getTaskDescribe = e => {
   newTaskDescribe = e.target.value;
@@ -44,6 +106,7 @@ const getTaskDescribe = e => {
 
 const createTask = (describe) => {
   if (!newTaskDescribe) return alert("Task describe is empty");
+  if(newTaskDescribe.length > 30) return alert("Task describe id too long, max 30 characters");
   //li
   const newTask = document.createElement("li");
   newTask.classList.add("main__li");
@@ -67,52 +130,28 @@ const createTask = (describe) => {
   newTask.appendChild(newDelete);
   newTask.appendChild(newDescribe);
   list.appendChild(newTask);
-
-  //li element refresh
-  tasks = document.querySelectorAll(".main__task");
-
-  btnsDone = document.querySelectorAll(
-    "li.main__li button.main__button--done"
-  );
-  btnsDone.forEach(item => item.addEventListener("click", doneTask));
-  btnsDelete = document.querySelectorAll(
-    "li.main__li button.main__button--delete"
-  );
-  btnsDelete.forEach(item => item.addEventListener("click", deleteTask));
+  reoladList();
 }
 
 const doneTask = e => {
   e.target.parentNode.style.transform = "translate(50%,0)";
   e.target.parentNode.style.backgroundColor = "black";
-
   // e.target.parentNode.style.textDecoration = "line-through";
   e.target.remove();
 };
 const deleteTask = e => {
   e.target.parentNode.remove();
-  // wyszukiwane=noralne
-  // e.target.parentNode.style.transform = "translate(150%," + 0 + "%)";
-  console.log(e.target.parentNode);
-  // setTimeout(function () {
-  // }, 50);
 };
 
-//li element
-let btnsDone = document.querySelectorAll(
-  "li.main__li button.main__button--done"
-);
-btnsDone.forEach(item => item.addEventListener("click", doneTask));
-let btnsDelete = document.querySelectorAll(
-  "li.main__li button.main__button--delete"
-);
-btnsDelete.forEach(item => item.addEventListener("click", deleteTask));
 
+
+btnsDone.forEach(item => item.addEventListener("click", doneTask));
+
+btnsDelete.forEach(item => item.addEventListener("click", deleteTask));
 
 taskDescribe.addEventListener("input", getTaskDescribe);
 
 searchInput.addEventListener("input", searchTask);
-
-
 
 createBtn.addEventListener("click", function () {
   searchPanel.classList.toggle("off");
@@ -120,9 +159,9 @@ createBtn.addEventListener("click", function () {
 
 });
 
-
 taskSubmit.addEventListener("click", function () {
   createTask(newTaskDescribe);
 }, false);
 
 
+console.log(tasks);
