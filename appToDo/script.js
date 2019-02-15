@@ -13,6 +13,7 @@ const searchTask = e => {
   );
   // remove complete li element
   tasks.forEach(task => task.parentNode.remove());
+  //create li element that found
   activeTasks.forEach(task => list.appendChild(task.parentNode));
 };
 
