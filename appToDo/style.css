@@ -86,6 +86,16 @@ body {
   border: none;
   box-shadow: inset 0px -20px 10px -15px rgba(0, 0, 0, 0.75);
 }
+.editor__category:after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: #fff transparent transparent transparent;
+}
 .editor__describe--task {
   flex-grow: 1;
   background-color: rgba(239, 171, 31);

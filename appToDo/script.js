@@ -12,7 +12,7 @@ let tasks = document.querySelectorAll(".main__task");
 const list = document.querySelector(".main");
 console.log(tasks);
 
-let newTaskDescribe = "My task";
+let newTaskDescribe = "";
 
 const searchTask = e => {
   const searchText = e.target.value.toLowerCase();
@@ -35,20 +35,15 @@ const searchTask = e => {
   // activeTasks.forEach(task => task.parentNode.style.display = "flex");
 
 }
-const btnsDone = document.querySelectorAll(
-  "li.main__li button.main__button--done"
-);
+
 
 const getTaskDescribe = e => {
   newTaskDescribe = e.target.value;
+  console.log(newTaskDescribe);
 }
 
 const createTask = (describe) => {
-  // <li class="main__li">
-  //   <button class="main__button main__button--done">done</button>
-  //   <button class="main__button main__button--delete">delete</button>
-  //   <p class="main__task">nie panie</p>
-  // </li>
+  if (!newTaskDescribe) return alert("Task describe is empty");
   //li
   const newTask = document.createElement("li");
   newTask.classList.add("main__li");
@@ -57,7 +52,6 @@ const createTask = (describe) => {
   newDone.classList.add("main__button");
   newDone.classList.add("main__button--done");
   newDone.innerText = "done";
-
   //delete
   const newDelete = document.createElement("button");
   newDelete.classList.add("main__button");
@@ -66,21 +60,25 @@ const createTask = (describe) => {
   //p
   const newDescribe = document.createElement("p");
   newDescribe.classList.add("main__task");
-  newDescribe.innerText = newTaskDescribe;
-
+  newDescribe.innerText = describe;
+  console.log(taskDescribe.value);
   //complete 
   newTask.appendChild(newDone);
   newTask.appendChild(newDelete);
-
   newTask.appendChild(newDescribe);
-
   list.appendChild(newTask);
 
+  //li element refresh
+  tasks = document.querySelectorAll(".main__task");
 
-  console.log(newTask, newDone, newDescribe);
-  // newTask.appendChild();
-  // list.appendChild()
-  // list.
+  btnsDone = document.querySelectorAll(
+    "li.main__li button.main__button--done"
+  );
+  btnsDone.forEach(item => item.addEventListener("click", doneTask));
+  btnsDelete = document.querySelectorAll(
+    "li.main__li button.main__button--delete"
+  );
+  btnsDelete.forEach(item => item.addEventListener("click", deleteTask));
 }
 
 const doneTask = e => {
@@ -99,15 +97,22 @@ const deleteTask = e => {
   // }, 50);
 };
 
+//li element
+let btnsDone = document.querySelectorAll(
+  "li.main__li button.main__button--done"
+);
+btnsDone.forEach(item => item.addEventListener("click", doneTask));
+let btnsDelete = document.querySelectorAll(
+  "li.main__li button.main__button--delete"
+);
+btnsDelete.forEach(item => item.addEventListener("click", deleteTask));
+
 
 taskDescribe.addEventListener("input", getTaskDescribe);
 
 searchInput.addEventListener("input", searchTask);
 
-btnsDone.forEach(item => item.addEventListener("click", doneTask));
 
-document.querySelectorAll("li.main__li button.main__button--delete")
-  .forEach(item => item.addEventListener("click", deleteTask));
 
 createBtn.addEventListener("click", function () {
   searchPanel.classList.toggle("off");
@@ -116,6 +121,8 @@ createBtn.addEventListener("click", function () {
 });
 
 
-taskSubmit.addEventListener("click", createTask(newTaskDescribe), false);
+taskSubmit.addEventListener("click", function () {
+  createTask(newTaskDescribe);
+}, false);
 
 
