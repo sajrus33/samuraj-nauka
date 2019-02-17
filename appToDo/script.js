@@ -1,6 +1,5 @@
 "use strict";
 
-
 //      COMUNICAT
 // if (!typeof(Storage) !== 'undefined') {
 //   $('#yay').fadeIn('slow');
@@ -9,7 +8,6 @@
 // }
 let canLocalStorage = false;
 let test;
-let index;
 
 
 function testLocalStorage() {
@@ -28,16 +26,18 @@ function init() {
     console.log("great local storage working");
     canLocalStorage = true;
     // localStorage.removeItem("localData");
-    index = localStorage.length;
-    for(let i=0; i < localStorage.length; i++){
-      let storagedTask = JSON.parse(localStorage.getItem(localStorage.key(i)));
-      console.log(String(storagedTask));
-      createTask(storagedTask,false);
-
+      let storagedTask = JSON.parse(localStorage.getItem("localTasks"));
+      console.log(storagedTask);
+      if(storagedTask){
+        storagedTask.forEach(task => {
+          createTask(task,false);
+        });
+      }
+      
 
     }
   }
-}
+
 
 // if(localData){
 //   console.log("u have local");
@@ -114,16 +114,11 @@ const searchTask = e => {
 
 const getTaskDescribe = e => {
   newTaskDescribe = e.target.value;
-  console.log(newTaskDescribe);
 }
 const createTask = (describe,create) => {
   if(create){
     if (!newTaskDescribe) return alert("Task describe is empty");
     if (newTaskDescribe.length > 30) return alert("Task describe id too long, max 30 characters");
-    if(canLocalStorage){
-      localStorage.setItem(String(index),JSON.stringify(newTaskDescribe));
-      index++;
-  }
   }
   
 
@@ -151,7 +146,18 @@ const createTask = (describe,create) => {
   newTask.appendChild(newDescribe);
   list.appendChild(newTask);
   reoladList();
-  console.log(tasks);
+
+  // console.log([...tasks]);
+  
+  // console.log(localTasks);
+
+  if(canLocalStorage&&create){
+    const localTasks=[];
+    [...tasks].forEach( task => {
+      localTasks.push(task.innerHTML);
+    });
+    localStorage.setItem("localTasks",JSON.stringify(localTasks));
+}
   
 }
 
@@ -165,6 +171,14 @@ const doneTask = e => {
 };
 const deleteTask = e => {
   e.target.parentNode.remove();
+  console.log(e.target.parentNode);
+  reoladList();
+
+  const localTasks=[];
+    [...tasks].forEach( task => {
+      localTasks.push(task.innerHTML);
+    });
+    localStorage.setItem("localTasks",JSON.stringify(localTasks));
 };
 
 init();
