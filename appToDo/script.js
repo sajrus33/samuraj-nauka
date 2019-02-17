@@ -1,6 +1,6 @@
 "use strict";
 
- 
+
 //      COMUNICAT
 // if (!typeof(Storage) !== 'undefined') {
 //   $('#yay').fadeIn('slow');
@@ -8,21 +8,21 @@
 //   $('#ooh').fadeIn('slow');
 // }
 
-function testLocalStorage(){
-  try{
-    localStorage.setItem("foo","foo");
+function testLocalStorage() {
+  try {
+    localStorage.setItem("foo", "foo");
     localStorage.removeItem("foo");
     return true;
-  }catch(e){
+  } catch (e) {
     return false;
   }
 }
-function init(){
-  if(!testLocalStorage){
+function init() {
+  if (!testLocalStorage) {
     alert("We are sorry but you cannot use localStorage");
-  }else{
+  } else {
     console.log("great local storage working");
-    localStorage.setItem("whatever","ye");
+    localStorage.setItem("whatever", "ye");
   }
 }
 init();
@@ -65,7 +65,7 @@ let btnsDelete = document.querySelectorAll(
 // 
 // 
 // 
-function reoladList(){
+function reoladList() {
   tasks = document.querySelectorAll(".main__task");
   btnsDone = document.querySelectorAll(
     "li.main__li button.main__button--done"
@@ -74,7 +74,8 @@ function reoladList(){
   btnsDelete = document.querySelectorAll(
     "li.main__li button.main__button--delete"
   );
-  btnsDelete.forEach(item => item.addEventListener("click", deleteTask));
+  btnsDelete.forEach(item =>
+    item.addEventListener("click", deleteTask));
 }
 
 
@@ -106,7 +107,7 @@ const getTaskDescribe = e => {
 
 const createTask = (describe) => {
   if (!newTaskDescribe) return alert("Task describe is empty");
-  if(newTaskDescribe.length > 30) return alert("Task describe id too long, max 30 characters");
+  if (newTaskDescribe.length > 30) return alert("Task describe id too long, max 30 characters");
   //li
   const newTask = document.createElement("li");
   newTask.classList.add("main__li");
