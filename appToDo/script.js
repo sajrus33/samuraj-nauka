@@ -7,6 +7,10 @@
 // } else {
 //   $('#ooh').fadeIn('slow');
 // }
+let canLocalStorage = false;
+let test;
+let index;
+
 
 function testLocalStorage() {
   try {
@@ -22,10 +26,18 @@ function init() {
     alert("We are sorry but you cannot use localStorage");
   } else {
     console.log("great local storage working");
-    localStorage.setItem("whatever", "ye");
+    canLocalStorage = true;
+    // localStorage.removeItem("localData");
+    index = localStorage.length;
+    for(let i=0; i < localStorage.length; i++){
+      let storagedTask = JSON.parse(localStorage.getItem(localStorage.key(i)));
+      console.log(String(storagedTask));
+      createTask(storagedTask,false);
+
+
+    }
   }
 }
-init();
 
 // if(localData){
 //   console.log("u have local");
@@ -104,10 +116,17 @@ const getTaskDescribe = e => {
   newTaskDescribe = e.target.value;
   console.log(newTaskDescribe);
 }
+const createTask = (describe,create) => {
+  if(create){
+    if (!newTaskDescribe) return alert("Task describe is empty");
+    if (newTaskDescribe.length > 30) return alert("Task describe id too long, max 30 characters");
+    if(canLocalStorage){
+      localStorage.setItem(String(index),JSON.stringify(newTaskDescribe));
+      index++;
+  }
+  }
+  
 
-const createTask = (describe) => {
-  if (!newTaskDescribe) return alert("Task describe is empty");
-  if (newTaskDescribe.length > 30) return alert("Task describe id too long, max 30 characters");
   //li
   const newTask = document.createElement("li");
   newTask.classList.add("main__li");
@@ -132,7 +151,11 @@ const createTask = (describe) => {
   newTask.appendChild(newDescribe);
   list.appendChild(newTask);
   reoladList();
+  console.log(tasks);
+  
 }
+
+
 
 const doneTask = e => {
   e.target.parentNode.style.transform = "translate(50%,0)";
@@ -144,6 +167,7 @@ const deleteTask = e => {
   e.target.parentNode.remove();
 };
 
+init();
 
 
 btnsDone.forEach(item => item.addEventListener("click", doneTask));
@@ -161,7 +185,7 @@ createBtn.addEventListener("click", function () {
 });
 
 taskSubmit.addEventListener("click", function () {
-  createTask(newTaskDescribe);
+  createTask(newTaskDescribe,true);
 }, false);
 
 
