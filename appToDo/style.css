@@ -13,18 +13,7 @@ body {
 }
 
 /*                                                                                            EDITOR */
-/* <section class="editor__wrapper editor__wrapper--task">
-        <form action="" class="editor__new editor__new--task">
-            <select name="editor__category" class="editor__category">
-                <option value="Sport">Sport</option>
-                <option value="School">School</option>
-                <option value="Important">Important</option>
-            </select>
-            <input type="text" class="editor__describe" value="My task">
-            <input type="submit" class="editor__submit--task" value="Add">
-        </form>
-    </section> */
-/*                                                                   EDITOR                                               */
+                                                                     
 .editor {
   width: 100%;
 
