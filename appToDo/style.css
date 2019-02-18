@@ -3,18 +3,36 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
   background-color: rgba(16, 55, 84);
   background-color: rgba(51, 171, 177, 1);
 
   overflow-x: hidden;
-  font-family: Arial, Helvetica, sans-serif;
+  /* font-family: Arial, Helvetica, sans-serif; */
+ 
+
   color: white;
 }
+.colorCompose{
+  color: white;
+  background-color:rgba(51, 171, 177, 1);
+
+}
+button, input, select{
+  font-family: 'Promp';
+  font-weight: bold;
+}
+button{
+  text-transform: uppercase;
+
+}
+
 
 /*                                                                                            EDITOR */
                                                                      
 .editor {
+  
   width: 100%;
 
 
@@ -135,36 +153,117 @@ body {
   box-shadow: inset 0px -20px 10px -15px rgba(0, 0, 0, 0.75);
 }
 
+/* section class="editor__wrapper editor__wrapper--category off">
+        <input value="New Category" class="editor__describe--category" type="text" />
+        <select name="editor__color--select" class="editor__color--select">
+          <option value="" class="editor__color editor__color--orange"></option>
+          <option value="" class="editor__color editor__color--orange"></option>
+          <option value="" class="editor__color editor__color--orange"></option>
+          <option value="" class="editor__color editor__color--orange"></option>
+          <option value="" class="editor__color editor__color--orange"></option>
+        </select>
+        <!-- <input type="color" name="favcolor" value="#ff0000"> -->
+      <div class="editor__nav">
+        <button class="editor__submit--category">Create</button>
+        <button class="editor__cancel--category">Back</button>
+      </div>
+    </section> */
 
 
 /*                                                                  new category */
 .editor__wrapper--category {
-  /* background: cadetblue;*/
+  /* flex C */
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: stretch;
 }
 
-.editor__panel--category {
+.editor__describe--category {
   flex-basis: 30%;
-  width: 30%;
+}
+.editor__color--bgc{
+  flex-basis: 20%;
+}
+.editor__color--font{
+  flex-basis: 20%;
+}
+
+.editor__nav--category{
+  flex-basis: 30%;
   /* flex C */
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: space-between;
+
+}
+.editor__submit--category{
+  border: none;
+  box-shadow: inset 0px -20px 10px -15px rgba(0, 0, 0, 0.75);
+  border-right: 1px solid darkgray;
+  width: 70%;
+
+}
+.editor__cancel--category{
+  border: none;
+  box-shadow: inset 0px -20px 10px -15px rgba(0, 0, 0, 0.75);
+  /* border-right: 1px solid darkgray; */
+  width: 30%;
 }
 
-.editor__label {
-  font-size: 1em;
-  font-weight: bold;
+/*                                         COLORS SELECT                          */
+/*  */
+/*  */
+.editor__color--FFF200{
+  background: #FFF200;
 }
-.editor__color {
-  height: 80%;
-  flex-basis: 30%;
-  flex-shrink: 0;
-  background-color: rgb(2, 2, 2);
+.editor__color--FD9406{
+  background: #FD9406;
 }
-.editor__range {
-  width: 100%;
+.editor__color--FF0000{
+  background: #FF0000;
 }
+.editor__color--FF0080{
+  background: #FF0080;
+}
+.editor__color--0080FF{
+  background: #0080FF;
+}
+.editor__color--0000FF{
+  background: #0000FF;
+}
+.editor__color--004000{
+  background: #004000;
+}
+.editor__color--00FF00{
+  background: #00FF00;
+}
+.editor__color--1C2168{
+  background: #1C2168;
+}
+.editor__color--800080{
+  background: #800080;
+}
+.editor__color--804040{
+  background: #804040;
+}
+.editor__color--D74F6D{
+  background: #D74F6D;
+}
+.editor__color--C0C0C0{
+  background: #C0C0C0;
+}
+.editor__color--008080{
+  background: #008080;
+}
+.editor__color--808000{
+  background: #808000;
+}
+.editor__color--80FF80{
+  background: #80FF80;
+}
+
+
+
+
+
 
 /*                             
          
@@ -261,4 +360,22 @@ body {
 .off{
   display: none;
 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@font-face {
+  font-family: "Promp";
+  src: url("Prompt-Bold.ttf");
 }

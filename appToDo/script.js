@@ -7,7 +7,7 @@
 //   $('#ooh').fadeIn('slow');
 // }
 let canLocalStorage = false;
-let test;
+let taskCharLimit=50;
 
 
 function testLocalStorage() {
@@ -24,7 +24,7 @@ function init() {
     alert("We are sorry but you cannot use localStorage");
   } else {
     console.log("great local storage working");
-    canLocalStorage = true;
+    canLocalStorage = testLocalStorage();
     // localStorage.removeItem("localData");
       let storagedTask = JSON.parse(localStorage.getItem("localTasks"));
       console.log(storagedTask);
@@ -36,24 +36,10 @@ function init() {
       
 
     }
-  }
+}
 
-
-// if(localData){
-//   console.log("u have local");
-// }else{
-//   let localData = [];
-// }
-// console.log(localData==true);
-// Put the object into storage
-// localStorage.setItem('localData', JSON.stringify(localData));
-
-// // Retrieve the object from storage
-// var retrievedObject = JSON.parse(localStorage.getItem('localData'));
-
-// console.log('retrievedObject: ', retrievedObject);
-
-const taskSubmit = document.querySelector(".editor__submit--task");
+const btnCategoryBack = document.querySelector(".editor__cancel--category");
+const btnTaskSubmit = document.querySelector(".editor__submit--task");
 const taskDescribe = document.querySelector(".editor__describe--task");
 
 const searchPanel = document.querySelector(".editor__wrapper--search");
@@ -70,11 +56,23 @@ let btnsDone = document.querySelectorAll(
 let btnsDelete = document.querySelectorAll(
   "li.main__li button.main__button--delete"
 );
+
+const selectCategoryBgc = document.querySelector(".editor__color--bgc");
+const selectCategoryFont = document.querySelector(".editor__color--font");
+const optionsCategoryBgc = document.querySelector(".editor__color--bgc");
+const optionsCategoryFont = document.querySelector(".editor__color--font");
+
+selectCategoryBgc.addEventListener("click",function(){
+  cosole.log("")
+});
+
+
+
+
+
+
+
 //                                                   fun
-// 
-// 
-// 
-// 
 // 
 // 
 function reoladList() {
@@ -89,8 +87,6 @@ function reoladList() {
   btnsDelete.forEach(item =>
     item.addEventListener("click", deleteTask));
 }
-
-
 const searchTask = e => {
   const searchText = e.target.value.toLowerCase();
 
@@ -111,17 +107,15 @@ const searchTask = e => {
   });
 
 }
-
 const getTaskDescribe = e => {
   newTaskDescribe = e.target.value;
 }
 const createTask = (describe,create) => {
   if(create){
     if (!newTaskDescribe) return alert("Task describe is empty");
-    if (newTaskDescribe.length > 30) return alert("Task describe id too long, max 30 characters");
+    if (newTaskDescribe.length > taskCharLimit) return alert("Task describe id too long, max 30 characters");
   }
   
-
   //li
   const newTask = document.createElement("li");
   newTask.classList.add("main__li");
@@ -157,10 +151,14 @@ const createTask = (describe,create) => {
       localTasks.push(task.innerHTML);
     });
     localStorage.setItem("localTasks",JSON.stringify(localTasks));
+    taskDescribe.value = "";
+    newTaskDescribe = "";
 }
   
 }
+const createCategory = (describe,bgc,fontColor,create) => {
 
+}
 
 
 const doneTask = e => {
@@ -171,7 +169,6 @@ const doneTask = e => {
 };
 const deleteTask = e => {
   e.target.parentNode.remove();
-  console.log(e.target.parentNode);
   reoladList();
 
   const localTasks=[];
@@ -195,12 +192,21 @@ searchInput.addEventListener("input", searchTask);
 createBtn.addEventListener("click", function () {
   searchPanel.classList.toggle("off");
   createPanel.classList.toggle("off");
-
+});
+btnCategoryBack.addEventListener("click",function(){
+  searchPanel.classList.toggle("off");
+  createPanel.classList.toggle("off");
 });
 
-taskSubmit.addEventListener("click", function () {
+btnTaskSubmit.addEventListener("click", function () {
   createTask(newTaskDescribe,true);
 }, false);
 
+taskDescribe.addEventListener("keyup", function(event) {
+  if (event.keyCode === 13) {
+   event.preventDefault();
+   btnTaskSubmit.click();
+  }
+});
 
 console.log(tasks);
