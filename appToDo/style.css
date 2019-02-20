@@ -28,6 +28,9 @@ button{
 
 }
 
+select::-ms-expand {
+  display: none;
+}
 
 /*                                                                                            EDITOR */
                                                                      
@@ -185,7 +188,7 @@ button{
   flex-basis: 20%;
 
 }
-.editor__category--bgc{
+.editor__category--font{
   flex-basis: 20%;
 }
 
@@ -212,10 +215,8 @@ button{
 /*                                         COLORS SELECT                          */
 /*  */
 /*  */
-option:checked
-{
-    background-color: #000000;
-    cursor: pointer;
+.editor__color{
+ /* font-size: .8em */
 }
 .editor__color--FFF200{
   background: #FFF200;
@@ -271,18 +272,8 @@ option:checked
 
 
 
-/*                             
-         
-                  
-            
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                                                                            MAIN LIST */
+                                         
+/*                                                                           MAIN LIST */
 .main {
   min-height: 77vh;
   width: 100%;
