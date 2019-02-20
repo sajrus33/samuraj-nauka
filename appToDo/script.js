@@ -57,15 +57,21 @@ let btnsDelete = document.querySelectorAll(
   "li.main__li button.main__button--delete"
 );
 
-const selectCategoryBgc = document.querySelector(".editor__color--bgc");
-const selectCategoryFont = document.querySelector(".editor__color--font");
-const optionsCategoryBgc = document.querySelector(".editor__color--bgc");
-const optionsCategoryFont = document.querySelector(".editor__color--font");
+const selectCategoryBgc = document.querySelector(".editor__category--bgc");
+const selectCategoryFont = document.querySelector(".editor__category--font");
 
-selectCategoryBgc.addEventListener("click",function(){
-  cosole.log("")
-});
+function setSelectColor(){
+  this.style.backgroundColor = this.options.item(this.selectedIndex).text;
+}
+selectCategoryBgc.addEventListener("change",setSelectColor);
+selectCategoryFont.addEventListener("change",setSelectColor);
 
+
+// [...optionsCategoryBgc].forEach(option => {
+//   option.addEventListener("click",function(){
+
+//   });
+// });
 
 
 

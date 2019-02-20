@@ -181,10 +181,11 @@ button{
 .editor__describe--category {
   flex-basis: 30%;
 }
-.editor__color--bgc{
+.editor__category--bgc{
   flex-basis: 20%;
+
 }
-.editor__color--font{
+.editor__category--bgc{
   flex-basis: 20%;
 }
 
@@ -211,6 +212,11 @@ button{
 /*                                         COLORS SELECT                          */
 /*  */
 /*  */
+option:checked
+{
+    background-color: #000000;
+    cursor: pointer;
+}
 .editor__color--FFF200{
   background: #FFF200;
 }
@@ -278,13 +284,13 @@ button{
                         
                                                                             MAIN LIST */
 .main {
-  min-height: 80vh;
+  min-height: 77vh;
   width: 100%;
   margin: 0 auto;
   /* min-width: 370px; */
 
   /* background: rgb(46, 48, 48); */
-  font-size: 1.2em;
+  font-size: .8em;
   text-align: left;
 
   color: whitesmoke;
@@ -306,7 +312,9 @@ button{
   list-style-type: none;
   box-shadow: inset 0px -20px 10px -15px rgba(0, 0, 0, 0.75);
   /* box-shadow: inset 0px 20px 10px -15px rgba(0, 0, 0, 0.75); */
+  font-weight: bold;
 
+  text-transform: uppercase;
   transition: 0.5s;
 
   /* flex C */
