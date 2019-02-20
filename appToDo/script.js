@@ -29,11 +29,11 @@ function init() {
     canLocalStorage = true;
     // localStorage.removeItem("localData");
     index = localStorage.length;
-    for(let i=0; i < localStorage.length; i++){
+    for (let i = 0; i < localStorage.length; i++) {
+      // localStorage.removeItem(localStorage.key(i));
       let storagedTask = JSON.parse(localStorage.getItem(localStorage.key(i)));
       console.log(String(storagedTask));
-      createTask(storagedTask,false);
-
+      createTask(storagedTask, false);
 
     }
   }
@@ -116,16 +116,16 @@ const getTaskDescribe = e => {
   newTaskDescribe = e.target.value;
   console.log(newTaskDescribe);
 }
-const createTask = (describe,create) => {
-  if(create){
+const createTask = (describe, create) => {
+  if (create) {
     if (!newTaskDescribe) return alert("Task describe is empty");
     if (newTaskDescribe.length > 30) return alert("Task describe id too long, max 30 characters");
-    if(canLocalStorage){
-      localStorage.setItem(String(index),JSON.stringify(newTaskDescribe));
+    if (canLocalStorage) {
+      localStorage.setItem(String(index), JSON.stringify(newTaskDescribe));
       index++;
+    }
   }
-  }
-  
+
 
   //li
   const newTask = document.createElement("li");
@@ -152,7 +152,7 @@ const createTask = (describe,create) => {
   list.appendChild(newTask);
   reoladList();
   console.log(tasks);
-  
+
 }
 
 
@@ -185,7 +185,7 @@ createBtn.addEventListener("click", function () {
 });
 
 taskSubmit.addEventListener("click", function () {
-  createTask(newTaskDescribe,true);
+  createTask(newTaskDescribe, true);
 }, false);
 
 
