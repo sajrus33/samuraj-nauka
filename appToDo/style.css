@@ -25,7 +25,6 @@ button, input, select{
 }
 button{
   text-transform: uppercase;
-
 }
 
 
@@ -172,6 +171,7 @@ button{
 
 /*                                                                  new category */
 .editor__wrapper--category {
+  height: 100%;
   /* flex C */
   flex-direction: column;
   align-items: stretch;
@@ -179,18 +179,21 @@ button{
 }
 
 .editor__describe--category {
-  flex-basis: 30%;
+  height:30%;
 }
 .editor__category--bgc{
-  flex-basis: 20%;
+  height: 20%;
 
 }
 .editor__category--bgc{
-  flex-basis: 20%;
+  height: 20%;
+  
 }
 
 .editor__nav--category{
-  flex-basis: 30%;
+  
+  height: 30%;
+  
   /* flex C */
   display: flex;
 
