@@ -92,6 +92,7 @@ select::-ms-expand {
 
 }
 .editor__category{
+  position: relative;
   height: 30%;
   border: none;
   box-shadow: inset 0px -20px 10px -15px rgba(0, 0, 0, 0.75);
@@ -105,6 +106,15 @@ select::-ms-expand {
   height: 0;
   border: 6px solid transparent;
   border-color: #fff transparent transparent transparent;
+}
+
+.editor__category--option{
+  display: none;
+  height: 100%;
+  width: 100%;
+}
+.displayBlock{
+  display: block;
 }
 .editor__describe--task {
   flex-grow: 1;

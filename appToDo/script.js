@@ -3,7 +3,6 @@
 let canLocalStorage = false;
 let taskCharLimit = 50;
 let categoryCharLimit = 20;
-
 function testLocalStorage() {
   try {
     localStorage.setItem("foo", "foo");
@@ -21,10 +20,15 @@ function init() {
     canLocalStorage = testLocalStorage();
 
     let storagedCategory = JSON.parse(localStorage.getItem("localCategorys"));
+    let storagedBgc = JSON.parse(localStorage.getItem("localBgc"));
+    let storagedFontColor = JSON.parse(localStorage.getItem("localFontColor"));
+
     console.log(storagedCategory);
     if (storagedCategory) {
-      storagedCategory.forEach(category => {
-        createCategory(category, "blue", "white", false);
+      storagedCategory.forEach((category, i) => {
+        console.log(storagedCategory[i], storagedBgc[i], storagedFontColor[i]);
+
+        createCategory(storagedCategory[i], storagedBgc[i], storagedFontColor[i], false);
       });
     }
 
@@ -171,37 +175,61 @@ const createTask = (describe, create, ) => {
       localTasks.push(task.innerHTML);
     });
     localStorage.setItem("localTasks", JSON.stringify(localTasks));
-    taskDescribe.value = "";
-    newTaskDescribe = "";
+
   }
 
 }
+// localStorage.clear();
 const createCategory = (describe, bgc, fontColor, create) => {
   if (create) {
-    if (!describe) return alert("Category describe is empty");
+    if (!describe || !bgc || !fontColor) return alert("pick color and name your category");
+
     if (describe.length > categoryCharLimit) return alert("Category describe is too long, max " + categoryCharLimit + " characters");
   }
 
-  const newCategory = document.createElement("option");
+  const newCategory = document.createElement("div");
+  newCategory.classList.add("editor__category--option");
   newCategory.innerText = describe;
   newCategory.style.backgroundColor = bgc;
   newCategory.style.color = fontColor;
   categoryList.appendChild(newCategory);
 
+  categorys = document.querySelectorAll(".editor__category--option");
+
   if (canLocalStorage && create) {
     const localCategorys = [];
-    [...categorys].forEach(category => {
-      localCategorys.push(category);
+    const localBgc = [];
+    const localFontColor = [];
+    [...categorys].forEach((category, i) => {
+      localCategorys.push(category.innerHTML);
+      localBgc.push(category.style.backgroundColor);
+      localFontColor.push(category.style.color);
+
     });
+
     localStorage.setItem("localCategorys", JSON.stringify(localCategorys));
+    localStorage.setItem("localBgc", JSON.stringify(localBgc));
+    localStorage.setItem("localFontColor", JSON.stringify(localFontColor));
+
+    console.log(localCategorys, localFontColor, localBgc);
 
   }
-
 }
+
 btnCategorySubmit.addEventListener("click", function () {
   createCategory(categoryDescribe.value, categoryDescribe.style.backgroundColor, categoryDescribe.style.color, true)
 });
 
+categoryList.addEventListener("click", function () {
+  [...categorys].forEach(category => {
+    category.classList.toggle("displayBlock");
+  })
+});
+[...categorys].forEach(category => {
+  category.addEventListener("click", function () {
+    console.log("yup")
+  });
+});
 const doneTask = e => {
   e.target.parentNode.style.transform = "translate(50%,0)";
   e.target.parentNode.style.backgroundColor = "black";
