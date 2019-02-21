@@ -1,15 +1,8 @@
 "use strict";
 
-//      COMUNICAT
-// if (!typeof(Storage) !== 'undefined') {
-//   $('#yay').fadeIn('slow');
-// } else {
-//   $('#ooh').fadeIn('slow');
-// }
 let canLocalStorage = false;
 let taskCharLimit = 50;
-
-
+let categoryCharLimit = 20;
 function testLocalStorage() {
   try {
     localStorage.setItem("foo", "foo");
@@ -25,7 +18,20 @@ function init() {
   } else {
     console.log("great local storage working");
     canLocalStorage = testLocalStorage();
-    // localStorage.removeItem("localData");
+
+    let storagedCategory = JSON.parse(localStorage.getItem("localCategorys"));
+    let storagedBgc = JSON.parse(localStorage.getItem("localBgc"));
+    let storagedFontColor = JSON.parse(localStorage.getItem("localFontColor"));
+
+    console.log(storagedCategory);
+    if (storagedCategory) {
+      storagedCategory.forEach((category, i) => {
+        console.log(storagedCategory[i], storagedBgc[i], storagedFontColor[i]);
+
+        createCategory(storagedCategory[i], storagedBgc[i], storagedFontColor[i], false);
+      });
+    }
+
     let storagedTask = JSON.parse(localStorage.getItem("localTasks"));
     console.log(storagedTask);
     if (storagedTask) {
@@ -34,44 +40,73 @@ function init() {
       });
     }
 
-
   }
 }
+//categorys list
+const categoryList = document.querySelector(".editor__category");
+let categorys = document.querySelectorAll(".editor__category--option");
 
-const btnCategoryBack = document.querySelector(".editor__cancel--category");
+//create task
 const btnTaskSubmit = document.querySelector(".editor__submit--task");
 const taskDescribe = document.querySelector(".editor__describe--task");
 
+//search panel
 const searchPanel = document.querySelector(".editor__wrapper--search");
-const createBtn = document.querySelector(".editor__create");
-const createPanel = document.querySelector(".editor__wrapper--category")
+const btnCreateCategory = document.querySelector(".editor__create");
 const searchInput = document.querySelector(".editor__search");
 
+//list and tasks
 const list = document.querySelector(".main");
 let tasks = document.querySelectorAll(".main__task");
-let newTaskDescribe = "";
 let btnsDone = document.querySelectorAll(
-  "li.main__li button.main__button--done"
+  "button.main__button--done"
 );
 let btnsDelete = document.querySelectorAll(
-  "li.main__li button.main__button--delete"
+  "button.main__button--delete"
 );
+function reoladList() {
+  tasks = document.querySelectorAll(".main__task");
+  btnsDone = document.querySelectorAll(
+    "button.main__button--done"
+  );
+  btnsDone.forEach(item => item.addEventListener("click", doneTask));
+  btnsDelete = document.querySelectorAll(
+    "button.main__button--delete"
+  );
+  btnsDelete.forEach(item =>
+    item.addEventListener("click", deleteTask));
+}
 
+// new category panel
+const createPanel = document.querySelector(".editor__wrapper--category");
+
+//new category
+const categoryDescribe = document.querySelector(".editor__describe--category");
 const selectCategoryBgc = document.querySelector(".editor__category--bgc");
 const selectCategoryFont = document.querySelector(".editor__category--font");
+const btnCategorySubmit = document.querySelector(".editor__submit--category")
+const btnCategoryBack = document.querySelector(".editor__cancel--category");
 
-function setSelectColor() {
+function setSelectBgc() {
   this.style.backgroundColor = this.options.item(this.selectedIndex).text;
+  categoryDescribe.style.backgroundColor = this.style.backgroundColor;
 }
-selectCategoryBgc.addEventListener("change", setSelectColor);
-selectCategoryFont.addEventListener("change", setSelectColor);
+function setSelectFontColor() {
+  this.style.backgroundColor = this.options.item(this.selectedIndex).text;
+  categoryDescribe.style.color = this.style.backgroundColor;
+}
+function setSelectBoth() {
+  this.style.backgroundColor = this.options.item(this.selectedIndex).text;
+  this.style.color = this.style.backgroundColor;
+  this.style.backgroundColor = this.options.item(this.selectedIndex).text;
+  this.style.backgroundColor = this.style.backgroundColor;
+}
+selectCategoryBgc.addEventListener("change", setSelectBgc, true);
+selectCategoryFont.addEventListener("change", setSelectFontColor, true);
+categoryList.addEventListener("change", setSelectBoth);
+// categoryList.addEventListener("change", setSelectFontColor);
 
 
-// [...optionsCategoryBgc].forEach(option => {
-//   option.addEventListener("click",function(){
-
-//   });
-// });
 
 
 
@@ -80,19 +115,7 @@ selectCategoryFont.addEventListener("change", setSelectColor);
 
 //                                                   fun
 // 
-// 
-function reoladList() {
-  tasks = document.querySelectorAll(".main__task");
-  btnsDone = document.querySelectorAll(
-    "li.main__li button.main__button--done"
-  );
-  btnsDone.forEach(item => item.addEventListener("click", doneTask));
-  btnsDelete = document.querySelectorAll(
-    "li.main__li button.main__button--delete"
-  );
-  btnsDelete.forEach(item =>
-    item.addEventListener("click", deleteTask));
-}
+
 const searchTask = e => {
   const searchText = e.target.value.toLowerCase();
 
@@ -111,15 +134,11 @@ const searchTask = e => {
       }
     });
   });
-
 }
-const getTaskDescribe = e => {
-  newTaskDescribe = e.target.value;
-}
-const createTask = (describe, create) => {
+const createTask = (describe, create, ) => {
   if (create) {
-    if (!newTaskDescribe) return alert("Task describe is empty");
-    if (newTaskDescribe.length > taskCharLimit) return alert("Task describe id too long, max 30 characters");
+    if (!describe) return alert("Task describe is empty");
+    if (describe.length > taskCharLimit) return alert("Task describe is too long, max " + taskCharLimit + " characters");
   }
 
   //li
@@ -139,7 +158,6 @@ const createTask = (describe, create) => {
   const newDescribe = document.createElement("p");
   newDescribe.classList.add("main__task");
   newDescribe.innerText = describe;
-  console.log(taskDescribe.value);
   //complete 
   newTask.appendChild(newDone);
   newTask.appendChild(newDelete);
@@ -157,16 +175,61 @@ const createTask = (describe, create) => {
       localTasks.push(task.innerHTML);
     });
     localStorage.setItem("localTasks", JSON.stringify(localTasks));
-    taskDescribe.value = "";
-    newTaskDescribe = "";
+
   }
 
 }
+// localStorage.clear();
 const createCategory = (describe, bgc, fontColor, create) => {
+  if (create) {
+    if (!describe || !bgc || !fontColor) return alert("pick color and name your category");
 
+    if (describe.length > categoryCharLimit) return alert("Category describe is too long, max " + categoryCharLimit + " characters");
+  }
+
+  const newCategory = document.createElement("div");
+  newCategory.classList.add("editor__category--option");
+  newCategory.innerText = describe;
+  newCategory.style.backgroundColor = bgc;
+  newCategory.style.color = fontColor;
+  categoryList.appendChild(newCategory);
+
+  categorys = document.querySelectorAll(".editor__category--option");
+
+  if (canLocalStorage && create) {
+    const localCategorys = [];
+    const localBgc = [];
+    const localFontColor = [];
+    [...categorys].forEach((category, i) => {
+      localCategorys.push(category.innerHTML);
+      localBgc.push(category.style.backgroundColor);
+      localFontColor.push(category.style.color);
+
+    });
+
+    localStorage.setItem("localCategorys", JSON.stringify(localCategorys));
+    localStorage.setItem("localBgc", JSON.stringify(localBgc));
+    localStorage.setItem("localFontColor", JSON.stringify(localFontColor));
+
+    console.log(localCategorys, localFontColor, localBgc);
+
+  }
 }
 
+btnCategorySubmit.addEventListener("click", function () {
+  createCategory(categoryDescribe.value, categoryDescribe.style.backgroundColor, categoryDescribe.style.color, true)
+});
 
+categoryList.addEventListener("click", function () {
+  [...categorys].forEach(category => {
+    category.classList.toggle("displayBlock");
+  })
+});
+[...categorys].forEach(category => {
+  category.addEventListener("click", function () {
+    console.log("yup")
+  });
+});
 const doneTask = e => {
   e.target.parentNode.style.transform = "translate(50%,0)";
   e.target.parentNode.style.backgroundColor = "black";
@@ -184,28 +247,21 @@ const deleteTask = e => {
   localStorage.setItem("localTasks", JSON.stringify(localTasks));
 };
 
-init();
-
-
 btnsDone.forEach(item => item.addEventListener("click", doneTask));
-
 btnsDelete.forEach(item => item.addEventListener("click", deleteTask));
-
-taskDescribe.addEventListener("input", getTaskDescribe);
-
 searchInput.addEventListener("input", searchTask);
 
-createBtn.addEventListener("click", function () {
+btnCreateCategory.addEventListener("click", function () {
   searchPanel.classList.toggle("off");
   createPanel.classList.toggle("off");
-});
+}, false);
 btnCategoryBack.addEventListener("click", function () {
   searchPanel.classList.toggle("off");
   createPanel.classList.toggle("off");
 });
 
 btnTaskSubmit.addEventListener("click", function () {
-  createTask(newTaskDescribe, true);
+  createTask(taskDescribe.value, true);
 }, false);
 
 taskDescribe.addEventListener("keyup", function (event) {
@@ -215,4 +271,4 @@ taskDescribe.addEventListener("keyup", function (event) {
   }
 });
 
-console.log(tasks);
+init();

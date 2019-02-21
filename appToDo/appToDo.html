@@ -2,12 +2,10 @@
 <html lang="en">
 
 <head>
-  
-
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>To Do List</title>
+  <title>ToDo App</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -15,139 +13,72 @@
   <article class="editor">
     <section class="editor__wrapper editor__wrapper--task">
       <div class="editor__panel editor__panel--task">
-        <!-- <label class="editor__label--task" for="editor__category">Choose category:</label> -->
-        <select name="editor__category" class="editor__category colorCompose">
-          <option value="Sport">Sport 🍔</option>
-          <option value="School">School</option>
-          <option value="Important">Important</option>
-
-        </select>
-        <!-- <label class="editor__label--task" for="editor__describe--task">Write your task:</label> -->
+        <div name="editor__category" class="editor__category colorCompose">
+          <!-- add ur category -->
+        </div>
         <input type="text" class="editor__describe--task">
-        <!-- <div class="editor__describe--task">My task</div> -->
         <button class="editor__submit--task">Add</button>
       </div>
     </section>
 
     <section class="editor__wrapper editor__wrapper--search ">
       <form action="" class="editor__panel editor__panel--search">
-        <!-- <label class="editor__label--search" for="editor__search">Search:</label> -->
         <input value="Search" class="editor__search" type="text" />
       </form>
       <button class="editor__create">Create Category</button>
     </section>
 
     <section class="editor__wrapper editor__wrapper--category off">
-        <input value="New Category" class="editor__describe--category colorCompose" type="text" />
-        <select name="editor__category--bgc" class="editor__category--bgc colorCompose">
-          <option style="display: none" value="" class="editor__color editor__color--orange">background color</option>
-          <option value="" class="editor__color editor__color--bgc editor__color--FFF200">#FFF200</option>
-          <option value="" class="editor__color editor__color--bgc editor__color--FD9406">#FD9406</option>
-          <option value="" class="editor__color editor__color--bgc editor__color--FF0000">#FF0000</option>
-          <option value="" class="editor__color editor__color--bgc editor__color--FF0080">#FF0080</option>
-          <option value="" class="editor__color editor__color--bgc editor__color--0080FF">#0080FF</option>
-          <option value="" class="editor__color editor__color--bgc editor__color--0000FF">#0000FF</option>
-          <option value="" class="editor__color editor__color--bgc editor__color--004000">#004000</option>
-          <option value="" class="editor__color editor__color--bgc editor__color--00FF00">#00FF00</option>
-          <option value="" class="editor__color editor__color--bgc editor__color--1C2168">#1C2168</option>
-          <option value="" class="editor__color editor__color--bgc editor__color--800080">#800080</option>
-          <option value="" class="editor__color editor__color--bgc editor__color--804040">#804040</option>
-          <option value="" class="editor__color editor__color--bgc editor__color--D74F6D">#D74F6D</option>
-          <option value="" class="editor__color editor__color--bgc editor__color--C0C0C0">#C0C0C0</option>
-          <option value="" class="editor__color editor__color--bgc editor__color--008080">#008080</option>
-          <option value="" class="editor__color editor__color--bgc editor__color--808000">#808000</option>
-          <option value="" class="editor__color editor__color--bgc editor__color--80FF80">#80FF80</option>
-        </select>
-        <select name="editor__category--font" class="editor__category--font colorCompose">
-          <option style="display: none" value="" class="editor__color editor__color--orange">font color</option>
-          <option value="" class="editor__color editor__color--font editor__color--FFF200">#FFF200</option>
-          <option value="" class="editor__color editor__color--font editor__color--FD9406">#FD9406</option>
-          <option value="" class="editor__color editor__color--font editor__color--FF0000">#FF0000</option>
-          <option value="" class="editor__color editor__color--font editor__color--FF0080">#FF0080</option>
-          <option value="" class="editor__color editor__color--font editor__color--0080FF">#0080FF</option>
-          <option value="" class="editor__color editor__color--font editor__color--0000FF">#0000FF</option>
-          <option value="" class="editor__color editor__color--font editor__color--004000">#004000</option>
-          <option value="" class="editor__color editor__color--font editor__color--00FF00">#00FF00</option>
-          <option value="" class="editor__color editor__color--font editor__color--1C2168">#1C2168</option>
-          <option value="" class="editor__color editor__color--font editor__color--800080">#800080</option>
-          <option value="" class="editor__color editor__color--font editor__color--804040">#804040</option>
-          <option value="" class="editor__color editor__color--font editor__color--D74F6D">#D74F6D</option>
-          <option value="" class="editor__color editor__color--font editor__color--C0C0C0">#C0C0C0</option>
-          <option value="" class="editor__color editor__color--font editor__color--008080">#008080</option>
-          <option value="" class="editor__color editor__color--font editor__color--808000">#808000</option>
-          <option value="" class="editor__color editor__color--font editor__color--80FF80">#80FF80</option>
-        </select>
-        <!-- <input type="color" name="favcolor" value="#ff0000"> -->
+      <input value="New Category" class="editor__describe--category colorCompose" type="text" />
+      <select name="editor__category--bgc" class="editor__category--bgc colorCompose">
+        <option style="display: none" value="" class="editor__color editor__color--orange">background color</option>
+        <option value="" class="editor__color editor__color--bgc editor__color--FFF200">#FFF200</option>
+        <option value="" class="editor__color editor__color--bgc editor__color--FD9406">#FD9406</option>
+        <option value="" class="editor__color editor__color--bgc editor__color--FF0000">#FF0000</option>
+        <option value="" class="editor__color editor__color--bgc editor__color--FF0080">#FF0080</option>
+        <option value="" class="editor__color editor__color--bgc editor__color--0080FF">#0080FF</option>
+        <option value="" class="editor__color editor__color--bgc editor__color--0000FF">#0000FF</option>
+        <option value="" class="editor__color editor__color--bgc editor__color--004000">#004000</option>
+        <option value="" class="editor__color editor__color--bgc editor__color--00FF00">#00FF00</option>
+        <option value="" class="editor__color editor__color--bgc editor__color--1C2168">#1C2168</option>
+        <option value="" class="editor__color editor__color--bgc editor__color--800080">#800080</option>
+        <option value="" class="editor__color editor__color--bgc editor__color--804040">#804040</option>
+        <option value="" class="editor__color editor__color--bgc editor__color--D74F6D">#D74F6D</option>
+        <option value="" class="editor__color editor__color--bgc editor__color--C0C0C0">#C0C0C0</option>
+        <option value="" class="editor__color editor__color--bgc editor__color--008080">#008080</option>
+        <option value="" class="editor__color editor__color--bgc editor__color--808000">#808000</option>
+        <option value="" class="editor__color editor__color--bgc editor__color--80FF80">#80FF80</option>
+      </select>
+      <select name="editor__category--font" class="editor__category--font colorCompose">
+        <option style="display: none" value="" class="editor__color editor__color--orange">font color</option>
+        <option value="" class="editor__color editor__color--font editor__color--FFF200">#FFF200</option>
+        <option value="" class="editor__color editor__color--font editor__color--FD9406">#FD9406</option>
+        <option value="" class="editor__color editor__color--font editor__color--FF0000">#FF0000</option>
+        <option value="" class="editor__color editor__color--font editor__color--FF0080">#FF0080</option>
+        <option value="" class="editor__color editor__color--font editor__color--0080FF">#0080FF</option>
+        <option value="" class="editor__color editor__color--font editor__color--0000FF">#0000FF</option>
+        <option value="" class="editor__color editor__color--font editor__color--004000">#004000</option>
+        <option value="" class="editor__color editor__color--font editor__color--00FF00">#00FF00</option>
+        <option value="" class="editor__color editor__color--font editor__color--1C2168">#1C2168</option>
+        <option value="" class="editor__color editor__color--font editor__color--800080">#800080</option>
+        <option value="" class="editor__color editor__color--font editor__color--804040">#804040</option>
+        <option value="" class="editor__color editor__color--font editor__color--D74F6D">#D74F6D</option>
+        <option value="" class="editor__color editor__color--font editor__color--C0C0C0">#C0C0C0</option>
+        <option value="" class="editor__color editor__color--font editor__color--008080">#008080</option>
+        <option value="" class="editor__color editor__color--font editor__color--808000">#808000</option>
+        <option value="" class="editor__color editor__color--font editor__color--80FF80">#80FF80</option>
+      </select>
       <div class="editor__nav--category">
         <button class="editor__submit--category">Create</button>
         <button class="editor__cancel--category">Back</button>
       </div>
     </section>
-    <!-- <section class="editor__wrapper editor__wrapper--category off ">
-      <form action="" class="editor__panel editor__panel--category">
-        <label class="editor__label" for="editor__red">Red</label>
-        <input class="editor__red editor__range" type="range" min="0" max="255" />
-
-        <label class="editor__label" for="editor__green">Green</label>
-        <input class="editor__green editor__range" type="range" min="0" max="255" />
-
-        <label class="editor__label" for="editor__blue">Blue</label>
-        <input class="editor__blue editor__range" type="range" min="0" max="255" />
-      </form>
-      <div class="editor__color"></div>
-      <button class="editor__create">Create Category</button>
-    </section> -->
-
-
   </article>
 
   <ul class="main">
+    <!-- add ur task -->
+
     <!-- <li class="main__li">
-      <button class="main__button main__button--done">done</button>
-      <button class="main__button main__button--delete">delete</button>
-      <p class="main__task">ogórek panie</p>
-    </li>
-    <li class="main__li">
-      <button class="main__button main__button--done">done</button>
-      <button class="main__button main__button--delete">delete</button>
-      <p class="main__task">nie panie</p>
-    </li>
-    <li class="main__li">
-      <button class="main__button main__button--done">done</button>
-      <button class="main__button main__button--delete">delete</button>
-      <p class="main__task">zrób panie</p>
-    </li>
-    <li class="main__li">
-      <button class="main__button main__button--done">done</button>
-      <button class="main__button main__button--delete">delete</button>
-      <p class="main__task">zadanie bn</p>
-    </li>
-    <li class="main__li">
-      <button class="main__button main__button--done">done</button>
-      <button class="main__button main__button--delete">delete</button>
-      <p class="main__task">zadanie panie</p>
-    </li>
-    <li class="main__li">
-      <button class="main__button main__button--done">done</button>
-      <button class="main__button main__button--delete">delete</button>
-      <p class="main__task">zadanie panie</p>
-    </li>
-    <li class="main__li">
-      <button class="main__button main__button--done">done</button>
-      <button class="main__button main__button--delete">delete</button>
-      <p class="main__task">zadanie ez</p>
-    </li>
-    <li class="main__li">
-      <button class="main__button main__button--done">done</button>
-      <button class="main__button main__button--delete">delete</button>
-      <p class="main__task">zadanie bardzo trudne</p>
-    </li>
-    <li class="main__li">
-      <button class="main__button main__button--done">done</button>
-      <button class="main__button main__button--delete">delete</button>
-      <p class="main__task">zadanie wsw</p>
-    </li>
-    <li class="main__li">
       <button class="main__button main__button--done">done</button>
       <button class="main__button main__button--delete">delete</button>
       <p class="main__task">zadanie szybkie</p>

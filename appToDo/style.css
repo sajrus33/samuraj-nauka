@@ -27,6 +27,9 @@ button{
   text-transform: uppercase;
 }
 
+select::-ms-expand {
+  display: none;
+}
 
 /*                                                                                            EDITOR */
                                                                      
@@ -88,6 +91,7 @@ button{
 
 }
 .editor__category{
+  position: relative;
   height: 30%;
   border: none;
   box-shadow: inset 0px -20px 10px -15px rgba(0, 0, 0, 0.75);
@@ -101,6 +105,15 @@ button{
   height: 0;
   border: 6px solid transparent;
   border-color: #fff transparent transparent transparent;
+}
+
+.editor__category--option{
+  display: none;
+  height: 100%;
+  width: 100%;
+}
+.displayBlock{
+  display: block;
 }
 .editor__describe--task {
   flex-grow: 1;
@@ -185,9 +198,14 @@ button{
   height: 20%;
 
 }
+<<<<<<< HEAD
 .editor__category--bgc{
   height: 20%;
   
+=======
+.editor__category--font{
+  flex-basis: 20%;
+>>>>>>> 861eb0bea466242887e996c07cdb52a548a60a34
 }
 
 .editor__nav--category{
@@ -215,10 +233,8 @@ button{
 /*                                         COLORS SELECT                          */
 /*  */
 /*  */
-option:checked
-{
-    background-color: #000000;
-    cursor: pointer;
+.editor__color{
+ /* font-size: .8em */
 }
 .editor__color--FFF200{
   background: #FFF200;
@@ -274,18 +290,8 @@ option:checked
 
 
 
-/*                             
-         
-                  
-            
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                                                                            MAIN LIST */
+                                         
+/*                                                                           MAIN LIST */
 .main {
   min-height: 77vh;
   width: 100%;
