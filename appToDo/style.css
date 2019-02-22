@@ -107,9 +107,15 @@ select::-ms-expand {
   border: 6px solid transparent;
   border-color: #fff transparent transparent transparent;
 }
+.editor__categorys{
+  /* position: relative; */
+  display: none;
+  overflow: hidden;
+  
+}
 
 .editor__category--option{
-  display: none;
+  display: block;
   height: 100%;
   width: 100%;
 }

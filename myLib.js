@@ -98,10 +98,13 @@ const MyLib = {
           ctx.stroke();
         }
         ctx.fill();
+
       }
 
     }
 
   }
 };
+
+
 

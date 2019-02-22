@@ -44,6 +44,7 @@ function init() {
 }
 //categorys list
 const categoryList = document.querySelector(".editor__category");
+const categorysWrappper = document.querySelector(".editor__categorys");
 let categorys = document.querySelectorAll(".editor__category--option");
 
 //create task
@@ -101,9 +102,7 @@ function setSelectBoth() {
   this.style.backgroundColor = this.options.item(this.selectedIndex).text;
   this.style.backgroundColor = this.style.backgroundColor;
 }
-selectCategoryBgc.addEventListener("change", setSelectBgc, true);
-selectCategoryFont.addEventListener("change", setSelectFontColor, true);
-categoryList.addEventListener("change", setSelectBoth);
+
 // categoryList.addEventListener("change", setSelectFontColor);
 
 
@@ -192,7 +191,7 @@ const createCategory = (describe, bgc, fontColor, create) => {
   newCategory.innerText = describe;
   newCategory.style.backgroundColor = bgc;
   newCategory.style.color = fontColor;
-  categoryList.appendChild(newCategory);
+  categorysWrappper.appendChild(newCategory);
 
   categorys = document.querySelectorAll(".editor__category--option");
 
@@ -216,15 +215,25 @@ const createCategory = (describe, bgc, fontColor, create) => {
   }
 }
 
+// localStorage.clear();
+
+selectCategoryBgc.addEventListener("change", setSelectBgc, true);
+selectCategoryFont.addEventListener("change", setSelectFontColor, true);
+categoryList.addEventListener("change", setSelectBoth);
+
 btnCategorySubmit.addEventListener("click", function () {
   createCategory(categoryDescribe.value, categoryDescribe.style.backgroundColor, categoryDescribe.style.color, true)
 });
 
+// categoryList.addEventListener("click", function () {
+//   [...categorys].forEach(category => {
+//     category.classList.toggle("displayBlock");
+//   })
+// });
 categoryList.addEventListener("click", function () {
-  [...categorys].forEach(category => {
-    category.classList.toggle("displayBlock");
-  })
+  categorysWrappper.classList.toggle("displayBlock");
 });
+
 [...categorys].forEach(category => {
   category.addEventListener("click", function () {
     console.log("yup")
