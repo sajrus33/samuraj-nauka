@@ -1,8 +1,7 @@
 "use strict";
-
 let canLocalStorage = false;
 let taskCharLimit = 50;
-let categoryCharLimit = 20;
+let categoryCharLimit = 15;
 function testLocalStorage() {
   try {
     localStorage.setItem("foo", "foo");
@@ -26,7 +25,7 @@ function init() {
     console.log(storagedCategory);
     if (storagedCategory) {
       storagedCategory.forEach((category, i) => {
-        console.log(storagedCategory[i], storagedBgc[i], storagedFontColor[i]);
+        console.log(category, storagedCategory[i], storagedBgc[i], storagedFontColor[i]);
 
         createCategory(storagedCategory[i], storagedBgc[i], storagedFontColor[i], false);
       });
@@ -36,7 +35,7 @@ function init() {
     console.log(storagedTask);
     if (storagedTask) {
       storagedTask.forEach(task => {
-        createTask(task, false);
+        createTask(task, "white", "black", false);
       });
     }
 
@@ -44,6 +43,7 @@ function init() {
 }
 //categorys list
 const categoryList = document.querySelector(".editor__category");
+const categorysWrappper = document.querySelector(".editor__categorys");
 let categorys = document.querySelectorAll(".editor__category--option");
 
 //create task
@@ -101,9 +101,7 @@ function setSelectBoth() {
   this.style.backgroundColor = this.options.item(this.selectedIndex).text;
   this.style.backgroundColor = this.style.backgroundColor;
 }
-selectCategoryBgc.addEventListener("change", setSelectBgc, true);
-selectCategoryFont.addEventListener("change", setSelectFontColor, true);
-categoryList.addEventListener("change", setSelectBoth);
+
 // categoryList.addEventListener("change", setSelectFontColor);
 
 
@@ -135,7 +133,7 @@ const searchTask = e => {
     });
   });
 }
-const createTask = (describe, create, ) => {
+const createTask = (describe, bgc, fontColor, create) => {
   if (create) {
     if (!describe) return alert("Task describe is empty");
     if (describe.length > taskCharLimit) return alert("Task describe is too long, max " + taskCharLimit + " characters");
@@ -144,6 +142,10 @@ const createTask = (describe, create, ) => {
   //li
   const newTask = document.createElement("li");
   newTask.classList.add("main__li");
+  newTask.style.backgroundColor = bgc;
+  newTask.style.color = fontColor;
+
+
   //done
   const newDone = document.createElement("button");
   newDone.classList.add("main__button");
@@ -165,10 +167,6 @@ const createTask = (describe, create, ) => {
   list.appendChild(newTask);
   reoladList();
 
-  // console.log([...tasks]);
-
-  // console.log(localTasks);
-
   if (canLocalStorage && create) {
     const localTasks = [];
     [...tasks].forEach(task => {
@@ -177,6 +175,15 @@ const createTask = (describe, create, ) => {
     localStorage.setItem("localTasks", JSON.stringify(localTasks));
 
   }
+}
+
+const selectCategory = e => {
+  console.log(e.target);
+  categorysWrappper.classList.toggle("displayBlock");
+  categoryList.style.backgroundColor = e.target.style.backgroundColor;
+  categoryList.style.color = e.target.style.color;
+  categoryList.innerText = e.target.innerText;
+  // e.target.style.border = "2px solid white"
 
 }
 // localStorage.clear();
@@ -192,7 +199,7 @@ const createCategory = (describe, bgc, fontColor, create) => {
   newCategory.innerText = describe;
   newCategory.style.backgroundColor = bgc;
   newCategory.style.color = fontColor;
-  categoryList.appendChild(newCategory);
+  categorysWrappper.appendChild(newCategory);
 
   categorys = document.querySelectorAll(".editor__category--option");
 
@@ -200,7 +207,7 @@ const createCategory = (describe, bgc, fontColor, create) => {
     const localCategorys = [];
     const localBgc = [];
     const localFontColor = [];
-    [...categorys].forEach((category, i) => {
+    [...categorys].forEach((category) => {
       localCategorys.push(category.innerHTML);
       localBgc.push(category.style.backgroundColor);
       localFontColor.push(category.style.color);
@@ -214,26 +221,35 @@ const createCategory = (describe, bgc, fontColor, create) => {
     console.log(localCategorys, localFontColor, localBgc);
 
   }
+  [...categorys].forEach(category => {
+    category.addEventListener("click", selectCategory);
+  });
 }
+
+
+
+
+
+
+//                                   LISTEN !
+// localStorage.clear();
+
+selectCategoryBgc.addEventListener("change", setSelectBgc, true);
+selectCategoryFont.addEventListener("change", setSelectFontColor, true);
+categoryList.addEventListener("change", setSelectBoth);
 
 btnCategorySubmit.addEventListener("click", function () {
   createCategory(categoryDescribe.value, categoryDescribe.style.backgroundColor, categoryDescribe.style.color, true)
 });
 
 categoryList.addEventListener("click", function () {
-  [...categorys].forEach(category => {
-    category.classList.toggle("displayBlock");
-  })
+  categorysWrappper.classList.toggle("displayBlock");
 });
-[...categorys].forEach(category => {
-  category.addEventListener("click", function () {
-    console.log("yup")
-  });
-});
+
+
 const doneTask = e => {
   e.target.parentNode.style.transform = "translate(50%,0)";
   e.target.parentNode.style.backgroundColor = "black";
-  // e.target.parentNode.style.textDecoration = "line-through";
   e.target.remove();
 };
 const deleteTask = e => {
@@ -261,7 +277,7 @@ btnCategoryBack.addEventListener("click", function () {
 });
 
 btnTaskSubmit.addEventListener("click", function () {
-  createTask(taskDescribe.value, true);
+  createTask(taskDescribe.value, categoryList.style.backgroundColor, categoryList.style.color, true);
 }, false);
 
 taskDescribe.addEventListener("keyup", function (event) {
@@ -272,3 +288,13 @@ taskDescribe.addEventListener("keyup", function (event) {
 });
 
 init();
+// on click window menu remove class displayBlock, join off and displayBlock classes into one
+//add json task style
+//add button arrow up down on taks
+//add monsters
+//add remove button for categorys
+//style stylee
+//task style = category style
+
+//style: when select category opens->transformr -100 to 0, and bounce soo: -100 10 -10 0 .
+//copyrights by Brian Wala :P fck off cukerberg
