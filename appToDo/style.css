@@ -198,14 +198,9 @@ select::-ms-expand {
   height: 20%;
 
 }
-<<<<<<< HEAD
 .editor__category--bgc{
   height: 20%;
   
-=======
-.editor__category--font{
-  flex-basis: 20%;
->>>>>>> 861eb0bea466242887e996c07cdb52a548a60a34
 }
 
 .editor__nav--category{
