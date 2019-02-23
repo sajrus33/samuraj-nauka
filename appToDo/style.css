@@ -7,11 +7,7 @@
 body {
   background-color: rgba(16, 55, 84);
   background-color: rgba(51, 171, 177, 1);
-
-  overflow-x: hidden;
-  /* font-family: Arial, Helvetica, sans-serif; */
- 
-
+  overflow-x: hidden; 
   color: white;
 }
 .colorCompose{
@@ -27,18 +23,28 @@ button{
   text-transform: uppercase;
 }
 
+
 select::-ms-expand {
   display: none;
 }
 
-/*                                                                                            EDITOR */
+
+
+
+
+
+
+
+
+
+
+
+
+/*                                                    EDITOR */
                                                                      
 .editor {
-  
   width: 100%;
-
-
-  height: 23vh;
+  height: 150px;
   min-height: 150px;
 
   background-color: rgba(16, 55, 84);
@@ -57,6 +63,7 @@ select::-ms-expand {
   height: 100%;
   flex-basis: 50%;
   min-width: 100px;
+  border: 1px solid silver;
 
   
   /* flex C */
@@ -76,10 +83,18 @@ select::-ms-expand {
 }
 
 
+
+
+
+
+
+
+
 /*                                                                  new task */
 
 .editor__wrapper--task {
   background-color: rgba(51, 171, 177, 1);
+
 }
 .editor__panel--task {
   flex-direction: column;
@@ -96,6 +111,7 @@ select::-ms-expand {
   border: none;
   box-shadow: inset 0px -20px 10px -15px rgba(0, 0, 0, 0.75);
 }
+/*  */
 .editor__category:after {
   position: absolute;
   content: "";
@@ -103,11 +119,13 @@ select::-ms-expand {
   right: 10px;
   width: 0;
   height: 0;
-  border: 6px solid transparent;
+  border: 10px solid transparent;
   border-color: #fff transparent transparent transparent;
 }
 .editor__categorys{
-  /* position: relative; */
+  position: absolute;
+  top: calc(150px * .3);
+  width: 50%;
   display: none;
   overflow: hidden;
   
@@ -115,12 +133,13 @@ select::-ms-expand {
 
 .editor__category--option{
   display: block;
-  height: 100%;
-  width: 100%;
+  /* height: 30px; */
+  width: calc(100% - 2px);
+  height: calc(150px * .3);
+  box-shadow: inset 0px -20px 10px -15px rgba(0, 0, 0, 0.75);
+  text-align: center;
 }
-.displayBlock{
-  display: block;
-}
+
 .editor__describe--task {
   flex-grow: 1;
   background-color: rgba(239, 171, 31);
@@ -134,14 +153,13 @@ select::-ms-expand {
   border-right: 1px solid darkgray;
 
 }
-/* .editor__e{
-  <section class="editor__wrapper editor__wrapper--search">
-      <form action="" class="editor__panel editor__panel--search">
-        <input class="editor__search" type="text" />
-      </form>
-      <button class="editor__create">Create Category</button>
-    </section>
-} */
+
+
+
+
+
+
+
 
 /*                                                                     search panel*/
 .editor__wrapper--search {
@@ -171,21 +189,19 @@ select::-ms-expand {
   box-shadow: inset 0px -20px 10px -15px rgba(0, 0, 0, 0.75);
 }
 
-/* section class="editor__wrapper editor__wrapper--category off">
-        <input value="New Category" class="editor__describe--category" type="text" />
-        <select name="editor__color--select" class="editor__color--select">
-          <option value="" class="editor__color editor__color--orange"></option>
-          <option value="" class="editor__color editor__color--orange"></option>
-          <option value="" class="editor__color editor__color--orange"></option>
-          <option value="" class="editor__color editor__color--orange"></option>
-          <option value="" class="editor__color editor__color--orange"></option>
-        </select>
-        <!-- <input type="color" name="favcolor" value="#ff0000"> -->
-      <div class="editor__nav">
-        <button class="editor__submit--category">Create</button>
-        <button class="editor__cancel--category">Back</button>
-      </div>
-    </section> */
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /*                                                                  new category */
@@ -202,25 +218,16 @@ select::-ms-expand {
 }
 .editor__category--bgc{
   height: 20%;
-
 }
-<<<<<<< HEAD
-.editor__category--bgc{
-  height: 20%;
-  
-=======
 .editor__category--font{
-  flex-basis: 20%;
->>>>>>> 861eb0bea466242887e996c07cdb52a548a60a34
+  height: 20%;
 }
 
 .editor__nav--category{
   
   height: 30%;
-  
   /* flex C */
   display: flex;
-
 }
 .editor__submit--category{
   border: none;
@@ -232,15 +239,25 @@ select::-ms-expand {
 .editor__cancel--category{
   border: none;
   box-shadow: inset 0px -20px 10px -15px rgba(0, 0, 0, 0.75);
-  /* border-right: 1px solid darkgray; */
   width: 30%;
 }
+
+
+
+
+
+
+
+
+
+
+
 
 /*                                         COLORS SELECT                          */
 /*  */
 /*  */
 .editor__color{
- /* font-size: .8em */
+  /* border: 1px solid black; */
 }
 .editor__color--FFF200{
   background: #FFF200;
@@ -296,10 +313,12 @@ select::-ms-expand {
 
 
 
+
+
                                          
 /*                                                                           MAIN LIST */
 .main {
-  min-height: 77vh;
+  min-height: calc(100vh - 150px);
   width: 100%;
   margin: 0 auto;
   /* min-width: 370px; */
@@ -312,11 +331,8 @@ select::-ms-expand {
   /* flex C */
   display: flex;
   flex-direction: column;
-  /* justify-content: space-around; */
   align-items: flex-start;
 
-  box-sizing: border-box;
-  /* padding:0 5%; */
 }
 .main__li {
   background-color: rgba(239, 171, 31);
@@ -326,27 +342,21 @@ select::-ms-expand {
 
   list-style-type: none;
   box-shadow: inset 0px -20px 10px -15px rgba(0, 0, 0, 0.75);
-  /* box-shadow: inset 0px 20px 10px -15px rgba(0, 0, 0, 0.75); */
   font-weight: bold;
+  box-sizing: border-box;
 
   text-transform: uppercase;
   transition: 0.5s;
 
   /* flex C */
   display: flex;
-  /* justify-content: stretch; */
   align-items: center;
-
-  box-sizing: border-box;
-
 }
 
 .main__li:nth-of-type(2n) {
-  /* background: rgb(46, 48, 48); */
   background-color: rgba(254, 95, 27, 1);
 }
 .main__li:nth-of-type(3n) {
-  /* /* background: rgb(46, 48, 48);  */
   background-color: rgba(213, 61, 19, 1);
 }
 .main__task {
@@ -357,10 +367,7 @@ select::-ms-expand {
   flex-basis: 10%;
   text-align: center;
   padding: 0.2em;
-
   box-shadow: inset 0px -20px 10px -15px rgba(0, 0, 0, 0.75);
-  /* box-shadow: inset 0px 20px 10px -15px rgba(0, 0, 0, 0.75); */
-
   border: none;
 }
 .main__button--done {
@@ -382,18 +389,10 @@ select::-ms-expand {
 
 .off{
   display: none;
-
 }
-
-
-
-
-
-
-
-
-
-
+.displayBlock{
+  display: block;
+}
 
 
 
