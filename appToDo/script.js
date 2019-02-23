@@ -32,10 +32,12 @@ function init() {
     }
 
     let storagedTask = JSON.parse(localStorage.getItem("localTasks"));
+    let storagedTaskBgc = JSON.parse(localStorage.getItem("localTaskBgc"));
+    let storagedTaskFontColor = JSON.parse(localStorage.getItem("localTaskFontColor"));
     console.log(storagedTask);
     if (storagedTask) {
-      storagedTask.forEach(task => {
-        createTask(task, "white", "black", false);
+      storagedTask.forEach((task, i) => {
+        createTask(task, storagedTaskBgc[i], storagedTaskFontColor[i], false);
       });
     }
 
@@ -45,6 +47,16 @@ function init() {
 const categoryList = document.querySelector(".editor__category");
 const categorysWrappper = document.querySelector(".editor__categorys");
 let categorys = document.querySelectorAll(".editor__category--option");
+function reoladCategorys() {
+  categorys = document.querySelectorAll(".editor__category--option");
+  [...categorys].forEach(category => {
+    category.addEventListener("click", selectCategory);
+  });
+}
+categorys = document.querySelectorAll(".editor__category--option");
+[...categorys].forEach(category => {
+  category.addEventListener("click", selectCategory);
+});
 
 //create task
 const btnTaskSubmit = document.querySelector(".editor__submit--task");
@@ -64,6 +76,7 @@ let btnsDone = document.querySelectorAll(
 let btnsDelete = document.querySelectorAll(
   "button.main__button--delete"
 );
+
 function reoladList() {
   tasks = document.querySelectorAll(".main__task");
   btnsDone = document.querySelectorAll(
@@ -89,11 +102,11 @@ const btnCategoryBack = document.querySelector(".editor__cancel--category");
 
 function setSelectBgc() {
   this.style.backgroundColor = this.options.item(this.selectedIndex).text;
-  categoryDescribe.style.backgroundColor = this.style.backgroundColor;
+  this.previousElementSibling.style.backgroundColor = this.style.backgroundColor;
 }
 function setSelectFontColor() {
   this.style.backgroundColor = this.options.item(this.selectedIndex).text;
-  categoryDescribe.style.color = this.style.backgroundColor;
+  this.previousElementSibling.previousElementSibling.style.color = this.style.backgroundColor;
 }
 function setSelectBoth() {
   this.style.backgroundColor = this.options.item(this.selectedIndex).text;
@@ -101,8 +114,6 @@ function setSelectBoth() {
   this.style.backgroundColor = this.options.item(this.selectedIndex).text;
   this.style.backgroundColor = this.style.backgroundColor;
 }
-
-// categoryList.addEventListener("change", setSelectFontColor);
 
 
 
@@ -113,6 +124,10 @@ function setSelectBoth() {
 
 //                                                   fun
 // 
+function toggleMenu() {
+  searchPanel.classList.toggle("off");
+  createPanel.classList.toggle("off");
+};
 
 const searchTask = e => {
   const searchText = e.target.value.toLowerCase();
@@ -169,14 +184,23 @@ const createTask = (describe, bgc, fontColor, create) => {
 
   if (canLocalStorage && create) {
     const localTasks = [];
+    const localTaskBgc = [];
+    const localTaskFontColor = [];
+
     [...tasks].forEach(task => {
       localTasks.push(task.innerHTML);
+      localTaskBgc.push(task.style.backgroundColor);
+      localTaskFontColor.push(task.style.color);
+      console.log(task.style.backgroundColor);
     });
+    // console.log(localTasks, localTaskBgc, localTaskFontColor);
     localStorage.setItem("localTasks", JSON.stringify(localTasks));
+    localStorage.setItem("localTaskBgc", JSON.stringify(localTaskBgc));
+    localStorage.setItem("localTaskFontColor", JSON.stringify(localTaskFontColor));
+
 
   }
 }
-
 const selectCategory = e => {
   console.log(e.target);
   categorysWrappper.classList.toggle("displayBlock");
@@ -201,7 +225,7 @@ const createCategory = (describe, bgc, fontColor, create) => {
   newCategory.style.color = fontColor;
   categorysWrappper.appendChild(newCategory);
 
-  categorys = document.querySelectorAll(".editor__category--option");
+  reoladCategorys();
 
   if (canLocalStorage && create) {
     const localCategorys = [];
@@ -217,22 +241,15 @@ const createCategory = (describe, bgc, fontColor, create) => {
     localStorage.setItem("localCategorys", JSON.stringify(localCategorys));
     localStorage.setItem("localBgc", JSON.stringify(localBgc));
     localStorage.setItem("localFontColor", JSON.stringify(localFontColor));
-
     console.log(localCategorys, localFontColor, localBgc);
-
   }
-  [...categorys].forEach(category => {
-    category.addEventListener("click", selectCategory);
-  });
+
 }
 
 
-
-
-
+// localStorage.clear();
 
 //                                   LISTEN !
-// localStorage.clear();
 
 selectCategoryBgc.addEventListener("change", setSelectBgc, true);
 selectCategoryFont.addEventListener("change", setSelectFontColor, true);
@@ -243,7 +260,11 @@ btnCategorySubmit.addEventListener("click", function () {
 });
 
 categoryList.addEventListener("click", function () {
-  categorysWrappper.classList.toggle("displayBlock");
+  if (categorys.length) {
+    categorysWrappper.classList.toggle("displayBlock");
+  } else {
+    alert("Lets create new category !");
+  }
 });
 
 
@@ -267,14 +288,9 @@ btnsDone.forEach(item => item.addEventListener("click", doneTask));
 btnsDelete.forEach(item => item.addEventListener("click", deleteTask));
 searchInput.addEventListener("input", searchTask);
 
-btnCreateCategory.addEventListener("click", function () {
-  searchPanel.classList.toggle("off");
-  createPanel.classList.toggle("off");
-}, false);
-btnCategoryBack.addEventListener("click", function () {
-  searchPanel.classList.toggle("off");
-  createPanel.classList.toggle("off");
-});
+
+btnCreateCategory.addEventListener("click", toggleMenu);
+btnCategoryBack.addEventListener("click", toggleMenu);
 
 btnTaskSubmit.addEventListener("click", function () {
   createTask(taskDescribe.value, categoryList.style.backgroundColor, categoryList.style.color, true);
@@ -288,13 +304,13 @@ taskDescribe.addEventListener("keyup", function (event) {
 });
 
 init();
-// on click window menu remove class displayBlock, join off and displayBlock classes into one
-//add json task style
-//add button arrow up down on taks
-//add monsters
-//add remove button for categorys
-//style stylee
-//task style = category style
+// on click window menu remove class displayBlock, join off and displayBlock classes into one 10
+//add json task style 1
+//add button arrow up down on taks 
+//add monsters 8
+//add remove button for categorys 2
+//style stylee 9
+
 
 //style: when select category opens->transformr -100 to 0, and bounce soo: -100 10 -10 0 .
 //copyrights by Brian Wala :P fck off cukerberg
