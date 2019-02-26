@@ -11,7 +11,7 @@
 
 <body>
   <article class="editor">
-    <section class="editor__wrapper editor__wrapper--task">
+    <section class="editor__wrapper editor__wrapper--task displayFlex">
       <div class="editor__panel editor__panel--task">
         <div name="editor__category" class="editor__category colorCompose">
           Choose category
@@ -25,14 +25,14 @@
       </div>
     </section>
 
-    <section class="editor__wrapper editor__wrapper--search ">
+    <section class="editor__wrapper editor__wrapper--search displayFlex">
       <form action="" class="editor__panel editor__panel--search">
         <input value="Search" class="editor__search" type="text" />
       </form>
       <button class="editor__create">Create Category</button>
     </section>
 
-    <section class="editor__wrapper editor__wrapper--category off">
+    <section class="editor__wrapper editor__wrapper--category">
       <input value="New Category" class="editor__describe--category colorCompose" type="text" />
       <select name="editor__category--bgc" class="editor__category--bgc colorCompose">
         <option style="display: none" value="" class="editor__color editor__color--orange">background color</option>
@@ -53,7 +53,7 @@
         <option value="" class="editor__color editor__color--bgc editor__color--808000">#808000</option>
         <option value="" class="editor__color editor__color--bgc editor__color--80FF80">#80FF80</option>
       </select>
-      <select name="editor__category--font" class="editor__category--font colorCompose">
+      <select name="editor__category--font" class="editor__category--font colorCompose" id="editor__category--font">
         <option style="display: none" value="" class="editor__color editor__color--orange">font color</option>
         <option value="" class="editor__color editor__color--font editor__color--FFF200">#FFF200</option>
         <option value="" class="editor__color editor__color--font editor__color--FD9406">#FD9406</option>
