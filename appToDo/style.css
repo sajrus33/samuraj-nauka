@@ -45,6 +45,7 @@ body {
   width: 100vw;
   height: 70px;
   background-color: rgba(239, 171, 31);
+  color: black;
   animation: tip 4s forwards;
   display: flex;
   flex-direction: column;
