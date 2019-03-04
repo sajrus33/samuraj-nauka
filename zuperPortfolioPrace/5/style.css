@@ -1,0 +1,334 @@
+/* RESET */
+*{
+    margin: 0;
+    padding: 0;
+}
+ul,ol{
+  list-style: none;
+}
+
+
+:root{
+  --bege : rgb(211, 167, 73);
+  --wrapperSize : 60%;
+}
+
+
+body{
+  font-size: 20px;
+  /* overflow: hidden; */
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/*                header 'header' */
+.header{
+  position: relative;
+  background: rgba(0, 0, 0, .8);
+  height: 100vh;
+  text-transform: uppercase;
+  /* flex C */
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+
+}
+
+/* header section */
+.header__slider{
+  position: relative;
+  color: var(--bege);
+  width: var(--wrapperSize);
+  flex-grow: 1;
+  
+  /* flex C */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.header__slider::after{
+  position: absolute;
+  content: "";
+  right: 0%;
+  bottom: -2.5%;
+  width: 3px;
+  height: 5%;
+  background-color: var(--bege);
+
+}
+
+
+/* counter(dots and number) in header */
+.slider__counter{
+  position: absolute;
+  top: 50%;
+  left: 0;
+  height: 50%;
+  transform: translate(-50%,-50%);
+  /* flex C */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.counter__number{
+  transform: rotate(90deg);
+
+  box-sizing: border-box;
+  position: relative;
+
+}
+.counter__number::before{
+  position: absolute;
+  top: 50%;
+  left: -200%;
+  content: "";
+  width: 100%;
+  height: 10%;
+
+  background-color: var(--bege);
+
+  transform: translateY(-50%);
+
+}
+.counter__dot{
+  display: block;
+  box-sizing: border-box;
+  width: .4em;
+  height: .4em;
+  /* margin-left: 1.5em; */
+  border-radius: 50%;
+  background: var(--bege);
+}
+
+
+/* header slider */
+.slide{
+  /* position: relative; */
+  padding-left: 10vw;
+  padding-top: 25vh;
+  width: 100%;
+
+/* flex C */
+display: flex;
+flex-direction: column;
+}
+.slide__h1{
+  font-size:4.5vw;
+  letter-spacing: .15em;
+  width: 75%;
+  margin-bottom: 7%;
+  
+}
+.slide__button{
+  position: relative;
+  width: 50%;
+  height: 50px;
+  padding: 0;
+  background-color: transparent;
+  border: 3px solid white;
+  color: white;
+}
+.slide__button::after{
+  content: "";
+  position: absolute;
+  right: 7%;
+  top: 50%;
+  width: 12%;
+  height: 1px;
+  background-color: #fff;
+
+}
+.slide__button::before{
+  content: "";
+  position: absolute;
+  right: 7%;
+  top: 50%;
+  width: 5px;
+  height: 5px;
+  border-top: 1px white solid;
+  border-right: 1px white solid;
+
+  transform:translateY(-50%) rotate(45deg);
+
+}
+.slide__button:hover{
+  background-color: #fff;
+  color: rgba(0, 0, 0, .8);
+
+}
+.slide__button:hover::after{
+  background-color: rgba(0, 0, 0, .8); 
+}
+.slide__button:hover::before{
+  border-color: rgba(0, 0, 0, .8);
+}
+
+
+
+
+/* slide info container --> mouse ico */
+.slide__info{
+
+}
+.slide__mouse{
+
+}
+.slide__direction{
+
+}
+
+/* slider right label */
+.slider__label{
+  position: absolute;
+  top: 50%;
+  right: 0%;
+  
+  transform: translate(50%,50%) rotate(90deg);
+  font-size: .6em;
+}
+
+
+
+
+
+/*                all nav-s WRAPPER */
+.nav__wrapper{
+  width: 100%;
+  color: white;
+  /* flex C */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+/*                all nav-s */
+.header__nav{
+  /* flex C */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/*                NAV 1 hamb */
+.header__nav--hamb{
+  margin-right: 15%;
+}
+.hamb__list{
+  /* to be over languages menu */
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: yellow;
+  width: 100%;
+  /* flex C */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+.hamb__option{
+  height: 50px;
+  line-height: 50px;
+}
+
+
+/*                 NAV 2 menu */
+.header__nav--menu{
+  flex-grow: 1;
+}
+
+.menu__list{
+  width: 100%;
+  /* flex C */
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+/* .menu__option{
+  
+} */
+
+
+
+/*                NAV 3 languages */
+.header__nav--languages{
+
+  position: relative;
+  width: 32px;
+  height: 32px;
+  margin-left: 15%;
+  padding-right: 5px;
+}
+.header__nav--languages::after{
+  content: "";
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid black;
+
+}
+.languages__list{
+  position: absolute;
+  left: calc(50% - 5px);
+  top: 100%;
+  transform: translateX(-50%);
+  /* flex C */
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+
+/*               MAIN  */
+.main{
+  /* flex C */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+/*        for all sections    main wrapper  */
+.main__wrapper{
+  /* width: 100%; */
+  /* flex C */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* main wrapper white */
+.main__wrapper--white{
+
+}
+
+
+/*  <main class="main">
+    <!-- main wrapper 100 width bgc -->
+    <section class="main__wrapper main__wrapper--white">
+      <!-- main product article -->
+      <article class="main__product">
+        <!-- product describe section -->
+        <section class="product__describe product__describe--first">
+          <h2 class="product__h2 product__h2--first">Furniture</h2>
+          <p class="product__p product__p--first">
+            The best of the best bla bla bla intead of liberum opsa sa librum
+            ipsum libre. The best of the best bla bla bla intead of liberum
+            opsa sa librum ipsum libre.
+          </p>
+          <a href="#" class="product__a product__a--first">Learn more</a>
+        </section>
+        <!-- product img section -->
+        <section class="product__img product__img--first">
+          <img class="img" src="" alt="first product image" />
+        </section>
+      </article> */
+/* toggle classes */
+.displayNone{
+  display: none;
+}

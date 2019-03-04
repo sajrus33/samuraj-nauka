@@ -1,0 +1,131 @@
+/* header and menu added from main.css */
+/* MAIN */
+
+.mainContainer>.mainWrapper{
+    padding-top: 70px;
+    min-height: 100vh;
+   
+    /* background-image: url(main.jpg);
+    background-size:100% auto; */
+
+    /* flexbox container */
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.2);
+    
+}
+.mainWrapper>.test{
+    min-width: 480px;
+    min-height: 100px;
+    flex-basis: calc(30vh/var(--difLabel));
+    min-width: 360px;
+    margin-top: 50px;
+    background-color: #120D1E;
+    box-shadow: 2px 2px 5px 2px;
+    border-radius: 0 30px 30px 0; 
+    
+    border-bottom: .5px silver solid;
+    border-top: .5px silver solid;
+    border-right: 2px silver solid;
+    /* transition: .25s .1s linear; */
+    transition: .5s linear;
+    /* flexbox container */
+    display: flex;
+    flex-direction: row;
+
+    transform: translateX(-100%);
+    animation: testShow linear .5s;
+}
+
+.mainWrapper>.test>.testWrapper{
+    flex-basis: 80%;
+    
+    overflow: hidden;
+    /* flexbox container */
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+.test>.selectTest{
+    min-height: 100px;
+    flex-basis: 20%;
+    
+    line-height: calc(30vh/var(--difLabel));
+    z-index: 3;
+    
+    cursor: pointer;
+}
+/* .test>.selectTest>a:hover{
+    background-color: rgba(0, 0, 0, 0.2);
+} */
+.test>.selectTest>a{
+    color: #721825;
+ 
+    display: block;
+    width: 100%;
+    padding-left: 80%;
+    position: absolute;
+    left:0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+.test>.selectTest>a>i{
+    font-size: 5rem;
+}
+
+ 
+.mainWrapper>.test:nth-of-type(1),
+.mainWrapper>.test:nth-of-type(2),
+.mainWrapper>.test:nth-of-type(3),
+.mainWrapper>.test:nth-of-type(4){
+    transform: translateX(-2%);
+    animation: testShow linear .5s;
+}
+@keyframes testShow{
+    0%{
+        transform: translateX(-100%);
+    }
+    100%{
+        transform: translateX(-2%);
+    }
+}
+.mainWrapper>.test>.testWrapper>h2{
+   
+    display: block;
+    flex-basis: calc(7.5vh/var(--difLabel) );
+    
+    background-color:#721825;
+    padding-left: 20px;
+    border-radius: 0 50px 50px 0;
+
+  
+}
+.mainWrapper>.test>.testWrapper>p{
+   
+    display: block;
+    flex-basis: calc(15vh/ var(--difLabel));
+   
+    background-color: #D8D0C5;
+   
+    /* padding-left: 20px; */
+    padding: 10px;
+    
+    border-radius: 0 50px 50px 0;
+   
+
+}
+.mainWrapper>.test>.testWrapper>footer{
+    
+    flex-basis: calc(7.5vh/ var(--difLabelz));
+    background-color: #7E9DA4;
+    /* border: 1px solid lightsalmon; */
+    /* padding-left: 20px; */
+    padding: 10px;
+    border-radius: 0 50px 50px 0;
+   
+    
+} 
+
+
+/* h2 p footer */
