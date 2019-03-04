@@ -188,15 +188,14 @@ const createTask = (describe, bgc, fontColor, create) => {
   const newDone = document.createElement("button");
   newDone.classList.add("main__button");
   newDone.classList.add("main__button--done");
-  // newDelete.innerText = "delete";
   //p
   const newDescribe = document.createElement("p");
   newDescribe.classList.add("main__task");
   newDescribe.innerText = describe;
   // edit
-  const newEdit = document.createElement("button");
-  newEdit.classList.add("main__button");
-  newEdit.classList.add("main__button--edit");
+  // const newEdit = document.createElement("button");
+  // newEdit.classList.add("main__button");
+  // newEdit.classList.add("main__button--edit");
   //delete
   const newDelete = document.createElement("button");
   newDelete.classList.add("main__button");
@@ -204,7 +203,7 @@ const createTask = (describe, bgc, fontColor, create) => {
   //complete
   newTask.appendChild(newDone);
   newTask.appendChild(newDescribe);
-  newTask.appendChild(newEdit);
+  // newTask.appendChild(newEdit);
   newTask.appendChild(newDelete);
 
   list.appendChild(newTask);
@@ -233,8 +232,8 @@ const createCategory = (describe, bgc, fontColor, create) => {
     if (describe.length > categoryCharLimit)
       return myAlert(
         "Category describe is too long, max " +
-          categoryCharLimit +
-          " characters"
+        categoryCharLimit +
+        " characters"
       );
     if (categorys) {
       categorys.forEach(cat => {
@@ -348,7 +347,7 @@ const doneTask = e => {
 selectCategoryBgc.addEventListener("change", setSelectBgc, true);
 selectCategoryFont.addEventListener("change", setSelectFontColor, true);
 categoryList.addEventListener("change", setSelectBoth);
-btnCategorySubmit.addEventListener("click", function() {
+btnCategorySubmit.addEventListener("click", function () {
   createCategory(
     categoryDescribe.value,
     categoryDescribe.style.backgroundColor,
@@ -356,7 +355,7 @@ btnCategorySubmit.addEventListener("click", function() {
     true
   );
 });
-categoryList.addEventListener("click", function() {
+categoryList.addEventListener("click", function () {
   if (categorys) {
     categorysWrappper.classList.toggle("displayFlex");
   } else {
@@ -365,14 +364,14 @@ categoryList.addEventListener("click", function() {
 });
 searchInput.addEventListener("input", searchTask);
 //hheeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeereeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee
-searchInput.addEventListener("click", function() {
+searchInput.addEventListener("click", function () {
   event.target.value = "";
 });
 btnCreateCategory.addEventListener("click", toggleMenu);
 btnCategoryBack.addEventListener("click", toggleMenu);
 btnTaskSubmit.addEventListener(
   "click",
-  function() {
+  function () {
     createTask(
       taskDescribe.value,
       categoryList.style.backgroundColor,
@@ -382,13 +381,13 @@ btnTaskSubmit.addEventListener(
   },
   false
 );
-categoryDescribe.addEventListener("keyup", function(event) {
+categoryDescribe.addEventListener("keyup", function (event) {
   if (event.keyCode === 13) {
     event.preventDefault();
     btnCategorySubmit.click();
   }
 });
-taskDescribe.addEventListener("keyup", function(event) {
+taskDescribe.addEventListener("keyup", function (event) {
   if (event.keyCode === 13) {
     event.preventDefault();
     btnTaskSubmit.click();
