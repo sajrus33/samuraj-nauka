@@ -1,0 +1,39 @@
+/* toggle classes */
+.displayNone{
+    display: none;
+  }
+  @media only screen and (max-width: 1000px) {
+    :root{
+      /* --wrapperSize : 80%; */
+    }
+    body {
+      font-size: 15px;
+    }
+  }
+  @media only screen and (max-width: 640px) {
+    :root{
+      --wrapperSize : 80%;
+    }
+    body {
+      font-size: 13px;
+    }
+  }
+  @media only screen and (max-width: 480px) {
+    :root{
+      --wrapperSize : 90%;
+    }
+    body {
+      font-size: 12px;
+    }
+    .header__nav--menu{
+      display: none;
+    }
+  }
+  @media only screen and (max-width: 320px) {
+    :root{
+      --wrapperSize : 95%;
+    }
+    body {
+      font-size: 10px;
+    }
+  }

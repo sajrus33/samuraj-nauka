@@ -1,0 +1,73 @@
+/*               MAIN  */
+.main{
+    /* flex C */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+/*   for all main img */
+.img{
+  width: 100%;
+}
+  
+  
+  /*        for all sections    main wrapper  */
+  .main__wrapper{
+    /* width: 100%; */
+    /* flex C */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  
+  /*          for 2 product articles inside wrapper--white      */
+  
+  /* main wrapper white */
+  .main__wrapper--white{
+    background-color: var(--white);
+  
+  }
+  
+  /* main product article */
+  .main__product{
+    width: var(--wrapperSize);
+    /* flex C */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* product describe WRAPPER */
+  .product__describe{
+    text-align: left;
+    /* flex C */
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    /* align-items: center; */
+  }
+  
+  /*  <main class="main">
+      <!-- main wrapper 100 width bgc -->
+      <section class="main__wrapper main__wrapper--white">
+        <!-- main product article -->
+        <article class="main__product">
+          <!-- product describe section -->
+          <section class="product__describe product__describe--first">
+            <h2 class="product__h2 product__h2--first">Furniture</h2>
+            <p class="product__p product__p--first">
+              The best of the best bla bla bla intead of liberum opsa sa librum
+              ipsum libre. The best of the best bla bla bla intead of liberum
+              opsa sa librum ipsum libre.
+            </p>
+            <a href="#" class="product__a product__a--first">Learn more</a>
+          </section>
+          <!-- product img section -->
+          <section class="product__img product__img--first">
+            <img class="img" src="" alt="first product image" />
+          </section>
+        </article> */
