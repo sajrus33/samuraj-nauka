@@ -1,4 +1,4 @@
-/* RESET */
+/*                          RESET */
 *{
     margin: 0;
     padding: 0;
@@ -10,6 +10,7 @@ ul,ol{
 
 :root{
   --bege : rgb(211, 167, 73);
+  --white: white;
   --wrapperSize : 60%;
 }
 
@@ -292,6 +293,9 @@ flex-direction: column;
   justify-content: center;
   align-items: center;
 }
+
+
+
 /*        for all sections    main wrapper  */
 .main__wrapper{
   /* width: 100%; */
@@ -302,11 +306,34 @@ flex-direction: column;
   align-items: center;
 }
 
+
+/*          for 2 product articles inside wrapper--white      */
+
 /* main wrapper white */
 .main__wrapper--white{
+  background-color: var(--white);
 
 }
 
+/* main product article */
+.main__product{
+  width: var(--wrapperSize);
+  /* flex C */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+/* product describe WRAPPER */
+.product__describe{
+  text-align: left;
+  /* flex C */
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  /* align-items: center; */
+}
 
 /*  <main class="main">
     <!-- main wrapper 100 width bgc -->
@@ -331,4 +358,21 @@ flex-direction: column;
 /* toggle classes */
 .displayNone{
   display: none;
+}
+
+@media only screen and (max-width: 640px) {
+  :root{
+    --wrapperSize : 80%;
+  }
+  body {
+    font-size: 13px;
+  }
+}
+@media only screen and (max-width: 480px) {
+  :root{
+    --wrapperSize : 90%;
+  }
+  body {
+    font-size: 12px;
+  }
 }
