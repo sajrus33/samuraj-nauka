@@ -1,3 +1,4 @@
+// newest version on codepen
 "use strict";
 let canLocalStorage = false;
 const taskCharLimit = 50;
@@ -397,4 +398,4 @@ taskDescribe.addEventListener("keyup", function (event) {
 init();
 myAlert("Welcome on ToDo :)");
 
-//copyrights by Brian Wala :P fck off cukerberg
+

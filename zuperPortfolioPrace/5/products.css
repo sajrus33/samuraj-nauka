@@ -27,17 +27,27 @@
   
   /* main wrapper white */
   .main__wrapper--white{
+    position: relative;
     background-color: var(--white);
   
   }
-  
+  .main__wrapper--white::before{
+    content: "";
+    position: absolute;
+    top: -40px;
+    left: 0;
+    width: 60%;
+    height: 40px;
+    background-color: var(--white);
+  }  
   /* main product article */
   .main__product{
+    height: 100vh;
     width: var(--wrapperSize);
     /* flex C */
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
   }
   
@@ -50,7 +60,27 @@
     /* justify-content: center; */
     /* align-items: center; */
   }
+
+  .product__h2{
+
+  }
+  .product__p{
+
+  }
+  .product__a{
+    text-decoration: none;
+    color: inherit;
+  }
+  .product__img{
+    /* display: flex;
+    justify-content: stretch;
+    align-items: stretch; */
+  }
   
+  /* FIRST PRODUCT */
+  .product__img--first{
+    /* width: 50vw; */
+  }
   /*  <main class="main">
       <!-- main wrapper 100 width bgc -->
       <section class="main__wrapper main__wrapper--white">
