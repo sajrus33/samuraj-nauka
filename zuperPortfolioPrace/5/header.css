@@ -45,6 +45,7 @@ body{
 
 /*                all nav-s WRAPPER */
 .nav__wrapper{
+  font-size: 1.3em;
   width: 100%;
   color: white;
   /* flex C */
