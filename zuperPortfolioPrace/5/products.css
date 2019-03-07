@@ -36,9 +36,11 @@
     position: absolute;
     top: -40px;
     left: 0;
-    width: 60%;
+    width: 50%;
     height: 40px;
-    background-color: var(--white);
+    /* background-color: var(--white); */
+    background-color: rgba(255, 255, 255, .85);
+
   }  
   /* main product article */
   .main__product{
