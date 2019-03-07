@@ -9,9 +9,13 @@ ul,ol{
 
 
 :root{
-  --bege : rgb(211, 167, 73);
+  /* --bege : rgb(211, 167, 73); */
+  --bege : #BEA67C;
+  --silver: #a7a691;
   --white: white;
+
   --wrapperSize : 60%;
+  --logoSize: 100px;
 }
 
 
@@ -26,11 +30,13 @@ body{
 /*                header 'header' */
 .header{
   position: relative;
-  background-image: url(img/bgc.jpg);
-  box-shadow: inset 0 0 0 100em rgba(0, 0, 0, .85);
+  background-image: url(img/wooder.png), url(img/wooder2.png);
+  background-position: right top, left bottom;
+  box-shadow: inset 0 0 0 100em rgba(0, 0, 0, .88);
   
 
-  background-size: 100% 100%;
+  background-size:50% 100%,50% 100%;
+  background-repeat: no-repeat,no-repeat;
   height: calc(100vh + 40px);
   text-transform: uppercase;
   /* flex C */
@@ -40,13 +46,27 @@ body{
   align-items: center;
 
 }
+.header::after{
+  content: "";
+  position: absolute;
+  left: 35%;
+  height: 100%;
+  width: 15%;
+  background-color: rgba(255,255,255,0.005);
+  box-shadow: 1px 0px 3px 0px rgba(0,0,0,0.45);
+  
+}
 
 
 
 /*                all nav-s WRAPPER */
 .nav__wrapper{
   width: 100%;
-  color: white;
+  margin-top: 10px;
+  color: var(--silver);
+  font-family: 'Anton', sans-serif;
+  font-weight: 500;
+  font-size: .9em;
   /* flex C */
   display: flex;
   flex-direction: row;
@@ -61,11 +81,22 @@ body{
   justify-content: center;
   align-items: center;
 }
+.menu__option--logo{
+  color: transparent;
+  /* background-color: #fff; */
+  background-image: url(img/logoCut.png);
+  background-size:contain;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+
+  /* flex E */
+
+}
 
 
 /*                NAV 1 hamb */
 .header__nav--hamb{
-  margin-right: 15%;
+  margin-left: 1.5%;
 }
 .hamb__list{
   /* to be over languages menu */
@@ -73,12 +104,13 @@ body{
   position: absolute;
   top: 0;
   left: 0;
-  background-color: yellow;
+  background-color: rgba(0, 0, 0, .98);
   width: 100%;
   /* flex C */
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-around;
   
 }
 .hamb__option{
@@ -109,23 +141,26 @@ body{
 .header__nav--languages{
 
   position: relative;
-  width: 32px;
-  height: 32px;
-  margin-left: 15%;
-  padding-right: 5px;
+  /* width: 32px;
+  height: 32px; */
+  /* margin-left: 15%; */
+  margin-right: calc(1.5% + 5px);
 }
 .header__nav--languages::after{
   content: "";
+  position: absolute;
+  right: 0;
+  transform: translateX(100%);
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
-  border-top: 5px solid black;
+  border-top: 5px solid var(--silver);
 
 }
 .languages__list{
   position: absolute;
-  left: calc(50% - 5px);
+  left: 0;
   top: 100%;
-  transform: translateX(-50%);
+  /* transform: translateX(50%); */
   /* flex C */
   display: flex;
   flex-direction: column;
@@ -165,7 +200,7 @@ body{
 /* counter(dots and number) in header */
 .slider__counter{
   position: absolute;
-  top: calc(50% + 1.8em);/*   here  we can aster the distance from top*/
+  top: calc(60%);/*   here  we can aster the distance from top*/
   left: 0;
   height: 50%;
   transform: translate(-50%,-50%);
@@ -177,6 +212,7 @@ body{
 }
 .counter__number{
   font-size: 1.8em;
+  font-weight: bold;
   transform: rotate(90deg);
 
   box-sizing: border-box;
@@ -211,8 +247,9 @@ body{
 .slide{
   /* position: relative; */
   /* padding-left: 50px;s */
-  /* padding-top: 25vh; */
+  /* margin-bottom: 5%; */
   /* width: 100%; */
+  transform: translateY(0%);
 
 /* flex C */
 display: flex;
