@@ -9,7 +9,9 @@ const myDOM = {
             myDOM.menuLangList.classList.toggle("displayNone");
         });
         myDOM.menuHamb.addEventListener("click", function () {
+            // if (innerWidth < 680) {
             myDOM.menuHambList.classList.toggle("displayNone");
+            // }
         });
 
     }

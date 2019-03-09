@@ -4,11 +4,12 @@
   font-weight: normal;
  
   /* fix buttons height */
-  line-height: 1em;
+  line-height: .9em;
  
   /* you can be more comfortable with increased icons size */
   font-size: 20px;
 }
+
  
 .icon-mouse { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe800;&nbsp;'); }
 .icon-search { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xe805;&nbsp;'); }
