@@ -1,7 +1,13 @@
 /* toggle classes */
 .displayNone{
     display: none;
+}
+
+@keyframes goInRight{
+  100%{
+    transform: translateX(0);
   }
+}
   @media only screen and (max-width: 1000px) {
     :root{
       /* --wrapperSize : 80%; */
