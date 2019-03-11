@@ -8,6 +8,8 @@ const myDOM = {
     menuHambList: document.querySelector(".hamb__list"),
     // products
     productDescribeFirst: document.querySelector(".product__describe--first"),
+    productDescribeSecond: document.querySelector(".product__describe--second"),
+
 
 
 
@@ -21,7 +23,18 @@ const myDOM = {
             // }
         });
         window.addEventListener('scroll', function () {
-            // if(mySize.headerHeight + )
+
+            if (window.scrollY > (mySize.headerHeight * .75 / 2)) {
+                myDOM.productDescribeFirst.style.animation = "goInRight 1s forwards";
+            } else {
+                myDOM.productDescribeFirst.style.animation = "none";
+            }
+
+            if (window.scrollY > (mySize.headerHeight * .75 * 1.5)) {
+                myDOM.productDescribeSecond.style.animation = "goInRight 1s forwards";
+            } else {
+                myDOM.productDescribeSecond.style.animation = "none";
+            }
 
             // const top = describe.previousElementSibling;
 
