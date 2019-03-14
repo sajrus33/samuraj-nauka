@@ -56,7 +56,7 @@ let mySize = {
         mySize.headerHeight = myDOM.header.offsetHeight;
         mySize.descrbieFirstTop = myDOM.productDescribeFirst.offsetTop,
 
-            console.log("resize");
+            console.log("resize", mySize.descrbieFirstTop);
     }
 
 }

@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     font-size: 1em;
+    
 }
 
 ul,ol{
@@ -19,10 +20,12 @@ ul,ol{
   --minSectionSize: 320px;
   --wrapperSize : 60%;
   --logoSize: 100px;
+  --productImgHeight : 70%;
 }
 
 
 body{
+  width: 100%;
   font-size: 26px;
   /* overflow: hidden; */
   font-family: "Lobster";
@@ -209,9 +212,9 @@ body{
   position: absolute;
   content: "";
   right: 0%;
-  bottom: -2.5%;
-  width: 3px;
-  height: 5%;
+  bottom: -3%;
+  width: 2px;
+  height: 6%;
   background-color: var(--bege);
   z-index: 1;
 
