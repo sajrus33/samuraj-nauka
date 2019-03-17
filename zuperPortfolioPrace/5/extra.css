@@ -20,7 +20,6 @@
   @media only screen and (max-width: 1300px){
     :root{
       --wrapperSize : 80%;
-      --logoSize: 50px;
     }
     body {
       font-size: 19px;
@@ -29,7 +28,6 @@
   @media only screen and (max-width: 1000px){
     :root{
       --wrapperSize : 80%;
-      --logoSize: 50px;
     }
     body {
       font-size: 18px;
@@ -38,7 +36,6 @@
  @media only screen and (max-width: 800px) and (orientation: landscape){
     :root{
       --wrapperSize : 80%;
-      --logoSize: 50px;
     }
     body {
       font-size: 16px;
@@ -50,7 +47,6 @@
   @media only screen and (max-width: 800px) and (orientation: portrait){
     :root{
       --wrapperSize : 80%;
-      --logoSize: 50px;
     }
     body {
       font-size: 21px;

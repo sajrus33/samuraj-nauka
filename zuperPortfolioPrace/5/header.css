@@ -16,8 +16,10 @@ ul,ol{
   --bege : #BEA67C;
   --silver: #a7a691;
   --white: white;
+ --darkSilver: #464646;
 
-  --minSectionSize: 320px;
+  /* --minSectionSize: 320px; */
+
   --wrapperSize : 60%;
   --logoSize: 100px;
   --productImgHeight : 70%;
@@ -78,7 +80,6 @@ body{
   color: var(--silver);
   font-family: 'Lobster';
   
-  /* font-family: 'Anton', sans-serif; */
 
   font-weight: 500;
   font-size: .9em;
@@ -99,10 +100,10 @@ body{
 .menu__option--logo{
   color: transparent;
   /* background-color: #fff; */
-  background-image: url(img/logoCut.png);
-  background-size:contain;
+  /* background-image: url(img/logoCut.png); */
+  /* background-size:contain;
   background-repeat: no-repeat;
-  background-position: 50% 50%;
+  background-position: 50% 50%; */
 
   /* flex E */
 
@@ -118,11 +119,11 @@ body{
 }
 .hamb__list{
   /* to be over languages menu */
-  z-index: 1;
+  z-index: 999;
   position: fixed;
   top: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, .98);
+  background-color: rgba(0, 0, 0, .8);
   width: 100%;
   /* flex C */
   display: flex;
@@ -133,18 +134,27 @@ body{
 }
 .hamb__option{
   color: var(--bege);
-  height: 50px;
-  line-height: 50px;
+  height: 25vh;
+  line-height: 25vh;
 }
 
 
 /*                 NAV 2 menu */
 .header__nav--menu{
   flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  
 }
 
 .menu__list{
-  width: var(--wrapperSize);
+  position: absolute;
+  left: calc( ((100% - (var(--wrapperSize)) ) / 2) + ((var(--wrapperSize) * .3)) );
+  width: calc(var(--wrapperSize) * .60);
+  box-sizing: content-box;
+  /* padding-right: 33%; */
   /* flex C */
   display: flex;
   align-items: center;
@@ -213,7 +223,7 @@ body{
   content: "";
   right: 0%;
   bottom: -3%;
-  width: 2px;
+  width: 3px;
   height: 6%;
   background-color: var(--bege);
   z-index: 1;
@@ -284,7 +294,7 @@ body{
 .slide__h1{
   text-transform: capitalize;
   font-size:2.5em;
-  letter-spacing: .15em;
+  letter-spacing: .22em;
   margin-bottom: 7%;
   
 }
@@ -350,9 +360,14 @@ body{
   /* flex C */
   display: flex;
   flex-direction: column;
+  flex-grow: 1;
+  /* align-items: center; */
+  /* justify-content: center; */
 }
 .slide__mouse{
-  margin-top: 10px;
+  margin-top: 5vh;
+  position: relative;
+  left: -20%;
   font-size: 2em;
   transform: rotate(15deg);
   color: var(--bege);
@@ -360,9 +375,12 @@ body{
 }
 .slide__direction{
   position: relative;
+  left: -5%;
+  
+
   font-size: .8em;
   color: rgba(190, 166, 124,.3);
-  transform: rotate(90deg) translateY(30%);
+  transform: rotate(90deg) translate(10%,70%);
 
   margin-top: calc(130% + 2em);
 }
@@ -394,7 +412,7 @@ body{
   right: 0%;
   
   transform: translate(50%,50%) rotate(90deg);
-  font-size: .6em;
+  font-size: .5em;
 }
 
 

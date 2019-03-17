@@ -1,0 +1,123 @@
+/*   <!--main products article -->
+      <article class="main__product main__product--thirt">
+
+        <!-- products describe section -->
+        <section class="product__describe product__describe--thirt">
+          <!-- products describe h2 -->
+          <h2 class="product__h2 product__h2--thirt">Flubmaster - is quality</h2>
+          <!-- products describe p -->
+          <p class="product__p">
+            The best of the best bla bla bla intead of liberum opsa sa librum
+            ipsum libre. The best of the best bla bla bla intead of liberum
+            opsa sa librum ipsum libre.
+          </p>
+        </section>
+
+        <!-- product iframes section -->
+        <section class="product__iframes">
+
+          <!-- iframe and label -->
+          <section class="product__iframe product__iframe--first">
+            <iframe src="" frameborder="0" class="iframe"></iframe>
+            <span class="product__label">Innovative Design</span>
+          </section>
+
+          <!-- iframe and label -->
+          <section class="product__iframe product__iframe--second">
+            <iframe src="" frameborder="0" class="iframe"></iframe>
+            <span class="product__label">High-level Skills</span>
+          </section>
+
+          <!-- iframe and label -->
+          <section class="product__iframe product__iframe--thirt">
+            <iframe src="" frameborder="0" class="iframe"></iframe>
+            <span class="product__label">Quality Products</span>
+          </section>
+
+        </section>
+
+      </article> */
+
+/* main product article */
+.main__product--thirt{
+    /* overflow, because of transform  over screen */
+
+    position: relative;
+    height: 90vh;
+    min-height: calc(var(--minSectionSize) * .9);
+    width: var(--wrapperSize);
+   
+    /* flex C */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* product describe WRAPPER */
+  .product__describe--thirt{
+    position: relative;    
+    z-index: 1;
+    text-align: center;
+    width: 100%;
+
+    /* flex C */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .product__describe--thirt::after{
+      content: none;
+  }
+
+  .product__h2--thirt{
+    position: relative;
+    white-space: nowrap;
+    text-transform: uppercase;
+    font-size: 2.2em;
+    color: black;
+    /* margin-bottom: 5px; */
+    width: 100%;
+
+  }
+  .product__h2--thirt::before{
+    content: none;
+  }
+
+  .product__p--thirt{
+    position: relative;
+    /* margin-bottom: 5px; */
+    width: auto;
+    color: var(--darkSilver);
+    font-weight: 200;
+
+  }
+  .product__p--thirt::before{
+    content: none;
+  }
+
+  .product__a--thirt{
+    position: relative;
+    width: 100%;
+    align-self: auto;
+    box-sizing: content-box;
+    white-space: wrap;
+    /* font-size: 18px; */
+
+
+
+    text-decoration: none;
+    color: inherit;
+  }
+  .product__img--thirt{
+    position: relative;
+  }
+  
+
+  /* iframes products */
+  .product__iframes{
+      display: flex;
+      flex-direction: row;
+
+  }
