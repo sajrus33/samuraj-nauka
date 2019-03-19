@@ -24,13 +24,13 @@ const myDOM = {
         });
         window.addEventListener('scroll', function () {
 
-            if (window.scrollY > (mySize.headerHeight * .75 / 2)) {
+            if (window.scrollY > (mySize.headerHeight * .75 / 3)) {
                 myDOM.productDescribeFirst.style.animation = "goInRight 1s forwards";
             } else {
                 myDOM.productDescribeFirst.style.animation = "none";
             }
 
-            if (window.scrollY > (mySize.headerHeight * .75 * 1.5)) {
+            if (window.scrollY > (mySize.headerHeight * .75 * 1.3)) {
                 myDOM.productDescribeSecond.style.animation = "goInRight 1s forwards";
             } else {
                 myDOM.productDescribeSecond.style.animation = "none";
@@ -66,3 +66,8 @@ function init() {
     mySize.resize();
 }
 init();
+
+const lastInputDOM = querySelectorAll(".adventureSendButton");
+console.log(lastInputDOM);
+
+// klasa kropki swiecacej w header "counter__dot--selected"
