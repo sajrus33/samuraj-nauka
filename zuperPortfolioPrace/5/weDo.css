@@ -1,0 +1,13 @@
+/*   <section class="main__wrapper main__wrapper--wood">
+      <article class="main__do">
+        <h2 class="do__h2">we do the design of any coplexity</h2>
+        <p class="do__p">This is a tea proffesionalsthat make the furniture and wood decor standards. This is a tea
+          proffesionalsthat make the furniture and wood decor standards.</p>
+        <button class="do__button">watch video</button>
+      </article>
+    </section> */
+.main__wrapper--wood{
+    background-color: brown;
+    height: 90vh;
+    min-height: calc(var(--minSectionSize) * .9);
+}
