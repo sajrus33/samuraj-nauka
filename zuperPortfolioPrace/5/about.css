@@ -1,0 +1,9 @@
+.main__wrapper--lightWood{
+    height: 90vh;
+    overflow: hidden;
+    position: relative;
+}
+.about__img{
+    width: 100%;
+    height: 100%;
+}

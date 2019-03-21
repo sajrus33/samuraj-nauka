@@ -67,7 +67,6 @@ function init() {
 }
 init();
 
-const lastInputDOM = querySelectorAll(".adventureSendButton");
-console.log(lastInputDOM);
+
 
 // klasa kropki swiecacej w header "counter__dot--selected"

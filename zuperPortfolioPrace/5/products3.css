@@ -46,6 +46,7 @@
     height: 90vh;
     min-height: calc(var(--minSectionSize) * .9);
     width: var(--wrapperSize);
+    flex-flow: 1;
    
     /* flex C */
     display: flex;
@@ -109,8 +110,8 @@
     position: relative;
     /* margin-bottom: 5px; */
     width: var(--wrapperSize);
-
     color: var(--darkSilver);
+
     font-weight: 200;
 
   }
@@ -138,12 +139,39 @@
 
   /* iframes products */
   .product__iframes{
-    height: 33%;
+    height: 100%;
     margin-bottom: 5%;
+    width: 100%;
 
-    /* flex C */
-      display: flex;
-      flex-direction: row;
-      overflow: hidden;
+  /* flex C */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+      /* overflow: hidden; */
 
   }
+  .product__iframe{
+    position: relative;
+
+    background: #000;
+  border-radius: 50%;
+  /* height: 100%; */
+  /* width: var(--iframeWidth);  */
+  width: 30vh; 
+  height: 30vh;
+
+  overflow: hidden;
+
+
+  }
+.iframe{
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translate(0%,0%);
+  width: 100%; 
+  height: 100%;
+  border-radius: 50%;
+
+}
