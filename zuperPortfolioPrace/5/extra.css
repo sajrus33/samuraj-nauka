@@ -25,6 +25,12 @@
       font-size: 19px;
     }
   }
+
+   @media only screen and (max-width: 1300px) and (orientation: portrait){
+    :root{
+      --videoSize : 25vw;
+    }
+  }
   @media only screen and (max-width: 1000px){
     :root{
       --wrapperSize : 80%;
@@ -33,6 +39,12 @@
       font-size: 18px;
     }
   }
+  @media only screen and (max-width: 1000px) and (orientation: portrait){
+    :root{
+      --videoSize : 25vw;
+    }
+  }
+
  @media only screen and (max-width: 800px) and (orientation: landscape){
     :root{
       --wrapperSize : 80%;
@@ -47,6 +59,8 @@
   @media only screen and (max-width: 800px) and (orientation: portrait){
     :root{
       --wrapperSize : 80%;
+      --videoSize : 25vw;
+
     }
     body {
       font-size: 21px;
@@ -63,6 +77,12 @@
       font-size: 14px;
     }
   }
+  @media only screen and (max-width: 640px) and (orientation: portrait){
+    :root{
+      --videoSize : 25vw;
+    }
+  }
+
   @media only screen and (max-width: 480px) {
     :root{
       --wrapperSize : 90%;
@@ -72,11 +92,22 @@
     }
    
   }
+  @media only screen and (max-width: 480px) and (orientation: portrait){
+    :root{
+      --videoSize : 25vw;
+    }
+  }
+
   @media only screen and (max-width: 320px) {
     :root{
       --wrapperSize : 95%;
     }
     body {
       font-size: 12px;
+    }
+  }
+  @media only screen and (max-width: 320px) and (orientation: portrait){
+    :root{
+      --videoSize : 25vw;
     }
   }
