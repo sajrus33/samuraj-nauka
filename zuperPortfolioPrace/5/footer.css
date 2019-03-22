@@ -1,6 +1,19 @@
+/*    <footer class="footer">
+      <div class="footer__copy">RIGHTS BLA BLA &COPY;</div>
+      <div class="footer__logo">flubmaster</div>
+      <div class="footer__designer">thanks to you designer</div>
+    </footer> */
 .footer{
-    position: relative;
-    height: 20vh;
+    position: absolute;
+    z-index: 3;
+    bottom:0;
+    height: 10vh;
     width: 100%;
-    background-color: black;
+    background-color: rgba(0, 0, 0,.8);
+    overflow: hidden;
+    /* flex C */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
 }

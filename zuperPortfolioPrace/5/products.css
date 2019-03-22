@@ -74,7 +74,7 @@
   .product__h2{
     text-transform: uppercase;
     position: relative;
-    font-size: 2.2em;
+    font-size: 2em;
     color: black;
     /* margin-bottom: 5px; */
     width: 100%;
@@ -168,7 +168,7 @@
     left: -10%;
     width: 14%;
     
-    height: 2px;
+    height: 3px;
     background-color: var(--bege);
     /* background-color: #BEA67C; */
 
@@ -280,7 +280,7 @@
     left: 105%;
     width: 14%;
     
-    height: 2px;
+    height: 3px;
     background-color: var(--bege);
     /* background-color: #BEA67C; */
 

@@ -12,8 +12,8 @@ ul,ol{
 
 
 :root{
-  /* --bege : rgb(211, 167, 73); */
-  --bege : #BEA67C;
+  
+  --bege : rgb(190, 166, 124);
   --silver: #a7a691;
   --white: white;
   /* --darkSilver: #464646; */
@@ -22,11 +22,12 @@ ul,ol{
   
 
   --minSectionSize: 320px;
-
   --wrapperSize : 60%;
-  --logoSize: 100px;
-  --productImgHeight : 50%;
+
+  --productImgHeight : 60%;
   --videoSize: 25vh;
+
+  --doSectionSize: 80%;
 }
 
 
@@ -335,18 +336,20 @@ body{
   height: 1px;
   background-color: #fff;
 
+  transform: translate(0,-50%);
+
 }
 .slide__button::before{
   content: "";
   position: absolute;
   right:15%;
   top: 50%;
-  width: 5px;
-  height: 5px;
+  width: 4px;
+  height: 4px;
   border-top: 1px white solid;
   border-right: 1px white solid;
 
-  transform:translateY(-45%) rotate(45deg);
+  transform:translateY(-50%) rotate(45deg);
 
 }
 .slide__button:hover{

@@ -1,3 +1,6 @@
+const myGlobal = {
+}
+
 const myDOM = {
     // header
     header: document.querySelector(".header"),
@@ -9,6 +12,11 @@ const myDOM = {
     // products
     productDescribeFirst: document.querySelector(".product__describe--first"),
     productDescribeSecond: document.querySelector(".product__describe--second"),
+    // videos
+    videosContainers: document.querySelectorAll(".video__wrapper"),
+    videos: document.querySelectorAll(".iframe"),
+
+
 
 
 
@@ -43,6 +51,20 @@ const myDOM = {
 
         });
         window.addEventListener("resize", mySize.resize);
+
+        myDOM.videosContainers.forEach(container => {
+            container.addEventListener("click", function () {
+                const videoWrapper = this.childNodes[1];
+                const video = videoWrapper.childNodes[1];
+                if (video.paused) {
+
+                    video.play();
+                } else {
+                    video.pause();
+
+                }
+            });
+        });
 
     },
 
