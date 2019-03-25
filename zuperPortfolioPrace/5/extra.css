@@ -8,6 +8,9 @@
     transform: translateX(0);
   }
 }
+
+
+
   @media only screen and (max-width: 1620px){
     :root{
       --wrapperSize : 80%;
@@ -17,6 +20,9 @@
       font-size: 21px;
     }
   }
+
+
+
   @media only screen and (max-width: 1300px){
     :root{
       --wrapperSize : 80%;
@@ -29,8 +35,20 @@
    @media only screen and (max-width: 1300px) and (orientation: portrait){
     :root{
       --videoSize : 25vw;
+      --productImgHeight : 40%;
+
     }
+    .main__wrapper--lightWood{
+      height: 50vh;
+    }
+    .main__product{
+      height: 50vh;
+    }
+   
   }
+
+
+
   @media only screen and (max-width: 1000px){
     :root{
       --wrapperSize : 80%;
@@ -39,13 +57,15 @@
       font-size: 18px;
     }
   }
-  @media only screen and (max-width: 1000px) and (orientation: portrait){
+  /* @media only screen and (max-width: 1000px) and (orientation: portrait){
     :root{
-      --videoSize : 25vw;
-    }
-  }
 
- @media only screen and (max-width: 800px) and (orientation: landscape){
+    }
+  } */
+
+
+
+ @media only screen and (max-width: 815px) and (orientation: landscape){
     :root{
       --wrapperSize : 80%;
     }
@@ -56,10 +76,9 @@
       display: none;
     }
   }
-  @media only screen and (max-width: 800px) and (orientation: portrait){
+  @media only screen and (max-width: 815px) and (orientation: portrait){
     :root{
       --wrapperSize : 80%;
-      --videoSize : 25vw;
 
     }
     body {
@@ -69,6 +88,10 @@
       display: none;
     }
   }
+
+
+
+
   @media only screen and (max-width: 640px) {
     :root{
       --wrapperSize : 80%;
@@ -77,11 +100,14 @@
       font-size: 14px;
     }
   }
-  @media only screen and (max-width: 640px) and (orientation: portrait){
+  /* @media only screen and (max-width: 640px) and (orientation: portrait){
     :root{
-      --videoSize : 25vw;
+
     }
-  }
+  } */
+
+
+
 
   @media only screen and (max-width: 480px) {
     :root{
@@ -92,11 +118,15 @@
     }
    
   }
-  @media only screen and (max-width: 480px) and (orientation: portrait){
+  /* @media only screen and (max-width: 480px) and (orientation: portrait){
     :root{
-      --videoSize : 25vw;
+
     }
-  }
+   
+  } */
+
+
+
 
   @media only screen and (max-width: 320px) {
     :root{
@@ -106,8 +136,9 @@
       font-size: 12px;
     }
   }
-  @media only screen and (max-width: 320px) and (orientation: portrait){
+  /* @media only screen and (max-width: 320px) and (orientation: portrait){
     :root{
-      --videoSize : 25vw;
+
     }
-  }
+
+  } */
