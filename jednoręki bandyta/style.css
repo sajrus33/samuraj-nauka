@@ -1,0 +1,134 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+   font-size: 16px;
+   /* height: 100vh; */
+   background-color: tomato;
+   /* flex C */
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+}
+/* <div class="wrap"></div>
+    <h1>One-armed bandit</h1>
+
+    <section class="game">
+        <div class="color"></div>
+        <div class="color"></div>
+        <div class="color"></div>
+    </section>
+
+    <section class="play">
+        <input type="number" placeholder="bet" class="bid">
+        <button class="start">Start</button>
+    </section>
+
+  */
+  /*               wrapper */
+.wrap{
+    position: relative;
+    min-width: 320px;
+    height: 100vh;
+    min-height: 320px;
+    /* flex C */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.h1{
+    font-size: 2em;
+    /* font-weight: 800; */
+    letter-spacing: .1em;
+    color: black;
+}
+/*                   game section */
+.game{
+    position: relative;
+    width: 100%;
+    height: 40%;
+    /* background-color: black; */
+    /* flex C */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.color{
+    background-color: #fff;
+    height: 100%;
+    width: 30%;
+}
+/*                   play section */
+.play{
+    width: 100%;
+    height: 20%;
+     /* flex C */
+   display: flex;
+   flex-direction: column;
+   justify-content: space-around;
+   align-items: center;
+}
+.bid{
+    position: relative;
+    height: 50%;
+    width: 100%;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+.bid::after{
+    content: "$";
+
+    position: absolute;
+    right:0;
+    top:50%;
+    transform: translate(-50%,-50%);
+    background-color: #fff;
+
+}
+.start{
+    height: 40%;
+    width: 30%;
+}
+/*   <section class="panel">
+        Your coins:
+        <span class="wallet"></span>
+    </section>
+
+    <section class="score">
+        <span class="result"></span>
+        Za tobą
+        <span class="number"></span>
+        gier, w tym
+        <span class="win"></span>
+        wygranych i
+        <span class="lost"></span>
+        przegranych
+    </section> */ 
+
+
+/*                     panel section */
+.panel{
+ height: 10%;
+ font-size: 1.5em;
+ /* flex C */
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-content: center;
+}
+
+.score{
+    width: 100%;
+    font-size: 1.2em;
+}
+
+span{
+    font-weight: 600;
+}

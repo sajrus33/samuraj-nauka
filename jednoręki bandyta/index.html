@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>One-armed bandit</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="wrap">
+
+        <h1 class="h1">One-armed bandit</h1>
+
+        <section class="game">
+            <div class="color color--first"></div>
+            <div class="color color--second"></div>
+            <div class="color color--thirt"></div>
+        </section>
+
+        <section class="play">
+            <input type="number" placeholder="bet" class="bid">
+            <button class="start">Start</button>
+        </section>
+
+        <section class="panel">
+            Your coins:
+            <span class="wallet">500</span>
+        </section>
+
+        <section class="score">
+            <span class="result">1</span>
+            Za tobą
+            <span class="number">2</span>
+            gier, w tym
+            <span class="win">3</span>
+            wygranych i
+            <span class="lost">4</span>
+            przegranych
+        </section>
+
+    </div>
+
+    <script src="Wallet.js"></script>
+
+    <script src="Game.js"></script>
+</body>
+
+</html>

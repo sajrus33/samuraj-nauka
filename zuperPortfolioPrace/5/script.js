@@ -57,8 +57,15 @@ const myDOM = {
                 const videoWrapper = this.childNodes[1];
                 const video = videoWrapper.childNodes[1];
                 if (video.paused) {
-
+                    video.requestFullscreen();
                     video.play();
+                    function listener() {
+                        console.log(video);
+                        video.webkitExitFullScreen();
+                        video.pause();
+                        video.removeEventListener("click", listener);
+                    };
+                    video.addEventListener("click", listener);
                 } else {
                     video.pause();
 
