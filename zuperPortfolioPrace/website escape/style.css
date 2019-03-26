@@ -1,0 +1,429 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+:root{
+    --headerColor: white;
+    --headerH1Size: 3.5em;
+    --headerGetHeight: 40px;
+    --headerQuestionSize: 1.4em;
+
+    --appWidth: 60%;
+    --appMarginBetweenColumns: 50px 0px;
+
+    --h2Size: 2.5em ;
+}
+
+body{
+    font-size: 15.5px;
+}
+p{
+    font-size: 1.1em;
+}
+.header{
+    position: relative;
+
+    height: 100vh;
+    background-image:linear-gradient( rgba(0,0,0,.3)100%, rgba(0,0,0,0) ), url("img/topBackground.png"); 
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    color: var(--headerColor);
+    white-space: nowrap;
+}
+
+.nav{
+    position: relative;
+    top: 10%;
+    transform: translateY(-50%);
+    width: var(--appWidth);
+    margin: 0 auto;
+
+    /* flex container */
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav__logo{
+    background-image: url("img/logo.png");
+    background-size: 100% 100%;
+    width: 140px;
+}
+
+.navList{
+    min-width: 40%;
+    list-style: none;
+
+    /* flex container */
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.navList__element{
+    font-size: 1em;
+}
+
+.navList__link{
+    text-decoration: none;
+    color: inherit;
+
+}
+
+.header__question{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+    font-size: var(--headerQuestionSize);
+
+    margin-bottom: 10px;
+
+}
+
+.header__h1{
+    text-transform: uppercase;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+    font-size: var(--headerH1Size);
+    letter-spacing: .1em;
+}
+
+.header__getMore{
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+    margin-top: 20px;
+
+    width: 180px;
+    height: var(--headerGetHeight);
+    font-size: 1.6em;
+    line-height: var(--headerGetHeight);
+    text-align: center;
+    padding: 1%;
+
+    border: .2em var(--headerColor) solid;
+    /* border: 2px white solid; */
+    
+}
+.header__getMore:hover{
+    background-color: var(--headerColor);
+    color: rgba(0,0,0,.5);
+    border-color: rgba(0,0,0,.5)
+}
+
+.header__link{
+    display: block;
+    width: 100%;
+    height: 100%;
+    transform: translateY(-100%);
+}
+
+
+/*                                                         MAIN                                                         */
+.main__wrapper{
+    background-color: white;
+
+    min-height: 160px;
+
+    width: 100%;
+    /* flex container */
+    display: flex;
+    justify-content: center;
+
+    /* overflow: hidden;                                                !!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+
+
+}
+.main__wrapper--gray{
+    background-color: rgba(250,250,250,1);
+
+}
+.main__wrapper--black{
+    background-color: black;
+
+}
+
+.main__article{
+    width: var(--appWidth);  
+
+    /* flex container */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dev__wrapper,.brand__wrapper{
+    width: 100%;
+     /* flex container */
+     display: flex;
+     flex-direction: column;
+}
+
+.main__h2{
+    white-space: nowrap;
+    font-size:var(--h2Size);
+    margin-bottom: 5%;
+    padding-left: 3%;
+    font-weight: 800 ;
+}
+.main__h2--nopadding{
+    padding: 0;
+}
+.main__h2--thin{
+    font-weight: 400;
+}
+
+.main__p{
+    padding: 5%;
+}
+/* ARTICLE 1 DEVELOPMENT*/
+.main__article--dev{
+    height: 50vh;
+    
+}
+.dev{
+    height: 50vh;
+}
+
+ 
+.dev__img{
+    width:40%;
+}
+
+/* ARTICLE 2 BRAND */
+.brand{
+    height: 50vh;
+}
+.brand__img{
+    width:40%;
+}
+
+
+/* ARTICLE 3 SKILLS */
+
+.skills{
+    height: 75vh;
+    /* flex container */
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: space-around;
+}
+.skill{
+    /* flex container */
+    display: flex;
+    flex-direction: row;
+
+    flex-basis: 40%;
+}
+.skill__container--img{
+    min-width: 50px;
+    min-height: 50px;
+    max-width: 50px;
+    max-height: 50px;
+    background-color: black;
+    border-radius: 50%;
+    /* flex container */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.skill__img{
+    height: 50%;
+    width: 50%;
+}
+.skill__h3{
+    padding-left: 5%;
+    white-space: nowrap;
+}
+
+/* ARTICLE 4 CLIENTS */
+.main__q{
+    font-size: 1.1em;
+    text-align: center;
+}
+
+
+.clients{
+    height: 100vh;
+    /* flex container */
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: space-around;
+}
+.clients__text{
+    white-space: nowrap;
+     /* flex container */
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+}
+.client{
+    height: 20%;
+     /* flex container */
+    display: flex;
+    justify-content: space-around;
+}
+
+.client__img{
+    /* flex-shrink: 0; */
+    height: 130%;
+    width: auto;
+    transform: translateY(-15%);
+    
+}
+.client__text{
+    width: 50%;
+
+    background-color: white;
+    border: 1px rgba(237,237,237,1) solid;
+
+    /* flex container */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.client__text--first::before{
+    content: "";
+    height: 5%;
+    width: 6%;
+    background-color: black;
+}
+.client__text--second::after{
+    content: "";
+    height: 5%;
+    width: 2%;
+    background-color: black;
+}
+.client__p{
+    font-size: .9em;
+}
+/* ARTICLE 5 TECHNOLOGYS */
+.technology{
+    height: 10vh;
+}
+.technology__wrapper{
+
+}
+/* ARTICLE 6 TEAM */
+.team{
+    height: 100vh;
+}
+
+
+
+/* 
+  <article class="dev">
+                <section class="dev__wrapper">
+                    <h2 class="dev__h2"></h2>
+                    <p class="dev__p"></p>
+                </section>
+                <img class="dev__img" src="img/user.png" alt="connection symbol, picture">
+            </article>
+            <article class="brand">
+                    <img class="brand__img" src="img/user.png" alt="connection symbol, picture">
+                    <section class="brand__wrapper">
+                        <h2 class="brand__h2"></h2>
+                        <p class="brand__p"></p>
+                    </section>
+            </article>
+*/
+
+@media only screen and (max-width: 1300px) {
+    body {
+      font-size: 14px;
+    }
+    .navList{
+     
+        width: 55%;
+        /* --headerH1Size: 3em; */
+    }
+    
+  
+  }
+  
+  @media only screen and (max-width: 767px) {
+    :root{
+            
+        --appWidth: 90%;
+        --headerH1Size: 2.5em;
+    }
+    body {
+      font-size: 13px;
+    }
+    
+    .navList{
+        width: 60%;
+    }
+  }
+
+  
+  
+  @media only screen and (max-width: 481px){
+      
+    body {
+      font-size: 10px;
+    }
+
+    :root{
+        --headerQuestionSize: 1.1em;
+        --headerH1Size: 2em;
+        --h2Size: 1.8em;
+
+        --appWidth: 100%;
+    }
+
+    .navList{
+        width: 70%;
+    }
+    .skill{
+        flex-basis: 95%;
+    }
+    .skills{
+        margin: var(--appMarginBetweenColumns);
+    }
+  }
+ 
+
+@media (min-width : 481px) and (max-width : 767px) and (orientation : landscape) { 
+    body {
+        font-size: 11px;
+      }
+      
+      .navList{
+          width: 70%;
+      }
+      :root{
+          --headerQuestionSize: 1.1em;
+          --headerH1Size: 2em;  
+          --h2Size: 1.8em;
+
+          --appWidth: 95%;
+      }
+    .dev,.brand,.skills,.clients{
+        margin: var(--appMarginBetweenColumns);
+    
+        }
+}
+
+  
+@media (min-width : 767px) and (max-width: 1124px) {
+    
+    :root{
+        --appWidth: 85%;
+    }
+}

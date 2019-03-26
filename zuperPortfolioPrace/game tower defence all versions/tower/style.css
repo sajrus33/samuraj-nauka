@@ -1,0 +1,409 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body{
+    background-image: url('png/mapCenter.png');
+    background-size: 32px 32px;
+
+    display: flex;
+    flex-direction: column;
+    
+    align-items: center;
+   
+}
+
+canvas{
+    background-color: transparent;
+    z-index: 2;
+    color: black;
+    font-size: 40px;
+
+    
+
+    position: fixed;
+    min-height: 392px;
+    min-width: 640px;
+    top: 0;
+    left: 0;
+
+    pointer-events: none;
+}
+
+.game{
+    cursor: url(png/sword.cur), pointer;
+    display: flex;
+    flex-direction: column;
+
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    
+}
+.gameMenu{
+    width: 640px;
+    height: 72px;
+    display: flex;
+    flex-direction: row;
+
+    border: solid silver 2.2px;
+    background-color:rgb(130, 82, 1);
+
+}
+.gameMenu button{
+    cursor: inherit;
+    border-color: silver;
+    
+}
+.leftMenu{
+    flex-basis: 100px;
+    font-family: 'Playfair Display', serif;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.leftMenu>.btn{
+    height: 32px;
+    font-size: 18px;
+    background-color: rgb(130, 82, 1);
+}
+.leftMenu>.btn:hover{
+    transform: scale(1.02);
+}
+.rightMenu{
+    flex-grow: 1;
+    justify-content: space-around;
+    align-items:center;
+
+    transition: .2s linear;
+    display: flex;
+}
+.gold{
+    width: 128px;
+    height: 64px;
+    background-color: rgb(130, 82, 1);
+    border: silver 1px solid;
+    text-align: center;
+    line-height: 64px;
+    color: gold;
+    
+    display: flex;
+}
+.goldSign{
+    margin-left: 5px;
+}
+.goldAmount{
+    flex-grow: 1;
+}
+.rightMenu>.btnTower{
+    width: 64px;
+    height: 64px;
+    background-color:rgb(130, 82, 1);
+    background-repeat: no-repeat;
+}
+.tower1,.btnTower1,.tower2,.btnTower2,.tower3,.btnTower3{
+    background-image: url("png/towerAll.png");
+}
+.btnTower2{
+    background-position: -64px 0;
+}
+.btnTower3{
+    background-position: -128px 0;
+}
+.tower1,.tower2,.tower3{
+    background-size: 32px 32px;
+    
+}
+.tower2{
+    background-position: -32px 0;
+}
+.tower3{
+    background-position: -64px 0;
+}
+.rightMenu>.btnTower:hover{
+    transform: scale(1.1);
+
+}
+.tower1,.tower2,.tower3{
+    transform: scale(1);
+    animation: buildingAnimation linear .3s; 
+    
+}
+
+.tower1::after,.tower2::after,.tower3::after{
+    display: none;
+    width: 165.22px;
+    height: 165.22px;
+
+    position: absolute;
+    left:50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+    
+
+    background: radial-gradient(transparent,#e66465);
+    border-radius: 50%;
+    content: "";
+    pointer-events: none;
+    
+    
+}
+.tower2::after{
+    width: 129.42px;
+    height: 129.42px
+}
+.tower3::after{
+    width: 370px;
+    height: 370px;
+}
+
+.tower1:hover::after,.tower2:hover::after,.tower3:hover::after{
+    display: block;
+}
+@keyframes buildingAnimation{
+    0%{opacity: 0;}
+    100%{opacity:1;
+   }
+    /*
+    0%{
+        transform: scale(1);
+
+    }
+    25%{
+        transform: scale(1.618);
+    }
+    50%{
+        transform: scale(1);
+    }
+    75%{
+        transform: scale(1.618);
+    }
+    100%{
+        transform: scale(1);
+    }*/
+    
+}
+
+.mapTable{
+   
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+   
+    background-color:transparent;
+    background-image: url('png/mapCenter.png');
+    background-size: 32px 32px;
+
+    height: 320px;
+    width: 640px;
+    min-height: 320px;
+    min-width: 640px;
+
+}
+
+.mapTable>div{
+width: 32px;
+height: 32px;
+
+background-size: cover;
+background-clip: border-box;
+border: solid rgba(255, 255, 255, .06) .1px;
+
+transition: .1618s linear animation;
+
+}
+
+
+/*                            Map Tiles */
+.mapTable>div.mapLeftTop{
+    background-image: url("png/mapLeftTop.png");
+    border-left: none;
+    border-top: none;
+   
+}
+.mapTable>div.mapTop{
+    background-image: url("png/mapTop.png");
+    border-top: none;
+   
+}
+.mapTable>div.mapRightTop{
+    background-image: url("png/mapRightTop.png");
+    border-right: none;
+    border-top: none;
+}
+.mapTable>div.mapLeft{
+    background-image: url("png/mapLEft.png");
+   
+    border-left: none;
+}
+
+.mapTable>div.mapCenter{
+   background-color:  rgba(39, 74, 22, 0.1);
+}
+.mapTable>div.mapRight{
+    background-image: url("png/mapRight.png");
+    border-right: none;
+}
+.mapTable>div.mapLeftBottom{
+    background-image: url("png/mapLeftBottom.png");
+    border-bottom: none;
+    border-left: none;
+}
+.mapTable>div.mapBottom{
+    background-image: url("png/mapBottom.png");
+    border-bottom: none;
+}
+.mapTable>div.mapRightBottom{background-image: url("png/mapRightBottom.png");}
+
+
+.mapTable>div.road{
+    background-color:transparent;
+    cursor: url(png/sword.cur), pointer ;
+}
+/*                                   Entrance Tiles */
+.mapTable>div.roadLeftEntrance{background-image: url("png/roadLeftRight.png"),url("png/mapLeft.png");}
+.mapTable>div.roadRightEntrance{background-image: url("png/roadLeftRight.png"),url("png/mapRight.png");}
+/*                                    Road Tiles */
+.mapTable>div.roadLeftRight{background-image: url("png/roadLeftRight.png");}
+.mapTable>div.roadTopLeft{background-image: url("png/roadTopLeft.png");}
+.mapTable>div.roadBottomTop{background-image: url("png/roadBottomTop.png");}
+.mapTable>div.roadBottomTop{background-image: url("png/roadBottomTop.png");}
+.mapTable>div.roadBottomLeft{background-image: url("png/roadBottomLeft.png");}
+.mapTable>div.roadBottomRight{background-image: url("png/roadBottomRight.png");}
+.mapTable>div.roadTopRight{background-image: url("png/roadTopRight.png");}
+/*Dodatki na mapie*/
+.mapTable>div.mapStone{background-image: url("png/mapStone.png");}
+.mapTable>div.mapTree{background-image: url("png/mapTree.png");}
+.mapTable>div.mapTree1{background-image: url("png/mapTree1.png");}
+.mapTable>div.mapTree2{background-image: url("png/mapTree2.png");}
+.mapTable>div.mapDiamond{background-image: url("png/mapDiamond.png");}
+.mapTable>div.mapTree2{background-image: url("png/mapTree2.png");}
+
+
+.minion{
+    animation: minionWalk linear  19s infinite;
+    
+    background-image:url("png/minionBlue.png");
+    /* background-color: transparent; */
+    cursor: url(png/sword.cur), pointer;
+    width: 32px;
+    height: 32px;
+    background-size: 32px 32px;
+    z-index: 3;
+    position: fixed;
+  
+    top: 0;
+    left: 0;
+}
+
+.minionAlive{
+    background-image:url("png/minionBlue.png");
+    position: relative;
+
+    width: 32px;
+    height: 32px;
+    background-size: 32px 32px;
+    z-index: 3;
+
+    top: 300px;
+    left: 0;
+}
+
+.destroyMinion{
+   background-image:url("png/minionBlue.png");
+   position: relative;
+   
+   width: 32px;
+   height: 32px;
+   background-position: 0 0;
+   z-index: 3;
+   position: fixed;
+  
+    top: 0;
+    left: 0;
+}
+
+.coin{
+    height: 16px;
+    width: 16px;
+
+    background-image: url('png/goldCoinSprite.png');
+    background-position: 0 0;
+    z-index: 4;
+    position: fixed;
+    left:0;
+    top: 0;
+    
+    transition: top .5s .3s;
+    animation: coinRotate 1s steps(8) infinite;
+
+    cursor: url(png/sword.cur), pointer;
+}
+@keyframes coinRotate{
+    100%{
+        background-position: 128px 0;
+    }
+}
+@keyframes minionWalk{
+  
+    100%{left:608px}
+    /*
+    0%{
+       left: 0;
+       transform: rotateY(0);
+    }
+    50%{
+        left:608px;
+        transform: rotateY(0);
+        
+    }
+    50.1%{
+        left:608px;
+        transform: rotateY(180deg);
+        
+        
+    }
+    99.9%{
+        left: 0;
+        transform: rotateY(180deg);
+    }
+    100%{
+        left:0;
+        transform: rotateY(0);
+       
+    }
+    */
+}
+.bloodScreen{
+    position: absolute;
+    left: 0;
+    top: -392px;
+    z-index: 10;
+    background-color: transparent;
+    width: 640px;
+    height: 392px;
+    
+    background-image: url(png/gameover.png);
+    background-size: contain;
+
+    animation: bloodScreen 3s both linear;
+}
+@keyframes bloodScreen {
+    100%{
+        top: 0;
+    }
+}
+
+/* .btnGameover{
+    position: absolute;
+    z-index: 10;
+    top: 10vh;
+    left: 10vh;
+    cursor: url('png/sword.cur'), pointer;
+} */

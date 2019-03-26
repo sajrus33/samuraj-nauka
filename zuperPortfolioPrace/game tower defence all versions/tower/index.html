@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,400italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>    
+    <div id="overlay">
+        <button class="btnGameover">Game OVER</button>
+        <canvas id="cnv" width="640" height="392px"></canvas>
+        <div class="game">
+            <div class="gameMenu">
+                <div class="leftMenu">
+                    <button class="btn pause">||</button>
+                    <button class="btn resume">Next Wave</button>
+                </div>
+                <div class="rightMenu">
+                    <button class="btnTower btnTower1" id="tower1"></button>
+                    <button class="btnTower btnTower2" id="tower2"></button>
+                    <button class="btnTower btnTower3" id="tower3"></button>
+                    <div class="gold">
+                        <div class="goldSign">Gold</div>    
+                        <div class="goldAmount"></div>
+                    </div>       
+                </div>
+                </div>
+
+                <div class="mapTable">
+            <!--TOP MAP 1-->
+            <div class="mapLeftTop map"></div>
+            <div class="mapTop map"></div>
+            <div class="mapTop map"></div>
+            <div class="mapTop map"></div>
+            <div class="mapTop map"></div>
+            <div class="mapTop map"></div>
+            <div class="mapTop map"></div>
+            <div class="mapTop map"></div>
+            <div class="mapTop map"></div>
+            <div class="mapTop map"></div>
+
+            <div class="mapTop map"></div>
+            <div class="mapTop map"></div>
+            <div class="mapTop map"></div>
+            <div class="mapTop map"></div>
+            <div class="mapTop map"></div>
+            <div class="mapTop map"></div>
+            <div class="mapTop map"></div>
+            <div class="mapTop map"></div>
+            <div class="mapTop map"></div>
+            <div class="mapRightTop map"></div>
+
+            <!--CENTER MAP 2-->    
+            <div class="mapLeft map"></div>
+            <div class="mapCenter map"></div>
+            <div class="mapCenter map"></div>
+            <div class="mapCenter map"></div>
+            <div class="mapCenter map"></div>
+
+            <div class="mapCenter map"></div>
+            <div class="mapCenter map"></div>
+            <div class="mapCenter map"></div>
+            <div class="mapCenter map"></div>
+            <div class="mapCenter map"></div>
+
+            <div class="mapCenter map"></div>
+            <div class="mapCenter map"></div>
+            <div class="mapCenter map"></div>
+            <div class="mapCenter map"></div>
+            <div class="mapCenter map"></div>
+
+            <div class="mapCenter map"></div>
+            <div class="mapCenter map"></div>
+            <div class="mapCenter map"></div>
+            <div class="mapCenter map"></div>
+            <div class="mapRight map"></div>
+
+            <!--CENTER MAP 3-->
+            <div class="mapLeft map"></div>
+            <div class="mapCenter map"></div>
+            <div class="mapCenter map"></div>
+            <div class="mapCenter map"></div>
+            <div class="mapCenter map"></div>
+
+            <div class="mapCenter map"></div>
+            <div class="mapCenter map"></div>
+            <div class="mapCenter map"></div>
+            <div class="mapCenter map"></div>
+            <div class="mapCenter map"></div>
+
+            <div class="mapCenter map"></div>
+            <div class="mapCenter map"></div>
+            <div class="mapCenter map"></div>
+            <div class="mapCenter map"></div>
+            <div class="mapCenter map"></div>
+
+            <div class="mapCenter map"></div>
+            <div class="mapCenter map"></div>
+            <div class="mapCenter map"></div>
+            <div class="mapCenter map"></div>
+            <div class="mapRight map"></div>
+
+            <!--CENTER MAP 4-->
+            <div class="mapLeft map"></div>
+            <div class="mapCenter map"></div>
+            <div class="mapCenter map"></div>
+            <div class="mapCenter map"></div>
+            <div class="mapCenter map"></div>
+
+            <div class="mapCenter map"></div>
+            <div class="mapCenter map"></div>
+            <div class="mapCenter map"></div>
+            <div class="mapCenter map"></div>
+            <div class="mapCenter map"></div>
+
+            <div class="mapCenter map"></div>
+            <div class="mapCenter map"></div>
+            <div class="mapCenter map"></div>
+            <div class="mapCenter map"></div>
+            <div class="mapCenter map"></div>
+
+            <div class="mapCenter map"></div>
+            <div class="mapCenter map"></div>
+            <div class="mapCenter map"></div>
+            <div class="mapCenter map"></div>
+            <div class="mapRight map"></div>
+
+            <!--CENTER MAP 5-->
+            <div class="mapLeft map"></div>
+            <div class="mapCenter map"></div>
+            <div class="mapCenter map"></div>
+            <div class="mapCenter map"></div>
+            <div class="mapCenter map"></div>
+
+            <div class="mapCenter map"></div>
+            <div class="mapCenter map"></div>
+            <div class="mapCenter map"></div>
+            <div class="mapCenter map"></div>
+            <div class="mapCenter map"></div>
+
+            <div class="mapCenter map"></div>
+            <div class="mapCenter map"></div>
+            <div class="mapCenter map"></div>
+            <div class="mapCenter map"></div>
+            <div class="mapCenter map"></div>
+
+            <div class="mapCenter map"></div>
+            <div class="mapCenter map"></div>
+            <div class="mapCenter map"></div>
+            <div class="mapCenter map"></div>
+            <div class="mapRight map"></div>
+
+            <!--CENTER MAP 6-->
+            <div class="mapCenter roadLeftEntrance road map"></div>
+            <div class="mapCenter roadLeftRight road map"></div>
+            <div class="mapCenter roadLeftRight road map"></div>
+            <div class="mapCenter roadLeftRight road map"></div>
+            <div class="mapCenter roadLeftRight road map"></div>
+
+            <div class="mapCenter roadLeftRight road map"></div>
+            <div class="mapCenter roadLeftRight road map"></div>
+            <div class="mapCenter roadLeftRight road map"></div>
+            <div class="mapCenter roadLeftRight road map"></div>
+            <div class="mapCenter roadLeftRight road map"></div>
+
+            <div class="mapCenter roadLeftRight road map"></div>
+            <div class="mapCenter roadLeftRight road map"></div>
+            <div class="mapCenter roadLeftRight road map"></div>
+            <div class="mapCenter roadLeftRight road map"></div>
+            <div class="mapCenter roadLeftRight road map"></div>
+
+            <div class="mapCenter roadLeftRight road map"></div>
+            <div class="mapCenter roadLeftRight road map"></div>
+            <div class="mapCenter roadLeftRight road map"></div>
+            <div class="mapCenter roadLeftRight road map"></div>
+            <div class="mapRight roadRightEntrance road map"></div>
+
+            <!--CENTER MAP 7-->
+            <div class="mapLeft map"></div>
+            <div class="mapCenter map"></div>
+            <div class="mapCenter map"></div>
+            <div class="mapCenter map"></div>
+            <div class="mapCenter map"></div>
+
+            <div class="mapCenter map"></div>
+            <div class="mapCenter map"></div>
+            <div class="mapCenter map"></div>
+            <div class="mapCenter map"></div>
+            <div class="mapCenter map"></div>
+
+            <div class="mapCenter map"></div>
+            <div class="mapCenter map"></div>
+            <div class="mapCenter map"></div>
+            <div class="mapCenter map"></div>
+            <div class="mapCenter map"></div>
+
+            <div class="mapCenter map"></div>
+            <div class="mapCenter map"></div>
+            <div class="mapCenter map"></div>
+            <div class="mapCenter map"></div>
+            <div class="mapRight map"></div>
+
+            <!--CENTER MAP 8-->
+            <div class="mapLeft map"></div>
+            <div class="mapCenter map"></div>
+            <div class="mapCenter map"></div>
+            <div class="mapCenter map"></div>
+            <div class="mapCenter map"></div>
+
+            <div class="mapCenter map"></div>
+            <div class="mapCenter map"></div>
+            <div class="mapCenter map"></div>
+            <div class="mapCenter map"></div>
+            <div class="mapCenter map"></div>
+
+            <div class="mapCenter map"></div>
+            <div class="mapCenter map"></div>
+            <div class="mapCenter map"></div>
+            <div class="mapCenter map"></div>
+            <div class="mapCenter map"></div>
+
+            <div class="mapCenter map"></div>
+            <div class="mapCenter map"></div>
+            <div class="mapCenter map"></div>
+            <div class="mapCenter map"></div>
+            <div class="mapRight map"></div>
+
+            <!--CENTER MAP 9-->
+            <div class="mapLeft map"></div>
+            <div class="mapCenter map"></div>
+            <div class="mapCenter map"></div>
+            <div class="mapCenter map"></div>
+            <div class="mapCenter map"></div>
+
+            <div class="mapCenter map"></div>
+            <div class="mapCenter map"></div>
+            <div class="mapCenter map"></div>
+            <div class="mapCenter map"></div>
+            <div class="mapCenter map"></div>
+
+            <div class="mapCenter map"></div>
+            <div class="mapCenter map"></div>
+            <div class="mapCenter map"></div>
+            <div class="mapCenter map"></div>
+            <div class="mapCenter map"></div>
+
+            <div class="mapCenter map"></div>
+            <div class="mapCenter map"></div>
+            <div class="mapCenter map"></div>
+            <div class="mapCenter map"></div>
+            <div class="mapRight map"></div>
+
+            <!--CENTER BOTTOM 10<-->
+            <div class="mapLeftBottom map"></div>
+            <div class="mapBottom map"></div>
+            <div class="mapBottom map"></div>
+            <div class="mapBottom map"></div>
+            <div class="mapBottom map"></div>
+
+            <div class="mapBottom map"></div>
+            <div class="mapBottom map"></div>
+            <div class="mapBottom map"></div>
+            <div class="mapBottom map"></div>
+            <div class="mapBottom map"></div>
+
+            <div class="mapBottom map"></div>
+            <div class="mapBottom map"></div>
+            <div class="mapBottom map"></div>
+            <div class="mapBottom map"></div>
+            <div class="mapBottom map"></div>
+
+            <div class="mapBottom map"></div>
+            <div class="mapBottom map"></div>
+            <div class="mapBottom map"></div>
+            <div class="mapBottom map"></div>
+            <div class="mapRightBottom map"></div>
+                </div>
+               
+        </div>
+    </div>
+    
+
+<!-- <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script> -->
+
+<script src="jquery.js"></script>
+
+<script src="script.js"></script>
+
+</body>
+</html>
