@@ -1,3 +1,163 @@
 .header{
+    padding: relative;
+    height: 100vh;
+    background-image: url("../img/header.png");
+    background-size: cover;
+    /* flex C */
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    overflow: hidden;
+
+
+}
+.header::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+
+    width: 120%;
+    height: 10%;
+    background-color: #fff;
+    transform:  translate(-50%,50%) rotate(-1deg);
     
 }
+
+.nav{
+    width: var(--wrapperWidth);
+    height: 15%;
+    /* flex C */
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.logo{
+    position: absolute;
+    top:0;
+    left:0;
+}
+
+.nav__list{
+    width: var(--navWidth);
+   
+       /* flex C */
+       display: flex;
+       flex-direction: row;
+       justify-content: space-between;
+       align-items: center;
+}
+.nav__link{
+    list-style: none;
+    font-size: 1.1em;
+    font-weight: 600;
+
+}
+/* } <header class="header">
+        <!-- navigation -->
+        <div class="logo"></div>
+        <nav class="nav">
+            <ul class="nav__list">
+                <a href="#">
+                    <li class="nav__link">About Me</li>
+                </a>
+                <a href="#">
+                    <li class="nav__link">My Education</li>
+                </a>
+                <a href="#">
+                    <li class="nav__link">My Skills</li>
+                </a>
+                <a href="#">
+                    <li class="nav__link">My Portfollio</li>
+                </a>
+                <a href="#">
+                    <li class="nav__link">Contact Me</li>
+                </a>
+            </ul>
+        </nav>
+        <!-- header section-->
+        <section class="header__section">
+            <img src="" alt="Author image" class="header__img">
+            <h1 class="header__h1">Brian Wala</h1>
+            <span class="header__specialization">Frontend Developer</span>
+            <button class="header__button">Hire me!</button>
+        </section>
+    </header> */
+    .header__section{
+        
+        position: relative;
+        min-height: 50%;
+        width: var(--sectionMinHeight);
+        /* flex C */
+        display: flex;
+        flex-direction: column;
+        /* background-color: #fff; */
+        align-items: center;
+        justify-content: space-around;
+        
+    }
+    .header__img{
+        display: block;
+        position: relative;
+        width: 50%;
+        height: auto;
+        filter: grayscale(66%);
+    }
+    .header__img::after{
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+    
+        width: 55%;
+        height: 75%;
+
+        border-top: 3px solid white;
+        border-right: 3px solid white;
+        transform: translate(3px,-3px);
+   
+    }
+    .header__img::before{
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    
+        width: 55%;
+        height: 75%;
+
+        border-bottom: 3px solid white;
+        border-left: 3px solid white;
+        transform: translate(-3px,3px);
+   
+    }
+
+    .header__h1{
+        font-size: 3em;
+        color: white;
+        font-weight: 600;
+
+        white-space: nowrap;
+        text-transform: uppercase;
+    }
+    .header__specialization{
+        font-size: 1.7em;
+        color: white;
+        font-weight: 400;
+
+        white-space: nowrap;
+    }
+    .header__button{
+        width: 100%;
+        padding: 5%;
+        background-color: transparent;
+        border: white solid 1px;
+        font-size: 1.7em;
+        color: white;
+        font-weight: 400;
+
+        white-space: nowrap;
+    }
