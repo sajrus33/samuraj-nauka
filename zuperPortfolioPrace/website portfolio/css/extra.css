@@ -17,7 +17,6 @@
       --logoSize: 50px;
     }
     body {
-      font-size: 21px;
     }
   }
 
@@ -28,7 +27,7 @@
       --wrapperSize : 80%;
     }
     body {
-      font-size: 19px;
+      font-size: 12px;
     }
   }
 
@@ -38,6 +37,9 @@
       --wrapperWidth: 90%;
       --navWidth: 100%;
   
+  }
+  .nav__list{
+    display:none;
   }
     .main__wrapper--lightWood{
       height: 50vh;
@@ -55,7 +57,6 @@
       --wrapperSize : 80%;
     }
     body {
-      font-size: 18px;
     }
   }
   /* @media only screen and (max-width: 1000px) and (orientation: portrait){
@@ -73,9 +74,11 @@
     --navWidth: 100%;
 
 }
+.nav__list{
+  display:none;
+}
   
     body {
-      font-size: 16px;
     }
     .header__nav--menu{
       display: none;
@@ -87,7 +90,6 @@
 
     }
     body {
-      font-size: 21px;
     }
     .header__nav--menu{
       display: none;
@@ -102,7 +104,6 @@
       --wrapperSize : 80%;
     }
     body {
-      font-size: 14px;
     }
   }
   /* @media only screen and (max-width: 640px) and (orientation: portrait){
@@ -140,6 +141,7 @@
     body {
       font-size: 12px;
     }
+  
   }
   /* @media only screen and (max-width: 320px) and (orientation: portrait){
     :root{
