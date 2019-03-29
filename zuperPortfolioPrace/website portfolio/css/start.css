@@ -3,6 +3,11 @@
     --wrapperWidth: 90%;
     --navWidth: 50%;
 
+    --blue : rgba(73,222,244,1);
+    --yellow : rgba(255,216,0,1);
+    --green : rgba(86,222,150,1);
+
+
 }
 *{
     padding: 0;

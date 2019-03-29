@@ -35,8 +35,8 @@
 }
 .about__section{
     /* background-color: blue; */
-    height: 25%;
-    width: 90%;
+    height: 15%;
+    width: 70%;
     display: flex;
     flex-direction: row;
     /* flex C */
@@ -50,10 +50,23 @@
 
 }
 .about__describe{
-    height: 90%;
-    width: 40%;
-    background-color: black;
+    height: 100%;
+    width: 45%;
+    /* background-color: black; */
+    /* color: #fff; */
+   
+     /* flex C */
+     display: flex;
+     flex-direction: column;
+     align-items: flex-start;
+     justify-content: space-around;
 }
+.about__h2{
+    font-size: 2em;
+    font-weight: 800;
+}
+
+
 /*     <section class=about__section>
                     <!-- describe wrapper -->
                     <section class="about__describe">
@@ -73,7 +86,37 @@
                 </section>
  */
 .about__note{
-    height: 90%;
-    width: 40%;
-    background-color: yellow;
+    height: 100%;
+    width: 45%;
+    color: white;
+    font-size: 2em;
+    font-weight: 600;
+    /* background-color: yellow; */
+     /* flex C */
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: space-around;
+}
+
+/* yellow */
+.about__note--yellow{
+    background-color: var(--yellow);
+}
+.about__number--yellow{
+    color: var(--yellow);
+}
+/* blue */
+.about__note--blue{
+    background-color: var(--blue);
+}
+.about__number--blue{
+    color: var(--blue);
+}
+/* green */
+.about__note--green{
+    background-color: var(--green);
+}
+.about__number--green{
+    color: var(--green);
 }
