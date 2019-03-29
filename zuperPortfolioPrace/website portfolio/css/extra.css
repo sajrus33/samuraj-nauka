@@ -11,36 +11,48 @@
 
 
 
-  @media only screen and (max-width: 1620px){
-    :root{
-      --wrapperSize : 80%;
-      --logoSize: 50px;
-    }
-    body {
-    }
-  }
-
-
-
-  @media only screen and (max-width: 1300px){
-    :root{
-      --wrapperSize : 80%;
-    }
-    body {
-      font-size: 12px;
-    }
-  }
-
-   @media only screen and (max-width: 1300px) and (orientation: portrait){
+  @media only screen and (max-width: 3000px)and (orientation: landscape){
     :root{
       --sectionMinHeight: 320px;
       --wrapperWidth: 90%;
-      --navWidth: 100%;
+      --navWidth: 50%;
   
+  
+      --aboutLineLeft: 50%;
+  
+      --noteAfterSize: 25px;
+      /* --noteWidth: 45%; */
+      /* 100 */
+      /* 45 */
   }
-  .nav__list{
+    body {
+      font-size: 20px;
+    }
+  }
+  @media only screen and (max-width: 3000px) and (orientation: portrait){
+    :root{
+      --sectionMinHeight: 320px;
+      --wrapperWidth: 90%;
+      --navWidth: 50%;
+
+      --aboutLineLeft: 90%;
+  
+      --noteAfterSize: 25px;
+      --noteWidth: 100%;
+      /* 100 */
+      --noteHeight:calc(45% * .6);
+      /* 45 */
+      --describeOrder: 1;
+      --noteOrder: 2;
+      --noteBeforeLeft: 100%;
+  
+  } 
+  body {
+    font-size: 18px;
+  }
+  /* .nav__list{
     display:none;
-  }
+  } */
     .main__wrapper--lightWood{
       height: 50vh;
     }
@@ -52,12 +64,66 @@
 
 
 
-  @media only screen and (max-width: 1000px){
+
+  @media only screen and (max-width: 1366px)and (orientation: landscape){
     :root{
       --wrapperSize : 80%;
     }
     body {
+      font-size: 17px;
     }
+  }
+
+   @media only screen and (max-width: 1366px) and (orientation: portrait){
+    :root{
+      --sectionMinHeight: 320px;
+      --wrapperWidth: 90%;
+      /* --navWidth: 100%; */
+  
+  }
+  body {
+    font-size: 12px;
+
+  }
+ 
+    .main__wrapper--lightWood{
+      height: 50vh;
+    }
+    .main__product{
+      height: 50vh;
+    }
+   
+  }
+
+
+
+  @media only screen and (max-width: 1080px)and (orientation: landscape){
+    :root{
+    --navWidth: 50%;
+      --wrapperSize : 80%;
+    }
+    body {
+      font-size: 16px;
+
+    }
+
+    .nav__list{
+      display:none;
+    }
+    
+  }
+  @media only screen and (max-width: 1080px)and (orientation: portrait){
+    :root{
+      --wrapperSize : 80%;
+    }
+    body {
+      font-size: 18px;
+
+    }
+    .nav__list{
+      display:none;
+    }
+    
   }
   /* @media only screen and (max-width: 1000px) and (orientation: portrait){
     :root{
@@ -67,11 +133,10 @@
 
 
 
- @media only screen and (max-width: 815px) and (orientation: landscape){
+ @media only screen and (max-width: 872px) and (orientation: landscape){
   :root{
     --sectionMinHeight: 320px;
     --wrapperWidth: 90%;
-    --navWidth: 100%;
 
 }
 .nav__list{
@@ -79,20 +144,27 @@
 }
   
     body {
+      font-size: 11px;
+
     }
     .header__nav--menu{
       display: none;
     }
   }
-  @media only screen and (max-width: 815px) and (orientation: portrait){
+  @media only screen and (max-width: 872px) and (orientation: portrait){
     :root{
       --wrapperSize : 80%;
 
     }
     body {
+      font-size: 16px;
+
     }
     .header__nav--menu{
       display: none;
+    }
+    .nav__list{
+      display:none;
     }
   }
 
@@ -102,15 +174,22 @@
   @media only screen and (max-width: 640px) {
     :root{
       --wrapperSize : 80%;
-    }
-    body {
-    }
-  }
-  /* @media only screen and (max-width: 640px) and (orientation: portrait){
-    :root{
+    --noteBeforeSize: 12.5px;
 
     }
-  } */
+    body {
+      font-size: 9.5px;
+
+    }
+  }
+  @media only screen and (max-width: 640px) and (orientation: portrait){
+    body {
+      font-size: 12px;
+    }
+    .skills{
+      height: 50vh;
+    }
+  }
 
 
 
@@ -118,28 +197,41 @@
   @media only screen and (max-width: 480px) {
     :root{
       --wrapperSize : 90%;
+      
     }
     body {
-      font-size: 13px;
+      font-size: 10px;
+    }
+.about__note{
+  font-weight: 600;
+}
+   
+  }
+  @media only screen and (max-width: 480px) and (orientation: portrait){
+    body {
+      font-size: 12px;
     }
    
   }
-  /* @media only screen and (max-width: 480px) and (orientation: portrait){
-    :root{
-
-    }
-   
-  } */
 
 
 
 
-  @media only screen and (max-width: 320px) {
+  @media only screen and (max-width: 320px)and (orientation: landscape) {
     :root{
       --wrapperSize : 95%;
     }
     body {
-      font-size: 12px;
+      font-size: 10px;
+    }
+  
+  }
+  @media only screen and (max-width: 321px)and (orientation: portrait) {
+    :root{
+      --wrapperSize : 95%;
+    }
+    body {
+      font-size: 9.5px;
     }
   
   }

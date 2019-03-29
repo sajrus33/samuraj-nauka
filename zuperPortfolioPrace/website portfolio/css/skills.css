@@ -1,0 +1,94 @@
+.main__section--skills{  
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+.main__section--skills::after{  
+    content: "";
+    position: absolute;
+    top: 0%;
+    left: -1%;
+    transform: translate(0%,-50%) rotate(-3deg);
+
+    width: 101%;
+    height: calc(10% / .5);
+    background-color: var(--gray);
+    z-index: 1;
+
+}
+.skills{
+    height: 75vh;
+    /* flex C */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.skill{
+    width: 31%;
+    height: 65%;
+    /* flex C */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.skill__img{
+    position: relative;
+}
+.skill__img::before{
+    box-sizing: border-box;
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    /* transform: translate(2px,-2px); */
+    border-top: 2px solid var(--grayDark);     
+    border-right: 2px solid var(--grayDark);     
+
+    width: 20%;
+    height: 40%;
+}
+.skill__img::after{
+    box-sizing: border-box;
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    /* transform: translate(-2px,2px); */
+    border-left: 2px solid var(--grayDark);     
+    border-bottom: 2px solid var(--grayDark);     
+
+    width: 20%;
+    height: 40%;
+}
+
+/*   <section class="skills">
+
+                    <!-- skill 1 -->
+                    <section class="skill">
+                    
+                        <img src="" alt="First degree" class="skill__img">
+                        <h3 class="skill__h3">Bachelor's degree</h3>
+                        <span class="skill__school">New Western College</span>
+                        <p class="skill__p">Lorem ipsum dolor sit amlet consecetuadising elit. Fusce grawica weit leo o
+                            com erfi omare di.</p>
+                    </section>
+
+                    <!-- skill 2 -->
+                    <section class="skill">
+                        <img src="" alt="First degree" class="skill__img">
+                        <h3 class="skill__h3">Certifications</h3>
+                        <span class="skill__school">New Western College</span>
+                        <p class="skill__p">Lorem ipsum dolor sit amlet consecetuadising elit. Fusce grawica weit leo o
+                            com erfi omare di.</p>
+                    </section>
+
+                    <!-- skill 3 -->
+                    <section class="skill">
+                        <img src="" alt="First degree" class="skill__img">
+                        <h3 class="skill__h3">Master's degree</h3>
+                        <span class="skill__school">New Western College</span>
+                        <p class="skill__p">Lorem ipsum dolor sit amlet consecetuadising elit. Fusce grawica weit leo o
+                            com erfi omare di.</p>
+                    </section>
+ */

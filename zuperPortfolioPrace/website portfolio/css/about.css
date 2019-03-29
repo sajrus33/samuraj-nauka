@@ -1,7 +1,16 @@
+.main__section--about{
+    position: relative;
+    background-color: var(--gray);
+    overflow: hidden;
+
+}
+
 .about{
     position: relative;
+    min-height: 135vh;
     height: 135vh;
-    /* background-color: red; */
+    width: 90%;
+/* flex-grow: 1; */
 
      /* flex C */
      display: flex;
@@ -10,11 +19,14 @@
      align-items: center;
      justify-content: center;
 
+    overflow: hidden;
+
+
 }
 .about::before{
     content: "";
     position: absolute;
-    left: 50%;
+    left: var(--aboutLineLeft);
     top: 50%;
     transform: translate(-50%,-50%);
 
@@ -22,20 +34,11 @@
     background-color: #000;
     height: 80%;
 }
-.about::after{  
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 50%;
 
-    width: 120%;
-    height: 8%;
-    background-color: #fff;
-    transform:  translate(-50%,50%) rotate(-1deg);
-}
 .about__section{
     /* background-color: blue; */
-    height: 15%;
+    position: relative;
+    height: 25%;
     width: 70%;
     display: flex;
     flex-direction: row;
@@ -43,27 +46,38 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
+
+    flex-wrap: wrap;
 
 
-    margin-bottom: 15px;
+
 
 }
 .about__describe{
-    height: 100%;
-    width: 45%;
-    /* background-color: black; */
+    height:var(--noteHeight);
+    width: var(--noteWidth);
+    /* background-color: black;  */
     /* color: #fff; */
+    order:var(--describeOrder);
    
      /* flex C */
      display: flex;
      flex-direction: column;
      align-items: flex-start;
-     justify-content: space-around;
+     justify-content: space-between;
+
+     /* box-sizing: border-box;
+     margin-bottom: 10%; */
+
 }
 .about__h2{
     font-size: 2em;
     font-weight: 800;
+}
+.about__p{
+    font-size: 1.2em;
+    font-weight: 600;
 }
 
 
@@ -86,17 +100,38 @@
                 </section>
  */
 .about__note{
-    height: 100%;
-    width: 45%;
+    position: relative;
+    height:var(--noteHeight);
+    width: var(--noteWidth);
     color: white;
     font-size: 2em;
-    font-weight: 600;
+    font-weight: 800;
+
+    order:var(--noteOrder);
     /* background-color: yellow; */
      /* flex C */
      display: flex;
      flex-direction: column;
      align-items: center;
      justify-content: space-around;
+
+     /* box-sizing: content-box; */
+     /* margin-bottom: 10%; */
+    z-index: 1;
+
+}
+
+.about__note::before{
+    content: "";
+    position: absolute;
+    z-index: 0;
+    left: var(--noteBeforeLeft);
+    top: 50%;
+    transform: translate(-50%,-50%) rotate(45deg);
+
+    width: var(--noteBeforeSize);
+    height: var(--noteBeforeSize);
+    background-color: var(--yellow);
 }
 
 /* yellow */
@@ -106,6 +141,8 @@
 .about__number--yellow{
     color: var(--yellow);
 }
+
+
 /* blue */
 .about__note--blue{
     background-color: var(--blue);
@@ -113,10 +150,23 @@
 .about__number--blue{
     color: var(--blue);
 }
+.about__note--blue::before{
+    background-color: var(--blue);
+    left: 100%;
+}
+
 /* green */
 .about__note--green{
     background-color: var(--green);
 }
 .about__number--green{
     color: var(--green);
+}
+.about__note--green::before{
+    background-color: var(--green);
+}
+.about__label{
+    z-index: 1;
+    text-align: center;
+    /* white-space: nowrap; */
 }

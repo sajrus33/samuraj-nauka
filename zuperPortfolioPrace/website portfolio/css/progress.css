@@ -1,0 +1,74 @@
+.main__section--progress{
+    height: 50vh;
+    background-image: url(../img/progress.png);
+    background-size: 100% 100%;
+}
+.progress{
+    height: 100%;
+    width: 100%;
+    /* flex C */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  
+}
+.progress__technology{
+    height: 100%;
+    width: 100%;
+
+     /* flex C */
+     display: flex;
+     flex-direction: column;
+     justify-content: space-around;
+     align-items: center;
+}
+.progress__circle{
+      /* width: 13.5%; */
+      width: calc(50vh * .333);
+      height: 33%;
+      border-radius: 50%;
+      background-color: var(--greenDark);
+
+      font-size: 2.3em;
+      font-weight: 800;
+      color: white;
+
+      margin-top: 28%;
+
+       /* flex C */
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+}
+.progress__label{
+    color: white;
+    margin-bottom: 27%;
+}
+/*   <!-- progress section                                                                   -->
+                <section class="progress">
+                    <!-- circle progress bar section 1-->
+                    <section class="progress__technology">
+                        <div class="progress__circle">33%</div>
+                        <span class="progress__label">HTML/CSS</span>
+                    </section>
+
+                    <!-- circle progress bar section 2-->
+                    <section class="progress__technology">
+                        <div class="progress__circle">33%</div>
+                        <span class="progress__label">JS</span>
+                    </section>
+
+                    <!-- circle progress bar section 3-->
+                    <section class="progress__technology">
+                        <div class="progress__circle">33%</div>
+                        <span class="progress__label">React</span>
+                    </section>
+
+                    <!-- circle progress bar section 3-->
+                    <section class="progress__technology">
+                        <div class="progress__circle">33%</div>
+                        <span class="progress__label">Node</span>
+                    </section>
+                    <!-- progress section END */

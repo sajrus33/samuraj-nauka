@@ -3,9 +3,27 @@
     --wrapperWidth: 90%;
     --navWidth: 50%;
 
+
+    --aboutLineLeft: 50%;
+
+    --noteBeforeSize: 25px;
+    --noteWidth: 45%;
+    /* 100 */
+    --noteHeight: 60%;
+    /* 45 */
+
+    --noteBeforeLeft: 0%;
+
+
     --blue : rgba(73,222,244,1);
     --yellow : rgba(255,216,0,1);
     --green : rgba(86,222,150,1);
+
+    --gray: rgba(239,239,239,1);
+
+
+    --grayDark: rgba(182,182,182);
+    --greenDark: rgba(0,148,63,1);
 
 
 }
@@ -30,3 +48,14 @@ body{
 .hide{
     display:none;
 }
+::-webkit-scrollbar {
+    width: 15px;
+    /* display: none; */
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: #000;
+  }
+   
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: transparent;
+  }

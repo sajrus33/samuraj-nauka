@@ -15,14 +15,13 @@
 .header::after{
     content: "";
     position: absolute;
-    bottom: 0;
-    left: 50%;
+    bottom: 0%;
+    left: 0%;
+    transform: translate(0%,50%) rotate(-3deg);
 
-    width: 120%;
+    width: 101%;
     height: 10%;
-    background-color: #fff;
-    transform:  translate(-50%,50%) rotate(-1deg);
-    
+    background-color: var(--gray);
 }
 
 .nav{
@@ -86,7 +85,7 @@
 }
 .nav__link{
     list-style: none;
-    font-size: 1.3em;
+    font-size: 1.1em;
     font-weight: 400;
 
 }
@@ -191,6 +190,7 @@
 
     }
     .header__button{
+        position: relative;
         width: 90%;
         padding: 5%;
         background-color: transparent;
@@ -203,5 +203,32 @@
         white-space: nowrap;
 
         margin-top: 20px;
+        overflow: hidden;
 
+        z-index: 2;
+
+    }
+    .header__button:hover{
+        color: black;
+        color: rgba(255,255,255,.5);
+        
+    }
+    .header__button::after{
+        content: "";
+        position: absolute;
+        left: 0;
+        top:0;
+        background-color: #fff;
+        transform: translateX(-100%); 
+        transition: .2s linear;
+
+        z-index: -1;
+
+        height: 100%;
+        width:100%;
+    }
+
+    .header__button:hover:after{
+        transform: translateX(0);
+        
     }
