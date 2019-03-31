@@ -1,6 +1,8 @@
 .header{
     position: relative;
     height: 100vh;
+    min-height: calc(var(--sectionMinHeight) * 1);
+
     background-image: url("../img/header.png");
     background-size: cover;
     /* flex C */
@@ -12,15 +14,18 @@
  
 
 }
+
 .header::after{
     content: "";
     position: absolute;
     bottom: 0%;
     left: 0%;
-    transform: translate(0%,50%) rotate(-3deg);
+    transform-origin: bottom left;
+    transform: translate(0%,100%)rotate(-2.5deg) ;
 
-    width: 101%;
-    height: 10%;
+    width: 110%;
+    height: var(--skewHeight);
+    /* min-height: 40px; */
     background-color: var(--gray);
 }
 
@@ -123,7 +128,7 @@
         
         position: relative;
         min-height: 50%;
-        width: var(--sectionMinHeight);
+        width: var(--portfolioMinHeight);
         /* flex C */
         display: flex;
         flex-direction: column;

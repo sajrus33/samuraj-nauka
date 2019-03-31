@@ -13,7 +13,8 @@
 
   @media only screen and (max-width: 3000px)and (orientation: landscape){
     :root{
-      --sectionMinHeight: 320px;
+      --sectionMinHeight: 480px;
+      --portfolioMinHeight: 320px;
       --wrapperWidth: 90%;
       --navWidth: 50%;
   
@@ -30,51 +31,56 @@
     }
   }
   @media only screen and (max-width: 3000px) and (orientation: portrait){
+
+
+      :root{
+        --wrapperSize : 80%;
+        --sectionMinHeight: 320px;
+        --wrapperWidth: 90%;
+        --navWidth: 50%;
+  
+        --aboutLineLeft: 90%;
+    
+        --noteAfterSize: 25px;
+        --noteWidth: 100%;
+        /* 100 */
+        --noteHeight:calc(45% * .6);
+        /* 45 */
+        --describeOrder: 1;
+        --noteOrder: 2;
+        --noteBeforeLeft: 100%;
+    
+    } 
+    body {
+      font-size: 23px;
+    }
+  }
+
+  @media only screen and (max-width: 1666px)and (orientation: landscape){
     :root{
+      --wrapperSize : 80%;
       --sectionMinHeight: 320px;
-      --wrapperWidth: 90%;
-      --navWidth: 50%;
 
-      --aboutLineLeft: 90%;
-  
-      --noteAfterSize: 25px;
-      --noteWidth: 100%;
-      /* 100 */
-      --noteHeight:calc(45% * .6);
-      /* 45 */
-      --describeOrder: 1;
-      --noteOrder: 2;
-      --noteBeforeLeft: 100%;
-  
-  } 
-  body {
-    font-size: 18px;
-  }
-  /* .nav__list{
-    display:none;
-  } */
-    .main__wrapper--lightWood{
-      height: 50vh;
     }
-    .main__product{
-      height: 50vh;
+    body {
+      font-size: 18px;
     }
-   
   }
 
-
+  
 
 
   @media only screen and (max-width: 1366px)and (orientation: landscape){
     :root{
       --wrapperSize : 80%;
+      --sectionMinHeight: 320px;
+
     }
     body {
       font-size: 17px;
     }
   }
-
-   @media only screen and (max-width: 1366px) and (orientation: portrait){
+  @media only screen and (max-width: 1366px) and (orientation: portrait){
     :root{
       --sectionMinHeight: 320px;
       --wrapperWidth: 90%;
@@ -82,7 +88,7 @@
   
   }
   body {
-    font-size: 12px;
+    font-size: 18px;
 
   }
  
@@ -95,15 +101,18 @@
    
   }
 
+ 
 
 
   @media only screen and (max-width: 1080px)and (orientation: landscape){
     :root{
     --navWidth: 50%;
       --wrapperSize : 80%;
+      --sectionMinHeight: 320px;
+
     }
     body {
-      font-size: 16px;
+      font-size: 13px;
 
     }
 
@@ -117,7 +126,7 @@
       --wrapperSize : 80%;
     }
     body {
-      font-size: 18px;
+      font-size: 17px;
 
     }
     .nav__list{
@@ -135,7 +144,6 @@
 
  @media only screen and (max-width: 872px) and (orientation: landscape){
   :root{
-    --sectionMinHeight: 320px;
     --wrapperWidth: 90%;
 
 }
@@ -144,7 +152,7 @@
 }
   
     body {
-      font-size: 11px;
+      font-size: 10px;
 
     }
     .header__nav--menu{
@@ -157,7 +165,7 @@
 
     }
     body {
-      font-size: 16px;
+      font-size:13.5px;
 
     }
     .header__nav--menu{
@@ -178,7 +186,7 @@
 
     }
     body {
-      font-size: 9.5px;
+      font-size: 9px;
 
     }
   }
@@ -202,14 +210,14 @@
     body {
       font-size: 10px;
     }
-.about__note{
-  font-weight: 600;
-}
+    .about__note{
+      font-weight: 700;
+    }
    
   }
   @media only screen and (max-width: 480px) and (orientation: portrait){
     body {
-      font-size: 12px;
+      font-size: 11px;
     }
    
   }
@@ -222,7 +230,7 @@
       --wrapperSize : 95%;
     }
     body {
-      font-size: 10px;
+      font-size: 9.5px;
     }
   
   }

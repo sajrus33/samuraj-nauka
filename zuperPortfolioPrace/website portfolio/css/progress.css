@@ -1,16 +1,61 @@
+.paralax{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../img/paralax.jpg);
+    background-size: cover;
+
+    box-shadow:inset 100vw 0 0 0 rgba(0,0,0,.82);
+    z-index: -1;
+}
 .main__section--progress{
+    position: relative;
     height: 50vh;
-    background-image: url(../img/progress.png);
-    background-size: 100% 100%;
+    /* min-height: 50vh; */
+
+    background-color: transparent;
+}
+.main__section--progress::before{
+    content: "";
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    transform-origin: bottom right;
+    transform: translate(0%,-100%)rotate(-2.5deg) ;
+
+    width: 110%;
+   height: var(--skewHeight);
+    /* min-height: 40px; */
+    background-color: white;
+}
+.main__section--progress::after{
+    content: "";
+    position: absolute;
+    bottom: 0%;
+    right: 0%;
+    transform-origin: bottom left;
+    transform: translate(1%,100%)rotate(-2.5deg) ;
+
+    width: 110%;
+    height: var(--skewHeight);
+    /* min-height: 40px; */
+    background-color: var(--gray);
+
 }
 .progress{
     height: 100%;
     width: 100%;
+
+    margin-top: 15px;
     /* flex C */
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+
+
   
 }
 .progress__technology{
@@ -22,10 +67,12 @@
      flex-direction: column;
      justify-content: space-around;
      align-items: center;
+
 }
 .progress__circle{
       /* width: 13.5%; */
       width: calc(50vh * .333);
+      min-width: calc(var(--sectionMinHeight) * .333);
       height: 33%;
       border-radius: 50%;
       background-color: var(--greenDark);

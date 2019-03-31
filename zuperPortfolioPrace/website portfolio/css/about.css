@@ -7,7 +7,7 @@
 
 .about{
     position: relative;
-    min-height: 135vh;
+    min-height: calc(var(--sectionMinHeight) * 1.35);
     height: 135vh;
     width: 90%;
 /* flex-grow: 1; */
@@ -106,6 +106,7 @@
     color: white;
     font-size: 2em;
     font-weight: 800;
+
 
     order:var(--noteOrder);
     /* background-color: yellow; */
