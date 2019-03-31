@@ -1,0 +1,19 @@
+.footer{
+    position: relative;
+    min-height: 100vh;
+    height: 100vh;
+    
+}
+.footer::before{
+    content: "";
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    transform-origin: bottom right;
+    transform: translate(0%,-100%)rotate(-2.5deg) ;
+
+    width: 110%;
+   height: var(--skewHeight);
+    /* min-height: 40px; */
+    background-color:var(--gray);
+}
