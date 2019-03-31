@@ -1,4 +1,4 @@
-.footer{
+.main__section--footer{
     position: relative;
     min-height: 100vh;
     height: 100vh;
@@ -6,7 +6,7 @@
     background-color: transparent;
     
 }
-.footer::before{
+.main__section--footer::before{
     content: "";
     position: absolute;
     top: 0%;

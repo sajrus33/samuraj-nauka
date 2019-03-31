@@ -3,7 +3,10 @@
     height: 100vh;
     min-height: calc(var(--sectionMinHeight) * 1);
 
-    background-image: url("../img/header.png");
+    /* background-image: url("../img/header.png");
+
+     */
+     background-color: transparent;
     background-size: cover;
     /* flex C */
     display: flex;
