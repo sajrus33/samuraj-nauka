@@ -105,14 +105,24 @@
      justify-content: center;
      align-items: center;
 }
+.progress__technology:hover  .pointer{
+    transform: translateY(0)  rotate(-30deg);
+}
 .pointer{
     position: absolute;
-    top: 50%;
-    font-size: .8em;
+    top: 0em;
+
+    left: 100%;
+    height: auto;
+    font-size: 1em;
     color: var(--orange);
-    transform: translateY(100%);
+    transform: translateY(50%) rotate(-30deg);
+
+    transition: .2s linear;
 }
 .progress__label{
+    position: relative;
+
     color: white;
     margin-top: 15%;
 
