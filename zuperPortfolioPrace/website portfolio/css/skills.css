@@ -60,6 +60,12 @@
 
     width: 20%;
     height: 40%;
+
+    transition: .2s linear;
+}
+.skill__img:hover::before{
+    border-width: 7px;
+
 }
 .skill__img::after{
     box-sizing: border-box;
@@ -73,6 +79,11 @@
 
     width: 20%;
     height: 40%;
+
+    transition: .2s linear;
+}
+.skill__img:hover::after{
+    border-width: 7px;
 }
 
 .skill__h3{
