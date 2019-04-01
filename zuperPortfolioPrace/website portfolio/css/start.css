@@ -7,6 +7,68 @@
     --navWidth: 50%;
 
 
+    --projectWidthBig: 36%;
+    --projectWidthSmall: 25%;
+
+    --projectHeight: 44%;
+    --projectHeight2: 48%;
+    --projectHeight3: 59%;
+
+    --projectHeight1: 52%;
+    --projectHeight2: 48%;
+    --projectHeight3: 37%;
+
+
+
+
+    
+/*  height: 44%;
+    width: 36%;
+    background-color: blue;
+    align-self: flex-start;
+    
+}
+.projects__project--second{
+    height: 48%;
+    width: 36%;
+    background-color: green;
+    align-self: flex-start;
+
+
+}
+.projects__project--thirt{
+    height: 59%;
+    width: 25%;
+    background-color: yellow;
+    align-self: flex-start;
+
+
+    
+}
+.projects__project--fourth{
+    height: 52%;
+    width: 36%;
+    background-color: purple;
+    align-self: flex-end;
+    transform: translateY(-9vh);
+
+
+}
+.projects__project--fifth{
+    height: 48%;
+    width: 36%;
+    background-color: black;
+    align-self: flex-end;
+transform: translateY(-9vh);
+
+    
+}
+.projects__project--sixth{
+    height: 37%;
+    width: 25%;
+    background-color: black;
+    align-self: flex-end;
+transform: translateY(-9vh); */
     --aboutLineLeft: 50%;
 
     --noteBeforeSize: 25px;
