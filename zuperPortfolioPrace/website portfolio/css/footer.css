@@ -19,3 +19,80 @@
     /* min-height: 40px; */
     background-color:var(--gray);
 }
+.footer{
+    /* flex C */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer__contact{
+    width: 25%;
+    height: 65%;
+    margin-bottom: 10vh;
+    /* flex E */
+    align-self: flex-end;
+
+}
+.footer__img{
+    width: 33%;
+    min-width: 64px;
+}
+.footer__mailer{
+    height: 70%;
+    width: 65%;
+    margin-bottom: 10vh;
+    /* background-color:var(--grayDark); */
+    /* flex E */
+    align-self: flex-end;
+    /* flex C */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+}
+.footer__input{
+    height: calc(7.5% / .7);
+    width: 100%;
+}
+/*       <!-- wrapper 90% of width                                                               -->
+        <section class="main__wrapper footer">
+
+            <section class="footer__contact">
+                <address class="footer__adress">
+
+                    <section class="footer__wrapper footer__wrapper--me">
+                        <div class="footer__img">
+                            <img src="img/me.jpg" alt="Author image" class="img">
+                        </div>
+                        <div class="footer__me">
+                            <h3 class="footer__h3">Brian Wala</h3>
+                            <span class="footer__specialization">Frontend Developer</span>
+                        </div>
+                    </section>
+                    <span class="footer__number">+48 662-212-779</span>
+                    <span class="footer__email">brianwala22@gmail.com</span>
+
+                    <button class="footer__button">Codepen</button>
+                    <section class="footer__wrapper footer__wrapper--media">
+                        <div class="footer__media footer__media--fb"></div>
+                        <div class="footer__media footer__media--tweeter"></div>
+                        <div class="footer__media footer__media--github"></div>
+                        <div class="footer__media footer__media--code"></div>
+                        <div class="footer__media footer__media--google"></div>
+                    </section>
+
+                </address>
+            </section>
+
+            <section class="footer__mailer">
+                <input placeholder="Full Name" type="text" class="footer__input footer__name">
+                <input placeholder="Email" type="text" class="footer__input footer__email">
+                <input placeholder="Number" type="text" class="footer__input footer__number">
+                <input placeholder="Write your Message here..." type="text" class="footer__input footer__message">
+                <input type="submit" class="footer__input footer__submit">
+            </section>
+
+        </section>
+ */
