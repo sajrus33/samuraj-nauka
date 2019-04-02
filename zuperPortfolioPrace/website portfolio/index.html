@@ -48,19 +48,19 @@
 
             <ul class="nav__list">
                 <a href="#">
-                    <li class="nav__link">About Me</li>
+                    <li class="nav__link nav__link--about">About Me</li>
                 </a>
                 <a href="#">
-                    <li class="nav__link">My Education</li>
+                    <li class="nav__link nav__link--skills">My Education</li>
                 </a>
                 <a href="#">
-                    <li class="nav__link">My Skills</li>
+                    <li class="nav__link nav__link--progress">My Skills</li>
                 </a>
                 <a href="#">
-                    <li class="nav__link">My Portfollio</li>
+                    <li class="nav__link nav__link--projects">My Portfollio</li>
                 </a>
                 <a href="#">
-                    <li class="nav__link">Contact Me</li>
+                    <li class="nav__link nav__link--footer">Contact Me</li>
                 </a>
             </ul>
         </nav>
@@ -74,7 +74,7 @@
         </section>
     </header>
 
-
+    <div class="arrow"><i class="fas fa-chevron-up arrow__ico"></i></div>
 
     <!-- main -->
     <main class="main">
@@ -250,23 +250,50 @@
             <section class="main__wrapper projects">
                 <!-- filters -->
                 <section class="projects__filters">
-                    <span class="projects__filter">All</span>
+                    <span class="projects__filter"><a class="projects__link" href="#">All</a></span>
+
                     <span class="projects__filter">/</span>
-                    <span class="projects__filter">HTML - CSS</span>
+
+                    <span class="projects__filter"><a class="projects__link" href="#">HTML - CSS</a></span>
+
+
                     <span class="projects__filter">/</span>
-                    <span class="projects__filter">JS</span>
+                    <span class="projects__filter"><a class="projects__link" href="#">JS</a></span>
+
+
+
                     <span class="projects__filter">/</span>
-                    <span class="projects__filter">React</span>
+                    <span class="projects__filter"><a class="projects__link" href="#">Node</a></span>
+
+
+
                     <span class="projects__filter">/</span>
-                    <span class="projects__filter">Node</span>
+                    <span class="projects__filter"><a class="projects__link" href="#">React</a></span>
+
+
                 </section>
                 <!-- project collection -->
                 <section class="projects__album">
-                    <article class="projects__project projects__project--first"></article>
-                    <article class="projects__project projects__project--second"></article>
-                    <article class="projects__project projects__project--thirt"></article>
-                    <article class="projects__project projects__project--fourth"></article>
-                    <article class="projects__project projects__project--fifth"></article>
+                    <article class="projects__project projects__project--first">
+                        <iframe scrolling="no" class="project__iframe" src="https://sajrus33.github.io/Flubmaster-web/"
+                            frameborder="0"></iframe>
+                    </article>
+                    <article class="projects__project projects__project--second">
+                        <iframe scrolling="no" class="project__iframe"
+                            src="https://sajrus33.github.io/TowerDefence/index.html" frameborder="0"></iframe>
+                    </article>
+                    <article class="projects__project projects__project--thirt">
+                        <iframe scrolling="no" class="project__iframe"
+                            src="https://sajrus33.github.io/App-ToDo/index.html" frameborder="0"></iframe>
+                    </article>
+                    <article class="projects__project projects__project--fourth">
+                        <iframe scrolling="no" class="project__iframe" src="https://sajrus33.github.io/Escape-Layout/"
+                            frameborder="0"></iframe>https://sajrus33.github.io/Card-game-prototype/
+                    </article>
+                    <article class="projects__project projects__project--fifth">
+                        <iframe scrolling="no" class="project__iframe"
+                            src="https://sajrus33.github.io/Card-game-prototype/" frameborder="0"></iframe>
+                    </article>
                     <article class="projects__project projects__project--sixth"></article>
 
                 </section>

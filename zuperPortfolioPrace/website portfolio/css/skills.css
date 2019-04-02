@@ -64,7 +64,7 @@
     transition: .2s linear;
 }
 .skill__img:hover::before{
-    border-width: 7px;
+    /* border-width: 5px; */
     right: -5px;
     top: -5px;
 
@@ -85,14 +85,14 @@
     transition: .2s linear;
 }
 .skill__img:hover::after{
-    border-width: 7px;
+    /* border-width: 5px; */
     left: -5px;
     bottom: -5px;
 }
 
 .skill__h3{
 margin-bottom: 3.5%;
-font-size: 1.5em;
+font-size: 1.4em;
 white-space: nowrap;
 
 }

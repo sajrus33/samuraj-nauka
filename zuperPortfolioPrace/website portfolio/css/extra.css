@@ -50,6 +50,61 @@
         --noteOrder: 2;
         --noteBeforeLeft: 100%;
     
+        --projectWidthBig: 36%;
+        --projectWidthSmall: 25%;
+    
+        --projectWidth: 44%;
+        --projectWidth2: 48%;
+        --projectWidth3:59%;
+    
+        --projectWidth4: 52%;
+        --projectWidth5: 48%;
+        --projectWidth6: 37%;
+    
+    
+
+
+
+
+        --projectHeight: var(--projectWidthBig);
+        --projectHeight2: var(--projectWidthBig);
+        --projectHeight3:var(--projectWidthSmall);
+    
+        --projectHeight4: var(--projectWidthBig);
+        --projectHeight5: var(--projectWidthBig);
+        --projectHeight6: var(--projectWidthSmall);
+
+        --projectOrder: 1;
+        --projectOrder2: 3;
+        --projectOrder3: 5;
+        --projectOrder4: 2;
+        --projectOrder5: 4;
+        --projectOrder6: 6;
+
+        --projectSelf5: flex-start;
+
+
+        --projectMargin: 0;
+
+        /* --projectWidthBig: 36%;
+        --projectWidthSmall: 25%;
+
+        --projectWidth: var(--projectWidthBig);
+        --projectWidth2: var(--projectWidthBig);
+        --projectWidth3: var(--projectWidthSmall);
+
+        --projectWidth4: var(--projectWidthBig);
+        --projectWidth5: var(--projectWidthBig);
+        --projectWidth6: var(--projectWidthSmall);
+
+
+        --projectHeight: 44%;
+        --projectHeight2: 48%;
+        --projectHeight3: 59%;
+
+        --projectHeight4: 52%;
+        --projectHeight5: 48%;
+        --projectHeight6: 37%; */
     } 
     body {
       font-size: 23px;

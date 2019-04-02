@@ -43,7 +43,7 @@ const constants = {
             // console.log("took");
 
             $(this).remove();
-            let coinSound = new Audio("audio/coinSound.wav");
+            const coinSound = new Audio("audio/coinSound.wav");
             coinSound.play();
             goldObj.actualizeGold(minionSet.prize);
         },
@@ -199,7 +199,7 @@ const mapSet = {
         this.mapTree3.src = "png/mapTree2.png";
         this.mapDiamond.src = "png/mapDiamond.png";
         this.mapStone.src = "png/mapStone.png";
-    //minion
+        //minion
         this.minion.src = "png/minionPink.png";
     },
     // maps drawing                                                                                                    FUNCTION
@@ -392,7 +392,7 @@ function minionObj(leftOfMinion, topOfMinion, minionHp, whichMinion, ) {
         }
     }
     this.draw = function () {
-        context.ctx4.drawImage(mapSet.minion,this.x,this.y,32,32);
+        context.ctx4.drawImage(mapSet.minion, this.x, this.y, 32, 32);
         context.ctx4.beginPath();
         context.ctx4.moveTo(this.x, this.y);
         context.ctx4.lineTo(this.x + this.minionHp, this.y);
@@ -404,7 +404,7 @@ function minionObj(leftOfMinion, topOfMinion, minionHp, whichMinion, ) {
         // console.log(this.minion.offset());
         // this.x = this.minion.offset().left-overlayOffset.left;
         // this.y = this.minion.offset().top-overlayOffset.top;
-        this.x +=this.dx;
+        this.x += this.dx;
         // this.y +=this.dx
         // if (this.minionHp <= 0) {
         //     this.dead();
@@ -422,7 +422,7 @@ function chooseTower() {
     }
 }
 //                                    towers constructor and shooting function                                      FUNCTION
-function tower(x, y, dmgArea, dmgSize, dmgColor, dmg, towerType, whichTower, sound,picX) {
+function tower(x, y, dmgArea, dmgSize, dmgColor, dmg, towerType, whichTower, sound, picX) {
     x += 16; //move to the middle
     y += 16; //move to the middle
 
@@ -472,25 +472,25 @@ function tower(x, y, dmgArea, dmgSize, dmgColor, dmg, towerType, whichTower, sou
 
             // console.log(targetsArray, "targetsArray pobrane minionki");
             targeting:
-                for (var i = 0; i < this.targetsArray.length; i++) {
-                    this.target.x = this.targetsArray[i].offsetLeft + minionSet.minionHalfSize;
-                    this.target.y = this.targetsArray[i].offsetTop + minionSet.minionHalfSize;
+            for (var i = 0; i < this.targetsArray.length; i++) {
+                this.target.x = this.targetsArray[i].offsetLeft + minionSet.minionHalfSize;
+                this.target.y = this.targetsArray[i].offsetTop + minionSet.minionHalfSize;
+                // console.log(this.target.x, "x liczba");
+                if (pointInCircle(this.target.x, this.target.y, this.x, this.y, this.dmgArea)) {
+
                     // console.log(this.target.x, "x liczba");
-                    if (pointInCircle(this.target.x, this.target.y, this.x, this.y, this.dmgArea)) {
-
-                        // console.log(this.target.x, "x liczba");
-                        this.targetElement = this.targetsArray[i];
+                    this.targetElement = this.targetsArray[i];
 
 
-                        for (var j = 0; j < minionSet.targetsArray.length; j++) {
-                            if (minionSet.targetsArray[j] === this.targetElement) {
-                                this.whichOne = j;
-                            }
+                    for (var j = 0; j < minionSet.targetsArray.length; j++) {
+                        if (minionSet.targetsArray[j] === this.targetElement) {
+                            this.whichOne = j;
                         }
-                        // console.log(this.targetElement);
-                        break targeting;
                     }
+                    // console.log(this.targetElement);
+                    break targeting;
                 }
+            }
         }
 
         if (this.targetElement != undefined) {
@@ -653,7 +653,7 @@ function createMinions() {
     if (minionSet.minionsConstructed == false) {
         for (let i = 0; i < minionSet.waveSize[3] + 1; i++) {
             // console.log(overlayOffset,"overlayoffset when spoting");
-            let Respown = RespownSpot( -120, 0, 32, 250);
+            let Respown = RespownSpot(-120, 0, 32, 250);
             minionSet.minionsArray.push(new minionObj(Respown.y, Respown.x, minionSet.minionHp, minionSet.whichMinion));
             minionSet.whichMinion += 1;
         }
