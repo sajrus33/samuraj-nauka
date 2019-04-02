@@ -109,6 +109,11 @@
     body {
       font-size: 23px;
     }
+    .footer__wrapper{
+      width: 100%;
+      /* flex C */
+      /* flex-direction: column; */
+  }
   }
 
   @media only screen and (max-width: 1666px)and (orientation: landscape){

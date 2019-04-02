@@ -3,7 +3,7 @@
     min-height: 100vh;
     height: 100vh;
 
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, .2);
     
 }
 .main__section--footer::before{
@@ -24,37 +24,91 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
 }
 
 .footer__contact{
     width: 25%;
-    height: 65%;
+    height: 67%;
     margin-bottom: 10vh;
     /* flex E */
-    align-self: flex-end;
+    /* align-self: flex-end; */
 
+}
+
+.footer__adress{
+    width: 100%;
+    height: 100%;
+    color: white;
+    margin-right: 8.5%;
+}
+.footer__wrapper{
+    width: 100%;
+    /* flex C */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.footer__wrapper--me{
+    height: auto;
 }
 .footer__img{
     width: 33%;
-    min-width: 64px;
+    min-width: 50px;
 }
+.footer__me{
+    /* height: 100%; */
+    width: 55%;
+    /* background-color: #fff; */
+    /* white-space: nowrap; */
+}
+.footer__h3{
+    font-size: 1.6em;
+    font-weight: 800;
+    margin-bottom: 5px;
+}
+.footer__specialization{}
+
 .footer__mailer{
-    height: 70%;
+    height: 72%;
     width: 65%;
     margin-bottom: 10vh;
+    margin-left: 8.5%;
+
     /* background-color:var(--grayDark); */
     /* flex E */
-    align-self: flex-end;
+    /* align-self: flex-end; */
     /* flex C */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: stretch;
+    align-items: center;
 }
 .footer__input{
     height: calc(7.5% / .7);
     width: 100%;
+    background-color: transparent;
+    border: var(--footerGray) 2px solid;
+    color: var(--footerDarkGray);
+    text-align: center;
+    align-self: flex-start;
+}
+.footer__message{
+    position: relative;
+    height: 40%;
+    text-align: left;
+
+}
+/* .footer__message::-webkit-input-placeholder {
+    } */
+.footer__submit{
+    background-color: var(--orange);
+    color: white;
+    font-size: 1.3em;
+    font-weight: 600;
+    border: none;
 }
 /*       <!-- wrapper 90% of width                                                               -->
         <section class="main__wrapper footer">
