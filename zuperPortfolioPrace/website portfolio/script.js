@@ -22,7 +22,10 @@ function init() {
         progress: document.querySelector(".main__section--progress"),
         projects: document.querySelector(".main__section--projects"),
         footer: document.querySelector(".main__section--footer"),
+
         paralax: document.querySelector(".paralax"),
+        arrow: document.querySelector(".arrow"),
+
 
 
 
@@ -71,9 +74,16 @@ function init() {
             console.log(targetName);
             link.addEventListener("click", function () {
                 console.log(targetName);
-                const scrollTime = myDOM[targetName].offsetTop / 1.5;
+                const scrollTime = myDOM[targetName].offsetTop / 2;
                 myDOM.scrollTo(myDOM[targetName], scrollTime);
             });
+        });
+
+        myDOM.arrow.addEventListener("click", function () {
+            console.log("click");
+            const scrollTime = Math.abs(window.pageYOffset / 3);
+
+            myDOM.scrollTo(myDOM.header, scrollTime);
         });
     }
     listen();
