@@ -43,8 +43,13 @@
 
 }
 .projects__project{
+    position: relative;
     overflow: hidden;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
     /* overflow-x: scroll; */
+    /* z-index: 2; */
 
 }
 .projects__project--first{
@@ -112,11 +117,92 @@
 .project__iframe{
 
     width: 100%;
-    min-width: 540px;
+    min-width: 640px;
     height: 100%;
     min-height: 320px;
-
+    /* transform: scale(1.5); */
     /* overflow: scroll; */
+    transition: .2s linear;
+    z-index: 1;
+    cursor: pointer;
+    pointer-events: none;
+}
+.projects__project:hover .project__iframe{
+    /* min-width: 1024px;
+    min-height: 720px; */
+    transform: scale(1.1);
+
+}
+.projects__project:hover  .project__code,.project__code:hover{
+    /* min-width: 1024px;
+    min-height: 720px; */
+    transform: translate(-50%,5px);
+    
+
+}
+.projects__project:hover  .project__check,.project__check:hover{
+    /* min-width: 1024px;
+    min-height: 720px; */
+    transform: translate(-50%,-5px);
+    
+
+}
+/* .project__iframe:hover .project__iframe:nth-child(2){
+    visibility: visible;
+
+} */
+.project__code{
+    z-index: 2;
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%,-100%);
+    min-width: 50px;
+    min-height: 50px;
+    padding:5px 5px;
+    border-radius: 50%;
+    /* background-color: #fff; */
+    font-size: 1.5em;
+    color: var(--gray);
+    background-color: rgba(0,0,0,.9);
+    /* flex C */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: .3s;
+}
+.project__check{
+    z-index: 2;
+    position: absolute;
+    bottom: 0%;
+    left: 50%;
+    transform: translate(-50%,100%);
+    min-width: 50px;
+    min-height: 50px;
+    padding:5px 5px;
+    border-radius: 50%;
+    /* background-color: #fff; */
+    font-size: 1.5em;
+    color: var(--gray);
+    background-color: rgba(0,0,0,.9);
+    /* flex C */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: .3s;
+}
+.project__ico{
+    pointer-events: none;
+
+}
+.project__ico--check{
+
+    position: absolute;
+    left: 50%;
+    top:50%;
+    transform: translate(-50%,-50%);
 }
 /*    <section class="main__section main__section--projects">
 rojects__project--first"></article>
