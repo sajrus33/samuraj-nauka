@@ -98,6 +98,74 @@
     cursor: pointer;
 
 }
+/* hamb nav */
+.nav--ham{
+    display: none;
+
+}
+
+/* hamburger menu  */
+.ham,.ham--closed{
+    position: relative;
+    height: 50px;
+    width: 85px;
+    /* background-color: #fff; */
+    overflow: hidden;
+
+}
+
+.ham__bar{
+    position: absolute;
+    width: 113%;
+    height: 10%;
+    background: white;
+    transform-origin: left center;
+    /* transform: rotate(27deg); */
+    transition:  .3s;
+
+}
+
+.ham__bar--first{
+    top: 0%;
+    transform: translate(0%,0%);
+}
+.ham__bar--second{
+    top: 50%;
+    transform: translateY(-50%);
+    transition:  .2s;
+}
+.ham__bar--thirt{
+    bottom: 0%;
+    /* transform: translateY(-q00%); */
+}
+.ham:hover .ham__bar--first{
+    transform: rotate(28deg);
+
+}
+.ham:hover .ham__bar--second{
+    /* transform: rotate(-28deg); */
+    background-color: transparent;
+
+}
+.ham:hover .ham__bar--thirt{
+    transform: rotate(-28deg);
+
+}
+
+
+.ham__list{
+    display: none;
+}
+.ham__link{
+
+}
+/*  <nav class="nav--ham">
+                <div class="ham">
+                    <span class="ham__bar ham__bar--first"></span>
+                    <span class="ham__bar ham__bar--second"></span>
+                    <span class="ham__bar ham__bar--thirt"></span>
+                </div>
+                <ul class="ham__list"> */
 /* } <header class="header">
         <!-- navigation -->
         <div class="logo"></div>

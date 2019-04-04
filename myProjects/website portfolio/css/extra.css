@@ -114,6 +114,10 @@
       /* flex C */
       /* flex-direction: column; */
   }
+  .about__note{
+    box-sizing: content-box;
+
+  }
   }
 
   @media only screen and (max-width: 1666px)and (orientation: landscape){
@@ -179,6 +183,9 @@
     .nav__list{
       display:none;
     }
+    .nav--ham{
+      display: flex;
+    }
     
   }
   @media only screen and (max-width: 1080px)and (orientation: portrait){
@@ -191,6 +198,9 @@
     }
     .nav__list{
       display:none;
+    }
+    .nav--ham{
+      display: flex;
     }
     
   }
