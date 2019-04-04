@@ -2,6 +2,12 @@
 .displayNone{
     display: none;
 }
+.hide{
+  display:none;
+}
+.flex{
+  display: flex;
+}
 
 @keyframes goInRight{
   100%{
@@ -123,7 +129,7 @@
   @media only screen and (max-width: 1666px)and (orientation: landscape){
     :root{
       --wrapperSize : 80%;
-      --sectionMinHeight: 320px;
+      --sectionMinHeight: 480px;
 
     }
     body {
@@ -137,11 +143,11 @@
   @media only screen and (max-width: 1366px)and (orientation: landscape){
     :root{
       --wrapperSize : 80%;
-      --sectionMinHeight: 320px;
+      --sectionMinHeight: 360px;
 
     }
     body {
-      font-size: 17px;
+      font-size: 16px;
     }
   }
   @media only screen and (max-width: 1366px) and (orientation: portrait){
@@ -290,6 +296,7 @@
       font-size: 11px;
     }
    
+   
   }
 
 
@@ -310,6 +317,9 @@
     }
     body {
       font-size: 9.5px;
+    }
+    .ham__link--about{
+      align-self: flex-start;
     }
   
   }

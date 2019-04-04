@@ -35,7 +35,11 @@
 .nav{
     position: relative;
     width: var(--wrapperWidth);
-    height: 15%;
+    height: 10%;
+
+    margin-top: 2%;
+    margin-bottom: 1%;
+
     /* flex C */
     display: flex;
     flex-direction: row;
@@ -105,12 +109,20 @@
 }
 
 /* hamburger menu  */
-.ham,.ham--closed{
-    position: relative;
+.ham{
+    position: fixed;
+    right: 5%;
+    top: 2%;
     height: 50px;
     width: 85px;
-    /* background-color: #fff; */
-    overflow: hidden;
+    transform: scale(1);
+    cursor: pointer;
+    
+    
+    /* overflow: hidden; */
+    transition: .1s;
+    z-index: 1000;
+
 
 }
 
@@ -119,6 +131,10 @@
     width: 113%;
     height: 10%;
     background: white;
+    /* border: 1px black solid; */
+    /* box-sizing: content-box; */
+    
+
     transform-origin: left center;
     /* transform: rotate(27deg); */
     transition:  .3s;
@@ -127,36 +143,191 @@
 
 .ham__bar--first{
     top: 0%;
-    transform: translate(0%,0%);
+    transform: translate(0%,0%) rotate(0);
+    animation: bar1close linear .3s forwards;
+
 }
 .ham__bar--second{
     top: 50%;
     transform: translateY(-50%);
     transition:  .2s;
+    animation: bar2close linear .2s forwards;
+
 }
 .ham__bar--thirt{
     bottom: 0%;
     /* transform: translateY(-q00%); */
-}
-.ham:hover .ham__bar--first{
-    transform: rotate(28deg);
+    animation: bar3close linear .3s forwards;
 
 }
-.ham:hover .ham__bar--second{
-    /* transform: rotate(-28deg); */
-    background-color: transparent;
+.ham__bar--firstA{
+    animation: bar1 linear .3s forwards;
+}
+.ham__bar--secondA{
+    animation: bar2 linear .2s forwards;
+}
+.ham__bar--thirtA{
+    animation: bar3 linear .3s forwards;
+}
+
+@keyframes bar1{
+     0%{
+        transform: rotate(0);
+
+    }
+    100%{
+        transform: rotate(28deg);
+    }
+}
+@keyframes bar2{
+     0%{
+        background-color: white;
+
+    }
+    100%{
+        background-color: transparent;
+    }
+}
+@keyframes bar3{
+     0%{
+        transform: rotate(0);
+
+    }
+    100%{
+        transform: rotate(-28deg);
+    }
+}
+@keyframes bar1close{
+    0%{
+        transform: rotate(28deg);
+
+    }
+    100%{
+        transform: rotate(0);
+    }
+}
+@keyframes bar2close{
+     0%{
+        background-color: transparent;
+
+    }
+    100%{
+        background-color: white;
+    }
+}
+@keyframes bar3close{
+     0%{
+        transform: rotate(-28deg);
+
+    }
+    100%{
+        transform: rotate(0);
+    }
+}
+
+
+/*
+        .ham:hover .ham__bar--first{
+        
+        }
+        .ham:hover .ham__bar--second{
+        
+        }
+        .ham:hover .ham__bar--thirt{
+        
+        }
+         */
+
+
+.ham:hover{
+    transform: scale(1.1);
 
 }
-.ham:hover .ham__bar--thirt{
-    transform: rotate(-28deg);
 
-}
 
 
 .ham__list{
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    min-height: 320px;
+    width: 100%;
+
+    z-index: 999;
+    background-color: black;
+
     display: none;
+    /* flex C */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.ham__a{
+    width: 60%;
+    height: 20%;
+    /* flex C */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .ham__link{
+        position: relative;
+
+        padding: 3%;
+        list-style: none;
+        font-size: 2.9em;
+        font-weight: 400;
+        cursor: pointer;
+
+        transition: .2s linear;
+    
+}
+.ham__link::before{
+    box-sizing: border-box;
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    /* transform: translate(2px,-2px); */
+    border-top: 2px solid var(--grayDark);     
+    border-right: 2px solid var(--grayDark);     
+
+    width: 55%;
+    height: 75%;
+
+    transition: .2s linear;
+}
+.ham__link::after{
+    box-sizing: border-box;
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    /* transform: translate(-2px,2px); */
+    border-left: 2px solid var(--grayDark);     
+    border-bottom: 2px solid var(--grayDark);     
+
+    width: 55%;
+    height: 75%;
+
+    transition: .2s linear;
+}
+.ham__link:hover{
+    padding: 5%;
+}
+
+.ham__link:hover::after{
+    /* border-width: 5px; */
+    /* left: -5px;
+    bottom: -5px; */
+}
+.ham__link:hover::before{
+    /* border-width: 5px; */
+    /* right: -5px;
+    top: -5px; */
 
 }
 /*  <nav class="nav--ham">
@@ -207,6 +378,9 @@
         /* background-color: #fff; */
         align-items: center;
         justify-content: center;
+
+        z-index: 5;
+        margin-bottom: 5%;
         
     }
     .header__img{
@@ -270,6 +444,7 @@
         position: relative;
         width: 90%;
         padding: 5%;
+        min-height: 50px;
         background-color: transparent;
         border: white solid 2px;
         font-size: 1.2em;

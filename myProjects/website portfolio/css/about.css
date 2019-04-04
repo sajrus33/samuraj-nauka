@@ -107,6 +107,7 @@
     font-size: 2em;
     font-weight: 800;
     padding: 5%;
+    white-space: nowrap;
 
     order:var(--noteOrder);
     /* background-color: yellow; */

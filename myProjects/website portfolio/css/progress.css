@@ -1,10 +1,10 @@
 
 .main__section--progress{
     position: relative;
-   min-height: 75vh;
+   /* min-height: 75vh; */
 
     /* height: 75vh; */
-    /* min-height: 75vh; */
+    min-height: 75vh;
 
     background-color: transparent;
 }

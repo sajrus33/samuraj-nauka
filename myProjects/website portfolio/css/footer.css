@@ -1,6 +1,6 @@
 .main__section--footer{
     position: relative;
-    min-height: 100vh;
+    min-height: var(--sectionMinHeight);
     height: 100vh;
 
     background-color: rgba(0, 0, 0, .2);
@@ -28,9 +28,11 @@
 }
 
 .footer__contact{
+    position: relative;
     width: 25%;
     height: 67%;
     margin-bottom: 10vh;
+    white-space: nowrap;
     /* flex E */
     /* align-self: flex-end; */
 
@@ -41,6 +43,11 @@
     height: 100%;
     color: white;
     margin-right: 8.5%;
+     /* flex C */
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: flex-start;
 }
 .footer__wrapper{
     width: 100%;
@@ -71,6 +78,55 @@
 }
 .footer__specialization{}
 
+.footer__myNumber{
+    height: 19%;
+    width: 100%;
+    margin-top: 8.5%;
+    /* 446,85 */
+    /* flex C */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+.footer__myEmail{
+    height: 2.5%;
+    width: 100%;
+
+    margin-bottom: 9.5%;
+    margin-top: 7.5%;
+    /* flex C */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+.footer__button{
+    width: 72%;
+    min-width: 70px;
+    height: 10%;
+    min-height: 10px;
+}
+.footer__wrapper--media{
+    margin-top: 20%;
+}
+.footer__media{
+    width: 45px;
+    height: 45px;
+    background-color: var(--footerMediaGray);
+    border-radius: 50%;
+    
+}
+/* <button class="footer__button">Codepen</button>
+<section class="footer__wrapper footer__wrapper--media">
+    <div class="footer__media footer__media--fb"></div>
+    <div class="footer__media footer__media--tweeter"></div>
+    <div class="footer__media footer__media--github"></div>
+    <div class="footer__media footer__media--code"></div>
+    <div class="footer__media footer__media--google"></div>
+</section> */
+
+/* mailer section */
 .footer__mailer{
     height: 72%;
     width: 65%;
