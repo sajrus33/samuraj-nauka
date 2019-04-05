@@ -163,8 +163,10 @@ align-items: flex-end;
 
 }
 .footer__message::-webkit-input-placeholder{
-  background-color: #fff;
-  display: block;
+  /* background-color: #fff; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
 }
 /* .footer__message::-webkit-input-placeholder {
