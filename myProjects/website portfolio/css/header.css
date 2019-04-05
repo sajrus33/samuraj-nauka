@@ -115,15 +115,10 @@
     top: 2%;
     height: 50px;
     width: 85px;
-    transform: scale(1);
     cursor: pointer;
-    
-    
-    /* overflow: hidden; */
+
     transition: .1s;
     z-index: 1000;
-
-
 }
 
 .ham__bar{
@@ -131,14 +126,8 @@
     width: 113%;
     height: 10%;
     background: white;
-    /* border: 1px black solid; */
-    /* box-sizing: content-box; */
-    
-
     transform-origin: left center;
-    /* transform: rotate(27deg); */
     transition:  .3s;
-
 }
 
 .ham__bar--first{
@@ -156,7 +145,6 @@
 }
 .ham__bar--thirt{
     bottom: 0%;
-    /* transform: translateY(-q00%); */
     animation: bar3close linear .3s forwards;
 
 }
@@ -239,10 +227,6 @@
          */
 
 
-.ham:hover{
-    transform: scale(1.1);
-
-}
 
 
 
@@ -264,6 +248,7 @@
     align-items: center;
 
 }
+
 .ham__a{
     width: 60%;
     height: 20%;

@@ -1,0 +1,133 @@
+:root{
+    /* ARROW */
+    --arrowBgc: rgba(255,255,255,.82);
+
+    /* HAMBURGER */
+    --barColor: black;
+}
+/* ARROW */
+.arrow{
+    position: fixed;
+    width: 70px;
+
+    height: 70px;
+
+    right: 5%;
+    bottom: 1%;
+    background-color: var(--arrowBgc);
+    z-index: 999;
+}
+.arrow__ico{
+    font-size: 60px;
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+
+
+/* HAMBURGER */
+.hamburger{
+    position: fixed;
+    right: 5%;
+    top: 2%;
+    height: 50px;
+    width: 85px;
+    cursor: pointer;
+
+    transition: .1s;
+    z-index: 1000;
+}
+
+.bar{
+    position: absolute;
+    width: 113%;
+    height: 10%;
+    background: var(--barColor);
+    transform-origin: left center;
+    transition:  .3s;
+}
+
+.bar--first{
+    top: 0%;
+    transform: translate(0%,0%) rotate(0);
+    animation: bar1close linear .3s forwards;
+
+}
+.bar--second{
+    top: 50%;
+    transform: translateY(-50%);
+    transition:  .2s;
+    animation: bar2close linear .2s forwards;
+
+}
+.bar--thirt{
+    bottom: 0%;
+    animation: bar3close linear .3s forwards;
+
+}
+.bar--firstA{
+    animation: bar1 linear .3s forwards;
+}
+.bar--secondA{
+    animation: bar2 linear .2s forwards;
+}
+.bar--thirtA{
+    animation: bar3 linear .3s forwards;
+}
+
+@keyframes bar1{
+     0%{
+        transform: rotate(0);
+
+    }
+    100%{
+        transform: rotate(28deg);
+    }
+}
+@keyframes bar2{
+     0%{
+        background-color: var(--barColor);
+
+    }
+    100%{
+        background-color: transparent;
+    }
+}
+@keyframes bar3{
+     0%{
+        transform: rotate(0);
+
+    }
+    100%{
+        transform: rotate(-28deg);
+    }
+}
+@keyframes bar1close{
+    0%{
+        transform: rotate(28deg);
+
+    }
+    100%{
+        transform: rotate(0);
+    }
+}
+@keyframes bar2close{
+     0%{
+        background-color: transparent;
+
+    }
+    100%{
+        background-color: var(--barColor);
+    }
+}
+@keyframes bar3close{
+     0%{
+        transform: rotate(-28deg);
+
+    }
+    100%{
+        transform: rotate(0);
+    }
+}

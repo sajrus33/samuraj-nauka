@@ -79,7 +79,7 @@
 .footer__specialization{}
 
 .footer__myNumber{
-    height: 19%;
+    height: 2.5%;
     width: 100%;
     margin-top: 8.5%;
     /* 446,85 */
@@ -108,11 +108,12 @@
     min-height: 10px;
 }
 .footer__wrapper--media{
-    margin-top: 20%;
+flex-grow: 1;
+align-items: flex-end;
 }
 .footer__media{
-    width: 45px;
-    height: 45px;
+    width: 40px;
+    height: 40px;
     background-color: var(--footerMediaGray);
     border-radius: 50%;
     
@@ -156,6 +157,11 @@
     height: 40%;
     text-align: left;
 
+}
+.footer__message::-webkit-input-placeholder{
+  background-color: #fff;
+  display: block;
+  position: absolute;
 }
 /* .footer__message::-webkit-input-placeholder {
     } */

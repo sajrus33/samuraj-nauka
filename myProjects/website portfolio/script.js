@@ -48,18 +48,17 @@ function app() {
             myDOM.paralax.style.animation = "fadeOut .1s forwards";
 
             // const target = target;
-            console.log(target, "heeere");
+            console.log({ target });
+
             const targetPosition = target.offsetTop;//top of target
-            console.log(targetPosition);
             const startPosition = window.pageYOffset;//window se
-            console.log(startPosition);
 
             const distance = targetPosition - startPosition;
             // const duration = duration;
             let startTime = null;
 
-            function ease(time, start, distance, dur) {
-                time /= dur / 2;
+            function ease(time, start, distance, duration) {
+                time /= duration / 2;
                 if (time < 1) return distance / 2 * time * time + start;
                 time--;
                 return -distance / 2 * (time * (time - 2) - 1) + start;
@@ -79,84 +78,79 @@ function app() {
                 }
             }
             requestAnimationFrame(animation)
+        },
+
+
+        listen: function () {
+
+
+            // Event listeners init
+
+            // main nav  && hamburge nav  links"on clicks"
+            myDOM.nav.links.forEach((link, i) => {
+                const targetName = link.classList.value.slice(21, link.classList.value.length)
+                console.log(targetName);
+                link.addEventListener("click", function () {
+                    console.log(targetName);
+                    const scrollTime = myDOM[targetName].offsetTop / 2;
+                    myDOM.scrollTo(myDOM[targetName], scrollTime);
+                });
+                myDOM.nav.hamLinks[i].addEventListener("click", function () {
+                    console.log(targetName);
+                    const scrollTime = myDOM[targetName].offsetTop / 2;
+                    setTimeout(() => {
+                        myDOM.scrollTo(myDOM[targetName], scrollTime);
+                        myDOM.nav.ham.click();
+                    }, 300);
+                });
+            });
+            // hamburger ico menu on click
+            myDOM.nav.ham.addEventListener("click", function () {
+                // console.log("ham working");
+                // hamburger ico change  ||| -> X
+                myDOM.nav.bar1.classList.toggle("ham__bar--firstA");
+                myDOM.nav.bar2.classList.toggle("ham__bar--secondA");
+                myDOM.nav.bar3.classList.toggle("ham__bar--thirtA");
+                // display mobile nav
+                myDOM.nav.hamList.classList.toggle("flex");
+
+            });
+            myDOM.arrow.addEventListener("click", function () {
+                console.log("click");
+                const scrollTime = Math.abs(window.pageYOffset / 3);
+
+                myDOM.scrollTo(myDOM.header, scrollTime);
+            });
+
+            myDOM.iframes.code.forEach(iframe => {
+                iframe.addEventListener("click", function () {
+                    const url = this.previousElementSibling.getAttribute("data-code");
+                    console.log(url);
+                    window.open(url);
+                });
+
+            });
+            myDOM.iframes.check.forEach(iframe => {
+                iframe.addEventListener("click", function () {
+                    const url = this.previousElementSibling.previousElementSibling.getAttribute("src");
+                    console.log(url);
+                    window.open(url);
+                });
+            });
+
+
         }
+
 
 
     };
 
     function init() {
-
-        // Event listeners init
-
-        // main nav  && hamburge nav  links"on clicks"
-        myDOM.nav.links.forEach((link, i) => {
-            const targetName = link.classList.value.slice(21, link.classList.value.length)
-            console.log(targetName);
-            link.addEventListener("click", function () {
-                console.log(targetName);
-                const scrollTime = myDOM[targetName].offsetTop / 2;
-                myDOM.scrollTo(myDOM[targetName], scrollTime);
-            });
-            myDOM.nav.hamLinks[i].addEventListener("click", function () {
-                console.log(targetName);
-                const scrollTime = myDOM[targetName].offsetTop / 2;
-                setTimeout(() => {
-                    myDOM.scrollTo(myDOM[targetName], scrollTime);
-                    myDOM.nav.ham.click();
-                }, 300);
-
-            });
-
-        });
-        // hamburger ico menu on click
-        myDOM.nav.ham.addEventListener("click", function () {
-            // console.log("ham working");
-            // hamburger ico change  ||| -> X
-            myDOM.nav.bar1.classList.toggle("ham__bar--firstA");
-            myDOM.nav.bar2.classList.toggle("ham__bar--secondA");
-            myDOM.nav.bar3.classList.toggle("ham__bar--thirtA");
-            // display mobile nav
-            myDOM.nav.hamList.classList.toggle("flex");
-
-        });
-
-
-
-        myDOM.arrow.addEventListener("click", function () {
-            console.log("click");
-            const scrollTime = Math.abs(window.pageYOffset / 3);
-
-            myDOM.scrollTo(myDOM.header, scrollTime);
-        });
-
-        myDOM.iframes.code.forEach(iframe => {
-            iframe.addEventListener("click", function () {
-                const url = this.previousElementSibling.getAttribute("data-code");
-                console.log(url);
-                window.open(url);
-            });
-
-        });
-        myDOM.iframes.check.forEach(iframe => {
-            iframe.addEventListener("click", function () {
-                const url = this.previousElementSibling.previousElementSibling.getAttribute("src");
-                console.log(url);
-                window.open(url);
-            });
-        });
-
-
+        myDOM.listen();
+        // slow !!!!!!!!
+        myDOM.setUpSrcs();
     }
     init();
-
-    // slow !!!!!!!!!!!
-    myDOM.setUpSrcs();
-
-
-
-
-
-
 }
 
 
