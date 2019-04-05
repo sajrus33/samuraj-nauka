@@ -118,6 +118,10 @@ align-items: flex-end;
     border-radius: 50%;
     
 }
+.footer__media:hover{
+    background-color: var(--footerMediaHover);
+    
+}
 /* <button class="footer__button">Codepen</button>
 <section class="footer__wrapper footer__wrapper--media">
     <div class="footer__media footer__media--fb"></div>

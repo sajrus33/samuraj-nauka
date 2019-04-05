@@ -31,7 +31,9 @@
     --footerGray: rgba(153,153,153,1);
     --footerDarkGray: rgba(175,175,175,1);
 
-    --footerMediaGray: rgba(213,213,213,1);
+    --footerMediaGray: rgba(213,213,213,.5);
+    --footerMediaHover: rgba(213,213,213,1);
+
 
 /* progress */
     --grayDark: rgba(182,182,182);

@@ -15,12 +15,14 @@ function app() {
             hamLinks: [...document.querySelectorAll(".ham__link")],
             links: [...document.querySelectorAll(".nav__link")]
 
-
         },
         header: document.querySelector(".header"),
         about: document.querySelector(".main__section--about"),
         skills: document.querySelector(".main__section--skills"),
+
         progress: document.querySelector(".main__section--progress"),
+        progressCircles: document.querySelectorAll(".progress__circle"),
+
         projects: document.querySelector(".main__section--projects"),
         footer: document.querySelector(".main__section--footer"),
 
@@ -81,6 +83,19 @@ function app() {
         },
 
 
+        createProgressCircle: function (container = myDOM.progressCircles[0]) {
+            const canvas = document.createElement("canvas");
+            container.appendChild(cavas);
+            canvas.style.width = "100%";
+            canvas.style.height = "100%";
+
+            const ctx = canvas.getContext("2d");
+
+            function animate() {
+
+            };
+
+        },
         listen: function () {
 
 
@@ -106,7 +121,6 @@ function app() {
             });
             // hamburger ico menu on click
             myDOM.nav.ham.addEventListener("click", function () {
-                // console.log("ham working");
                 // hamburger ico change  ||| -> X
                 myDOM.nav.bar1.classList.toggle("ham__bar--firstA");
                 myDOM.nav.bar2.classList.toggle("ham__bar--secondA");
