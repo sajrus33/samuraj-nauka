@@ -68,16 +68,16 @@
 .progress__circle{
       /* width: 13.5%; */
       position: relative;
-      box-sizing: border-box;
+      box-sizing: content-box;
       width: calc(75vh * .31);
       min-width: calc(var(--sectionMinHeight) * .31);
       height: calc(75vh * .31);
       min-height: calc(var(--sectionMinHeight) * .31);
 
-      border-radius: 50%;
+      /* border-radius: 50%; */
       /* background-color: var(--greenDark); */
       background-color: transparent;
-      border: calc(75vh * .31 * .075) solid var(--orange); 
+      /* border: calc(75vh * .31 * .075) solid var(--orange);  */
 
 
       font-size: 2.3em;
@@ -96,6 +96,15 @@
      justify-content: center;
      align-items: center;
 }
+.progress__canvas{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    /* background-color: black; */
+}
+
 .progress__technology:hover  .pointer{
     transform: translateY(0)  rotate(-30deg);
 }

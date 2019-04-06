@@ -4,9 +4,9 @@
 // let autoprefixer = require("gulp-autoprefixer");
 // let cleanCSS = require("gulp-clean-css");
 // let uglify = require("gulp-uglify");
-let gulp = require("gulp");
-let concat = require("gulp-concat");
-let cleanCSS = require("gulp-clean-css");
+const gulp = require("gulp");
+const concat = require("gulp-concat");
+const cleanCSS = require("gulp-clean-css");
 
 gulp.task("css", function () {
     return gulp.src(['./css/start.css', './css/header.css', './css/mainAll.css', './css/about.css', './css/skills.css', './css/progress.css', "./css/projects.css", "./css/footer.css", "./css/extra.css"])
