@@ -7,10 +7,10 @@ function app() {
     }
     const mySetUp = {
         speed: [
-            75 * 2,
-            55 * 2,
-            10 * 2,
-            20 * 2
+            75 * 1,
+            55 * 1,
+            10 * 1,
+            20 * 1
         ],
         progress: [
             .75,
@@ -61,10 +61,9 @@ function app() {
 
         createProgressCircles: function () {
             myDOM.progressCanvases.forEach((circle, i) => {
-                myObjects.circles.push(new ProgresCircle(circle, mySetUp.speed[i], mySetUp.progress[i], .1, "orange", 1));
+                myObjects.circles.push(new ProgresCircle(circle, mySetUp.speed[i], mySetUp.progress[i], .15, "rgba(252,198,38,1)", "white", "bold calc(2.6vw + 2.6vh) Open Sans", 1));
                 console.log(circle, mySetUp.speed[i], mySetUp.progress[i], .15, "orange", 1);
                 myObjects.circles[i].init();
-                myObjects.circles[i].run();
 
             });
         },
@@ -198,9 +197,7 @@ function app() {
 
     function init() {
         myDOM.reSize();
-
         myDOM.listen();
-
         myDOM.createProgressCircles();
         // slow !!!!!!!!
         myDOM.setUpSrcs();
