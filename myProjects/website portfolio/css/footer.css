@@ -119,7 +119,7 @@ align-items: flex-end;
     
 }
 .footer__media:hover{
-    background-color: var(--footerMediaHover);
+    /* background-color: var(--footerMediaHover); */
     
 }
 /* <button class="footer__button">Codepen</button>
