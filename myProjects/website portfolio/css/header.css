@@ -3,11 +3,11 @@
     height: 100vh;
     min-height: calc(var(--sectionMinHeight) * 1);
 
-    /* background-image: url("../img/header.png");
+    /* background-image: url("../img/header.png"); */
 
-     */
-     background-color: transparent;
-    background-size: cover;
+
+    background-color: transparent;
+    /* background-size: cover; */
     /* flex C */
     display: flex;
     flex-direction: column;
@@ -323,9 +323,10 @@
                 </div>
                 <ul class="ham__list"> */
 /* } <header class="header">
+
         <!-- navigation -->
-        <div class="logo"></div>
         <nav class="nav">
+            <div class="logo"></div>
             <ul class="nav__list">
                 <a href="#">
                     <li class="nav__link">About Me</li>
@@ -344,6 +345,7 @@
                 </a>
             </ul>
         </nav>
+
         <!-- header section-->
         <section class="header__section">
             <img src="" alt="Author image" class="header__img">
@@ -351,6 +353,7 @@
             <span class="header__specialization">Frontend Developer</span>
             <button class="header__button">Hire me!</button>
         </section>
+
     </header> */
     .header__section{
         
@@ -365,7 +368,7 @@
         justify-content: center;
 
         z-index: 5;
-        margin-bottom: 5%;
+        /* margin-top: 10%; */
         
     }
     .header__img{

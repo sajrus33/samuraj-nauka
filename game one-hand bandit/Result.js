@@ -4,17 +4,9 @@ class Result {
         else return 0;
     }
     static checkWinner(draw) {
-        let win;
-        for (let i = 0; i < draw.length; i++) {
-            draw[0] === draw[i];
-        }
-        if (win) return true;
-
+        if (draw[0] === draw[1] && draw[1] === draw[2] || draw[0] !== draw[1] && draw[1] !== draw[2] && draw[0] !== draw[2]) return true;
+        else return false;
     }
-    static show() {
-        console.log("show result");
-    }
-
 }
 
 Result.moneyWonInGame(true, 5, 4);

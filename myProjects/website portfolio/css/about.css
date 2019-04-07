@@ -21,6 +21,8 @@
 
     overflow: hidden;
 
+    z-index: 3;
+
 
 }
 .about::before{
