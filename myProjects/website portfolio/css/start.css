@@ -48,6 +48,15 @@
     --greenDark: rgba(0,148,63,1);
     --orange: rgba(252,198,38,1);
 
+/* media   */
+--colorFb: rgba(59,89,152,1);
+--colorGit: black;
+
+--colorCode: rgba(30,31,38,1);
+--colorGoogle:#EA4335 ;
+
+
+
       /* projects */
       --projectWidthBig: 36%;
       --projectWidthSmall: 25%;

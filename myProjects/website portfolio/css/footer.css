@@ -112,6 +112,7 @@
 align-items: flex-end;
 }
 .footer__media{
+    position: relative;
     width: 40px;
     height: 40px;
     background-color: transparent;
@@ -119,9 +120,25 @@ align-items: flex-end;
     border: solid 1px var(--footerMediaHover);
     
 }
-.footer__media:hover{
-    /* background-color: var(--footerMediaHover); */
-    
+
+.footer__ico{
+    position: absolute;
+    left: 50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+}
+
+.footer__media--first:hover{
+    background-color: var(--colorFb);
+}
+.footer__media--second:hover{
+    background-color: var(--colorGit);
+}
+.footer__media--thirt:hover{
+    background-color: var(--colorCode);
+}
+.footer__media--fifth:hover{
+    background-color: var(--colorGoogle);
 }
 /* <button class="footer__button">Codepen</button>
 <section class="footer__wrapper footer__wrapper--media">
