@@ -1,5 +1,5 @@
 .main__section--projects{
-    background-color: var(--gray);
+    background-color: white;
     z-index: 1;
 }
 .projects{
@@ -22,9 +22,14 @@
 .projects__filter{
     /* background-color: blue; */
     font-size: 1.2em;
+    /* font-weight: 600; */
     height: 100%;
     margin-left: 1.5%;
     letter-spacing: .15em;
+}
+.projects__filter--slash{
+    font-weight: 400;
+    color: var(--gray);
 }
 .projects__link{
     color: inherit;

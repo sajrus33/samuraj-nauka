@@ -55,6 +55,10 @@
         --describeOrder: 1;
         --noteOrder: 2;
         --noteBeforeLeft: 100%;
+
+        --noteAfterLeft: 107%;
+        --noteAfterLeftBlue: var(--noteAfterLeft);
+
     
         --projectWidthBig: 36%;
         --projectWidthSmall: 25%;

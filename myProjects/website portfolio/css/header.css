@@ -7,7 +7,7 @@
 
 
     background-color: transparent;
-    /* background-size: cover; */
+    background-size: cover;
     /* flex C */
     display: flex;
     flex-direction: column;
@@ -125,7 +125,7 @@
     position: absolute;
     width: 113%;
     height: 10%;
-    background: white;
+    background: var(--gray);
     transform-origin: left center;
     transition:  .3s;
 }
@@ -169,7 +169,7 @@
 }
 @keyframes bar2{
      0%{
-        background-color: white;
+        background-color: var(--gray);
 
     }
     100%{
@@ -200,7 +200,7 @@
 
     }
     100%{
-        background-color: white;
+        background-color: var(--gray);
     }
 }
 @keyframes bar3close{
@@ -358,7 +358,7 @@
     .header__section{
         
         position: relative;
-        min-height: 50%;
+        min-height: 40%;
         width: var(--portfolioMinHeight);
         /* flex C */
         display: flex;

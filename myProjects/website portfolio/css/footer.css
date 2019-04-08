@@ -17,7 +17,7 @@
     width: 110%;
    height: var(--skewHeight);
     /* min-height: 40px; */
-    background-color:var(--gray);
+    background-color:white;
 }
 .footer{
     /* flex C */
@@ -43,6 +43,7 @@
     height: 100%;
     color: white;
     margin-right: 8.5%;
+    font-style: normal;
      /* flex C */
      display: flex;
      flex-direction: column;

@@ -32,14 +32,16 @@
     width: 110%;
     height: var(--skewHeight);
     /* min-height: 40px; */
-    background-color: var(--gray);
+    background-color: white;
 
 }
 .progress{
     height: 100%;
     width: 100%;
 
-    margin-top: 15px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+
     /* flex C */
     display: flex;
     flex-direction: row;

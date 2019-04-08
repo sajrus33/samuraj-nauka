@@ -74,7 +74,7 @@
 
 }
 .about__h2{
-    font-size: 2.2em;
+    font-size: 2.4em;
     font-weight: 800;
 }
 .about__p{
@@ -106,7 +106,7 @@
     height:var(--noteHeight);
     width: var(--noteWidth);
     color: white;
-    font-size: 1.9em;
+    font-size: 2em;
     font-weight: 800;
     padding: 5%;
     white-space: nowrap;
@@ -137,6 +137,20 @@
     height: var(--noteBeforeSize);
     background-color: var(--yellow);
 }
+.about__note::after{
+    content: "";
+    position: absolute;
+    z-index: 0;
+    left: var(--noteAfterLeft);
+    top: 50%;
+    transform: translate(-50%,-50%);
+    border: black 1px solid;
+    border-radius: 50%;
+
+    width:calc(var(--noteBeforeSize) * .8);
+    height:calc(var(--noteBeforeSize) * .8);
+    background-color: var(--gray);
+}
 
 /* yellow */
 .about__note--yellow{
@@ -157,6 +171,14 @@
 .about__note--blue::before{
     background-color: var(--blue);
     left: 100%;
+}
+.about__note--blue::after{
+    /* left: 100%; */
+    left: var(--noteAfterLeftBlue);
+    
+    width:calc(var(--noteBeforeSize));
+    height:calc(var(--noteBeforeSize));
+
 }
 
 /* green */
