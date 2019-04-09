@@ -218,8 +218,12 @@ function app() {
 
     emailjs.init("user_tdJP5pQdemG5AhJpq5J7O");
     var templateParams = {
-        name: 'James',
-        notes: 'Check this out!'
+        replay_to: 'number BOT',
+
+        from_name: 'James BOT',
+        to_name: "Brian",
+        message_html: 'Check this out!'
+
     };
 
     emailjs.send('brianwala22_gmail_com', 'template_gqc9FdOP', templateParams)
