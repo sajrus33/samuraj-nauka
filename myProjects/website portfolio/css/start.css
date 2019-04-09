@@ -36,6 +36,8 @@
     --green : rgba(86,222,150,1);
 /* sections */
     --gray: rgba(239,239,239,1);
+    --gray2: rgba(207,207,207,1);
+
     --footerGray: rgba(153,153,153,1);
     --footerDarkGray: rgba(175,175,175,1);
 
@@ -157,6 +159,8 @@ body{
     bottom: 1%;
     background-color: rgba(255,255,255,.82);
     z-index: 5;
+
+    cursor: pointer;
 }
 .arrow:hover{
     background-color: rgba(255,255,255,1);

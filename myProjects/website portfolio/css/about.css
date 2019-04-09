@@ -33,7 +33,7 @@
     transform: translate(-50%,-50%);
 
     width: 1px;
-    background-color: #000;
+    background-color: var(--gray2);
     height: 80%;
 }
 
@@ -144,7 +144,7 @@
     left: var(--noteAfterLeft);
     top: 50%;
     transform: translate(-50%,-50%);
-    border: black 1px solid;
+    border: var(--gray2) 1px solid;
     border-radius: 50%;
 
     width:calc(var(--noteBeforeSize) * .8);

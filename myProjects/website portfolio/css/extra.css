@@ -254,6 +254,7 @@
     .nav__list{
       display:none;
     }
+    
   }
 
 
@@ -273,6 +274,12 @@
   @media only screen and (max-width: 640px) and (orientation: portrait){
     body {
       font-size: 12px;
+    }
+    .footer__ico--contact{
+      left:0%;
+      top:0%;
+      transform: translate(0%,-110%);
+
     }
    
   }
