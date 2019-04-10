@@ -41,6 +41,7 @@
     width: 31%;
     min-width: 200px;
     height: 65%;
+    min-height: calc(160px * .65);
     margin-left: 2.5%;
     margin-bottom: 5%;
     margin-top: 5%;

@@ -439,10 +439,12 @@
         color: white;
         font-weight: 400;
         text-transform: uppercase;
-
+        box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
         white-space: nowrap;
 
         margin-top: 20px;
+        margin-bottom: 30px;
+
         overflow: hidden;
         transition: .1s .05s linear;
 
