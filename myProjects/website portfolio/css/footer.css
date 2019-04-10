@@ -112,6 +112,12 @@
     justify-content: center;
     align-items: flex-start;
 }
+.myEmail{
+   
+    position: absolute;
+    /* overflow: hidden; */
+    transform: translateX(-100vw);
+}
 .footer__ico{
     position: absolute;
     left: 50%;
@@ -124,18 +130,56 @@
 }
 
 .footer__button{
+    box-sizing: content-box;
+    position: relative;
     width: 72%;
     min-width: 70px;
     height: 10%;
     min-height: 10px;
 
+    background-color: transparent;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 600;
     cursor: pointer;
+    color: white;
+    border: white solid 1px;
+
+    transition:  .18s;
+    z-index: 1;
+    overflow: hidden;
 
 }
+/* veary easy way to animate */
+.footer__button::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+
+    background-color: white;
+    width: 100%;
+    height: 0%;
+
+    transition: .3s;
+    z-index: -1;
+
+}
+
+.footer__button:hover::after{
+    height: 105%;
+}
+.footer__button:hover{
+    color: black;
+    
+}
+
 .footer__wrapper--media{
 align-items: flex-end;
 }
 .footer__media{
+    display: block;
     position: relative;
     width: 40px;
     height: 40px;
