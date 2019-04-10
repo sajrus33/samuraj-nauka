@@ -31,7 +31,7 @@
 
     /* flex C */
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     flex-wrap: wrap;
 }
@@ -42,7 +42,9 @@
     min-width: 200px;
     height: 65%;
     min-height: calc(160px * .65);
-    margin-left: 2.5%;
+    margin-left: auto;
+    margin-right: auto;
+
     margin-bottom: 5%;
     margin-top: 5%;
 
@@ -54,9 +56,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-.skill--first{
-    margin-left: 0;
 }
 .skill__img{
     position: relative;

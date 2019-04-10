@@ -275,12 +275,30 @@
     body {
       font-size: 12px;
     }
-    .footer__ico--contact{
-      left:0%;
-      top:0%;
-      transform: translate(0%,-110%);
-
+    .footer{
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
+   .footer__contact{
+     height: 10%;
+     width: 100%;
+   }
+   .footer__wrapper--me, .footer__specialization,.footer__myNumber,.footer__myEmail,.footer__button{
+     display: none;
+   }
+ 
+   .footer__wrapper--media{
+     flex-wrap: nowrap;
+   }
+
+   .footer__mailer{
+     width:100%;
+     margin: 0;
+   }
+   .footer__contact {
+     margin-bottom:0px;
+   }
    
   }
 
