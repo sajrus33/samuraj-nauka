@@ -36,6 +36,7 @@
 
 }
 .progress{
+    position: relative;
     height: 100%;
     width: 100%;
 
@@ -48,6 +49,7 @@
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
+    cursor: pointer;
 
 
   
@@ -66,7 +68,12 @@
      justify-content:center;
      align-items: center;
 
+     cursor: pointer;
+
+     transition: .5s linear;
+
 }
+
 .progress__circle{
       /* width: 13.5%; */
       position: relative;
@@ -133,6 +140,26 @@
     letter-spacing: .15em;
 
 }
+
+
+
+.progress__describe{
+    position: absolute;
+    color: white;
+    font-size: 1.5em;
+
+    width: 70%;
+    height: 90%;
+    min-height:calc(320px * .5);
+    transform: translateX(100vw);
+    transition: .2s;
+    flex-grow: 1;
+}
+.progress__describe--runIn{
+    position: relative;
+    transform: translateX(0);
+}
+
 /*   <!-- progress section                                                                   -->
                 <section class="progress">
                     <!-- circle progress bar section 1-->

@@ -236,12 +236,15 @@ align-items: flex-end;
     color: var(--footerDarkGray);
     text-align: center;
     align-self: flex-start;
+    font-size: 1.5em;
+
 }
 .footer__message{
     position: relative;
     height: 40%;
     text-align: left;
-
+    font-family: inherit;
+    font-size: 1.2em;
 }
 .footer__message::-webkit-input-placeholder{
   /* background-color: #fff; */
