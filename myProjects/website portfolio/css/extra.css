@@ -147,7 +147,7 @@
   @media only screen and (max-width: 1366px)and (orientation: landscape){
     :root{
       --wrapperSize : 80%;
-      --sectionMinHeight: 360px;
+      --sectionMinHeight: 400px;
 
     }
     body {
@@ -156,7 +156,6 @@
   }
   @media only screen and (max-width: 1366px) and (orientation: portrait){
     :root{
-      --sectionMinHeight: 320px;
       --wrapperWidth: 90%;
       /* --navWidth: 100%; */
   
@@ -182,7 +181,7 @@
     :root{
     --navWidth: 50%;
       --wrapperSize : 80%;
-      --sectionMinHeight: 320px;
+      --sectionMinHeight: 360px;
 
     }
     body {
@@ -225,6 +224,8 @@
  @media only screen and (max-width: 872px) and (orientation: landscape){
   :root{
     --wrapperWidth: 90%;
+    --sectionMinHeight: 340px;
+
 
 }
 .nav__list{
@@ -264,6 +265,8 @@
     :root{
       --wrapperSize : 80%;
     --noteBeforeSize: 12.5px;
+    --sectionMinHeight: 320px;
+
 
     }
     body {
