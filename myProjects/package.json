@@ -1,0 +1,25 @@
+{
+  "name": "myprojects",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "emailjs-com": "^2.3.2",
+    "gulp": "^4.0.0",
+    "gulp-clean-css": "^4.0.0",
+    "gulp-watch": "^5.0.1",
+    "gulp-concat": "^2.6.1"
+  },
+  "devDependencies": {
+    "body-parser": "^1.18.3",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.4",
+    "express": "^4.16.4",
+    "pug": "^2.0.3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "yo",
+  "license": "ISC"
+}
