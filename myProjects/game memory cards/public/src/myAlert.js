@@ -1,17 +1,12 @@
 // my own alert() function 
 export function myAlert(describe) {
-    //   get old myAlert 
     const oldAlert = document.querySelector(".tip");
-    //   if exist
     if (oldAlert) {
-        //     remove it
         oldAlert.remove();
     }
-    //   create new myAlert
     const newAlert = document.createElement("div");
     newAlert.classList.add("tip");
-    //   fill myAlert text with argument "describe"
-    newAlert.innerText = describe;
+    newAlert.innerText = String(describe);
     document.body.appendChild(newAlert);
 }
 

@@ -1,3 +1,25 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+div{
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+canvas{
+  position: relative;
+
+}
+
 .tip {
     position: fixed;
     top: 0;
@@ -12,9 +34,9 @@
     justify-content: center;
     align-items: center;
     font-size: 1.15em;
-    white-space: no-wrap;
     pointer-events: none;
   }
+
   @keyframes tip {
     10% {
       top: 60%;
