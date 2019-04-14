@@ -1,5 +1,5 @@
 export class Card {
-    constructor(parent, width, height, alpha = 1) {
+    constructor(parent, width, height, imgSrc, alpha = 1) {
         // CANVAS
         this.canvas = document.createElement("canvas");
         // CTX
@@ -9,11 +9,15 @@ export class Card {
         // OWN PROPERTYS
         this.parent = parent;
         this.img = new Image();
+        this.imgSrc = imgSrc;
 
-        this.load = (src) => {
+        this.load = (src = this.imgSrc) => {
+            this.img.src = src;
+        };
+        this.init = () => {
+            this.load();
 
         };
-
         this.appendTo = () => {
             // append
             this.parent.appendChild(this.canvas);
@@ -24,15 +28,18 @@ export class Card {
             this.canvas.style.width = width;
             this.canvas.style.backgroundColor = "red";
             this.canvas.style.border = "black 1px solid";
+            this.init();
+
         };
+
         this.update = () => {
 
         };
         this.render = () => {
-
+            this.ctx.drawImage(this.img, 0, 0, this.width, this.height)
 
             this.update();
-            requestAnimationFrame(this.render)
+            requestAnimationFrame(this.render);
         };
 
         console.log(this.canvas);

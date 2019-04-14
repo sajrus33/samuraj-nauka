@@ -5,7 +5,7 @@
 //     card: [1, 3],
 // }
 export const imgs = {
-    faces: ["../imgs/sajrus33.jpg"],
+    faces: ["../img/sajrus33.jpg"],
 
 
 }
