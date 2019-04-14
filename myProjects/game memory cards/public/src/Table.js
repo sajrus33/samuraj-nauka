@@ -18,7 +18,10 @@ export class Table {
 
         // OWN PROPERTYS
         this.parent = parent;
-        this.appendTo = () => {
+        this.appendTo = (parent = this.parent) => {
+            // new parent?
+            this.parent = parent;
+            // append with div
             this.parent.appendChild(this.div);
             this.div.appendChild(this.canvas);
         };
