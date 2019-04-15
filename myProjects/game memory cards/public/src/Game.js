@@ -19,22 +19,18 @@ export class Game {
 
 
 
-        this.setCards = () => {
+        this.setCards = (y = 0) => {
+            for (let i = 0; i < resources.cards.number[y]; i++) {
 
+                this.cards.push(new Card(this.table.Cardswrapper, this.resources.cards.width[y], this.resources.cards.height[y], this.resources.imgs.catedras[i + 2], this.resources.imgs.catedras[0]));
+            }
         };
 
 
         this.init = (cardsOption = 1) => {
 
-
-            const y = cardsOption;
-
             this.table.appendTo();
-            for (let i = 0; i < resources.cards.number[y]; i++) {
-                this.cards.push(new Card(this.table.Cardswrapper, this.resources.cards.width[y], this.resources.cards.height[y], this.resources.imgs.catedras[i + 2], this.resources.imgs.catedras[0]));
-                this.cards[i].appendTo();
-            }
-
+            this.setCards(cardsOption);
         };
     }
 }

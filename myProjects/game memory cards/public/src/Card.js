@@ -69,6 +69,8 @@ export class Card {
             requestAnimationFrame(this.render);
         };
 
+        this.appendTo();
+
         // console.log(this.canvas);
     }
 }
