@@ -37,7 +37,12 @@ export class Statistics {
             this.render();
 
         };
+
         this.update = () => {
+            this.ctx.beginPath();
+            this.ctx.strokeStyle = "white";
+            this.ctx.fillText(String(Math.round(this.loaded * 100)) + "%", this.x, this.y * 1.2);
+            this.ctx.stroke();
         };
         this.render = () => {
 

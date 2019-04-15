@@ -14,30 +14,25 @@ export class Game {
         console.log(this.resources.imgs);
         this.table = new Table(document.body, "100%", "100%", this.resources.imgs.catedras[0], this.resources.imgs.table);
         this.Card = Card;
-        this.card = [];
+        this.cards = [];
 
 
-        // render all
-        this.render = () => {
-            this.table.render();
+
+
+        this.setCards = () => {
 
         };
 
 
-        this.init = () => {
-            // 40
-            //  10% 25%
-            // 20 
-            //  20% 25%
-            // 16
-            //  25% 25%
+        this.init = (cardsOption = 1) => {
 
-            const y = 1;
+
+            const y = cardsOption;
 
             this.table.appendTo();
             for (let i = 0; i < resources.cards.number[y]; i++) {
-                this.card.push(new Card(this.table.Cardswrapper, this.resources.cards.width[y], this.resources.cards.height[y], this.resources.imgs.catedras[3], this.resources.imgs.catedras[0]));
-                this.card[i].appendTo();
+                this.cards.push(new Card(this.table.Cardswrapper, this.resources.cards.width[y], this.resources.cards.height[y], this.resources.imgs.catedras[i + 2], this.resources.imgs.catedras[0]));
+                this.cards[i].appendTo();
             }
 
         };
