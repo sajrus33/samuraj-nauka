@@ -251,7 +251,12 @@ function app() {
                             circle.classList.toggle("displayNone");
                         }
                     });
-                    myDOM.progressDescribe.classList.toggle("progress__describe--runIn");
+                    myDOM.progressDescribe.classList.toggle("displayNone");
+
+                    setTimeout(function () {
+                        myDOM.progressDescribe.classList.toggle("progress__describe--runIn");
+                    }, 10)
+
                     if (mySetUp.text[i]) {
                         myDOM.progressDescribe.innerText = mySetUp.text[i];
 

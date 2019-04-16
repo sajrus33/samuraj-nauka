@@ -37,6 +37,8 @@ export class Statistics {
 
         this.ms = "00";
         this.min = "00";
+        this.sec = "00";
+
         this.date = undefined;
         this.score = 0;
         this.chance = 0;
@@ -71,8 +73,19 @@ export class Statistics {
 
         this.update = () => {
             if (this.date) {
-                this.ms = Math.abs(this.ms - this.date.getMinutes());
+                this.ms = -Math.abs(this.ms);
+                this.ms = this.ms - this.date.getMinutes();
+                this.ms = Math.abs(this.ms);
+                this.sec = Math.floor(this.ms / 100);
                 console.log(Math.abs(this.ms - this.date.getMinutes()));
+                this.min = Math.floor(this.sec / 60);
+                if (this.min < 10) {
+                    this.min = "0" + this.min;
+                }
+                this.sec = this.sec % 60;
+                if (this.sec < 10) {
+                    this.sec = "0" + this.sec;
+                }
 
             }
         };
@@ -80,7 +93,7 @@ export class Statistics {
 
             this.ctx.drawImage(this.img, 0, 0, this.x, this.canvas.height);
             this.ctx.font = "22px Courier";
-            this.ctx.fillText("🕒" + this.min + ":" + this.ms, this.timeLeft, this.y, this.timeRight);
+            this.ctx.fillText("🕒" + this.min + ":" + this.sec, this.timeLeft, this.y, this.timeRight);
             this.ctx.fillText("★" + this.score, this.scoreLeft, this.y, this.scoreRight);
             this.ctx.fillText("⏳" + this.chance, this.chanceLeft, this.y, this.chanceRight);
 

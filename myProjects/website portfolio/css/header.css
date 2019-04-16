@@ -375,8 +375,10 @@
         display: block;
         position: relative;
         width: 40%;
-        height: auto;
         filter: grayscale(66%);
+        /* flex C */
+        display: flex;
+        
     }
     .header__img::after{
         content: "";
