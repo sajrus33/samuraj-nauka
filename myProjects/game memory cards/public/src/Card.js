@@ -5,6 +5,8 @@ export class Card {
         // CTX
         this.ctx = this.canvas.getContext("2d");
         this.ctx.globalAlpha = alpha;
+        this.ctx.imageSmoothingQuality = "high";
+
 
         // OWN PROPERTYS
         this.parent = parent;
@@ -15,6 +17,9 @@ export class Card {
         this.img2 = new Image();
         this.imgSrc2 = imgSrc2;
 
+        this.checked = false;
+
+
         this.load = (src = this.imgSrc, src2 = this.imgSrc2) => {
             // new img?
             this.imgSrc = src;
@@ -23,21 +28,38 @@ export class Card {
             this.img2.src = src2;
         };
         this.check = () => {
-            console.log(this.img.src, this.img2.src);
-
+            // console.log("checking");
             this.img2.src = this.imgSrc;
             this.img.src = this.imgSrc2;
 
             const buffor = this.imgSrc;
             this.imgSrc = this.imgSrc2;
             this.imgSrc2 = buffor;
-            console.log("checking", this);
-            console.log(this.img.src, this.img2.src);
+            // check
+            if (this.checked) {
+                this.checked = false;
+            } else this.checked = true;
+            // console.log("checked");
+
+
         };
+        const check = this.check;
+
+        this.done = () => {
+            this.canvas.removeEventListener("click", check);
+            this.checked = false;
+        };
+
+        this.listen = () => {
+            this.check();
+            console.log();
+
+        };
+
         this.init = () => {
             this.load();
             this.render();
-            this.canvas.addEventListener("click", this.check.bind(this));
+            this.canvas.addEventListener("click", check);
 
         };
         this.appendTo = (parent = this.parent) => {
@@ -48,10 +70,13 @@ export class Card {
             // get higher z-index 
             this.canvas.style.zIndex = this.parent.style.zIndex + 1;
             // default style
+
             this.canvas.style.height = height;
             this.canvas.style.width = width;
             this.width = this.canvas.width;
             this.height = this.canvas.height;
+            this.canvas.width = this.width;
+            this.canvas.height = this.height;
             this.canvas.style.backgroundColor = "transparent";
             this.canvas.style.border = "black 1px solid";
 

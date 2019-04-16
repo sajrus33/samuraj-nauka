@@ -1,18 +1,43 @@
 export class Statistics {
-    constructor(parent = document.body, width, height, imgSrc, alpha = 1) {
+    constructor(parent = document.body, width, height, imgSrc, alpha = 1, color = "white") {
         //      CANVAS
         this.canvas = document.createElement("canvas");
         this.canvas.style.height = height;
         this.canvas.style.width = width;
         this.canvas.style.position = "absolute";
         this.canvas.style.top = "0%";
+        this.width = this.canvas.width;
+        this.height = this.canvas.height;
+        this.canvas.width = this.width;
+        this.canvas.height = this.height;
         //      CTX
         this.ctx = this.canvas.getContext("2d");
+        this.ctx.imageSmoothingQuality = "high";
         this.ctx.globalAlpha = alpha;
+        this.ctx.fillStyle = color;
+        this.ctx.textAlign = 'left';
+        this.ctx.textBaseline = 'bottom';
+
+
 
 
         //      OWN PROPERTYS
         this.parent = parent;
+        this.x = this.canvas.width;
+        this.y = Math.round(this.canvas.height / 2 * 1.1);
+        // time position
+        this.timeLeft = Math.round(this.x * .15);
+        this.timeRight = Math.round(this.x * .35);
+        // score position
+        this.scoreLeft = Math.round(this.x * .46);
+        this.scoreRight = Math.round(this.x * .6);
+        //chances position
+        this.chanceLeft = Math.round(this.x * .7);
+        this.chanceRight = Math.round(this.x * .85);
+
+        this.time = "20:20";
+        this.score = 0;
+        this.chance = 0;
 
         this.img = new Image();
         this.imgSrc = imgSrc;
@@ -39,16 +64,15 @@ export class Statistics {
         };
 
         this.update = () => {
-            this.ctx.beginPath();
-            this.ctx.strokeStyle = "white";
-            this.ctx.fillText(String(Math.round(this.loaded * 100)) + "%", this.x, this.y * 1.2);
-            this.ctx.stroke();
+            this.ctx.font = "22px Courier";
+            this.ctx.fillText(this.time, this.timeLeft, this.y, this.timeRight);
+            this.ctx.fillText(this.score, this.scoreLeft, this.y, this.scoreRight);
+            this.ctx.fillText(this.chance, this.chanceLeft, this.y, this.chanceRight);
+
         };
         this.render = () => {
 
-            this.ctx.drawImage(this.img, 0, 0, this.canvas.width, this.canvas.height);
-
-
+            this.ctx.drawImage(this.img, 0, 0, this.x, this.canvas.height);
             this.update();
             requestAnimationFrame(this.render);
         };

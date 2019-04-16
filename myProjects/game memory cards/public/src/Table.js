@@ -20,6 +20,8 @@ export class Table {
         //      CTX
         this.ctx = this.canvas.getContext("2d");
         this.ctx.globalAlpha = alpha;
+        this.ctx.imageSmoothingQuality = "high";
+
 
 
         //      OWN PROPERTYS
@@ -36,13 +38,13 @@ export class Table {
 
 
         // cards wrapper -> append after statics
-        this.Cardswrapper = document.createElement("div");
-        this.Cardswrapper.style.width = "100%";
-        this.Cardswrapper.style.height = "80%";
-        this.Cardswrapper.style.position = "absolute";
-        this.Cardswrapper.style.top = "20%";
+        this.cardswrapper = document.createElement("div");
+        this.cardswrapper.style.width = "100%";
+        this.cardswrapper.style.height = "80%";
+        this.cardswrapper.style.position = "absolute";
+        this.cardswrapper.style.top = "20%";
 
-        this.Cardswrapper.style.backgroundColor = "transparent";
+        this.cardswrapper.style.backgroundColor = "transparent";
 
 
 
@@ -66,7 +68,7 @@ export class Table {
             // append with div
             this.parent.appendChild(this.div);
             this.div.appendChild(this.canvas);
-            this.div.appendChild(this.Cardswrapper);
+            this.div.appendChild(this.cardswrapper);
 
             // append statistic menu
 
@@ -88,22 +90,6 @@ export class Table {
         };
 
 
-        // STATISTICS
-        this.statistics = {
-            create: () => {
-
-            },
-            update: () => {
-
-            },
-            render: () => {
-                this.ctx.drawImage(this.img, 0, 0, this.canvas.width, this.canvas.height);
-
-
-                this.update();
-                requestAnimationFrame(this.render);
-            },
-        }
 
 
 
