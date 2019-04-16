@@ -17,6 +17,8 @@ export class Card {
         this.img2 = new Image();
         this.imgSrc2 = imgSrc2;
 
+
+
         this.checked = false;
 
 
@@ -44,10 +46,22 @@ export class Card {
 
         };
         const check = this.check;
+        this.burn = () => {
+
+
+        };
 
         this.done = () => {
             this.canvas.removeEventListener("click", check);
             this.checked = false;
+
+            cancelAnimationFrame(this.animation);
+            this.ctx.clearRect(0, 0, this.width, this.height);
+
+            // this.total += 1;
+            // if (this.total == 3) {
+            //     this.total = 0;
+            //     this.frame += 1;
         };
 
         this.listen = () => {
@@ -78,7 +92,7 @@ export class Card {
             this.canvas.width = this.width;
             this.canvas.height = this.height;
             this.canvas.style.backgroundColor = "transparent";
-            this.canvas.style.border = "black 1px solid";
+            // this.canvas.style.border = "black 1px solid";
 
             this.init();
 
@@ -87,11 +101,13 @@ export class Card {
         this.update = () => {
         };
         this.render = () => {
-
+            this.ctx.clearRect(0, 0, this.width, this.height);
+            // console.log(this.img);
             this.ctx.drawImage(this.img2, 0, 0, this.width, this.height)
 
+
             this.update();
-            requestAnimationFrame(this.render);
+            this.animation = requestAnimationFrame(this.render);
         };
 
         this.appendTo();

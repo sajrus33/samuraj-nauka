@@ -8,7 +8,7 @@ console.log({ utilities, myAlert, Card, resources, Table });
 
 
 export class Game {
-    constructor(cardsOption = 2, category = "catedras") {
+    constructor(cardsOption = 1, category = "catedras") {
         this.category = category;
         myAlert(this.category);
 
@@ -20,6 +20,7 @@ export class Game {
         this.cards = [];
         this.cardsChecked = [];
         this.needUncheck = false;
+        this.run = false;
 
         this.uncheckCards = () => {
             this.cards.forEach((card) => {
@@ -35,6 +36,10 @@ export class Game {
         };
         // eventListener for cards manipulation
         this.result = () => {
+            if (!this.run) {
+                this.table.statistics.timer();
+                console.log(this.secs);
+            }
             this.table.statistics.chance++;
             // console.log(this.table.statistics.chance);
             if (this.needUncheck) {

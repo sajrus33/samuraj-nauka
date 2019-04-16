@@ -26,16 +26,18 @@ export class Statistics {
         this.x = this.canvas.width;
         this.y = Math.round(this.canvas.height / 2 * 1.1);
         // time position
-        this.timeLeft = Math.round(this.x * .15);
+        this.timeLeft = Math.round(this.x * .10);
         this.timeRight = Math.round(this.x * .35);
         // score position
-        this.scoreLeft = Math.round(this.x * .46);
+        this.scoreLeft = Math.round(this.x * .41);
         this.scoreRight = Math.round(this.x * .6);
         //chances position
-        this.chanceLeft = Math.round(this.x * .7);
+        this.chanceLeft = Math.round(this.x * .65);
         this.chanceRight = Math.round(this.x * .85);
 
-        this.time = "20:20";
+        this.ms = "00";
+        this.min = "00";
+        this.date = undefined;
         this.score = 0;
         this.chance = 0;
 
@@ -63,16 +65,25 @@ export class Statistics {
 
         };
 
-        this.update = () => {
-            this.ctx.font = "22px Courier";
-            this.ctx.fillText(this.time, this.timeLeft, this.y, this.timeRight);
-            this.ctx.fillText(this.score, this.scoreLeft, this.y, this.scoreRight);
-            this.ctx.fillText(this.chance, this.chanceLeft, this.y, this.chanceRight);
+        this.timer = () => {
+            this.date = new Date();
+        };
 
+        this.update = () => {
+            if (this.date) {
+                this.ms = Math.abs(this.ms - this.date.getMinutes());
+                console.log(Math.abs(this.ms - this.date.getMinutes()));
+
+            }
         };
         this.render = () => {
 
             this.ctx.drawImage(this.img, 0, 0, this.x, this.canvas.height);
+            this.ctx.font = "22px Courier";
+            this.ctx.fillText("🕒" + this.min + ":" + this.ms, this.timeLeft, this.y, this.timeRight);
+            this.ctx.fillText("★" + this.score, this.scoreLeft, this.y, this.scoreRight);
+            this.ctx.fillText("⏳" + this.chance, this.chanceLeft, this.y, this.chanceRight);
+
             this.update();
             requestAnimationFrame(this.render);
         };
