@@ -10,6 +10,10 @@ export class Statistics {
         this.height = this.canvas.height;
         this.canvas.width = this.width;
         this.canvas.height = this.height;
+        this.canvas.style.backgroundSize = "100% 100%";
+        this.canvas.style.backgroundRepeat = "no-repeat";
+
+
         //      CTX
         this.ctx = this.canvas.getContext("2d");
         this.ctx.imageSmoothingQuality = "high";
@@ -19,22 +23,21 @@ export class Statistics {
         this.ctx.textBaseline = 'bottom';
 
 
-
-
         //      OWN PROPERTYS
         this.parent = parent;
         this.x = this.canvas.width;
         this.y = Math.round(this.canvas.height / 2 * 1.1);
         // time position
-        this.timeLeft = Math.round(this.x * .10);
-        this.timeRight = Math.round(this.x * .35);
+        this.timeLeft = Math.round(this.x * .14);
+        this.timeRight = Math.round(this.x * .25);
         // score position
-        this.scoreLeft = Math.round(this.x * .41);
-        this.scoreRight = Math.round(this.x * .6);
+        this.scoreLeft = Math.round(this.x * .4);
+        this.scoreRight = Math.round(this.x * .5);
         //chances position
         this.chanceLeft = Math.round(this.x * .65);
-        this.chanceRight = Math.round(this.x * .85);
+        this.chanceRight = Math.round(this.x * .75);
 
+        // timer resources
         this.ms = "00";
         this.min = "00";
         this.sec = "00";
@@ -46,10 +49,13 @@ export class Statistics {
         this.img = new Image();
         this.imgSrc = imgSrc;
 
+
         this.load = (src = this.imgSrc) => {
             // new img?
             this.imgSrc = src;
             this.img.src = src;
+            this.canvas.style.backgroundImage = "url(" + this.imgSrc + ")";
+
         };
 
         // appendTo()
@@ -76,8 +82,8 @@ export class Statistics {
                 this.ms = -Math.abs(this.ms);
                 this.ms = this.ms - this.date.getMinutes();
                 this.ms = Math.abs(this.ms);
-                this.sec = Math.floor(this.ms / 100);
-                console.log(Math.abs(this.ms - this.date.getMinutes()));
+                this.sec = Math.floor(this.ms / 1000);
+                // console.log(Math.abs(this.ms - this.date.getMinutes()));
                 this.min = Math.floor(this.sec / 60);
                 if (this.min < 10) {
                     this.min = "0" + this.min;
@@ -90,11 +96,13 @@ export class Statistics {
             }
         };
         this.render = () => {
-
-            this.ctx.drawImage(this.img, 0, 0, this.x, this.canvas.height);
+            this.ctx.clearRect(0, 0, this.width, this.height);
+            // this.ctx.drawImage(this.img, 0, 0, this.x, this.canvas.height);
             this.ctx.font = "22px Courier";
-            this.ctx.fillText("🕒" + this.min + ":" + this.sec, this.timeLeft, this.y, this.timeRight);
-            this.ctx.fillText("★" + this.score, this.scoreLeft, this.y, this.scoreRight);
+            this.ctx.fillText("★" + this.score, this.timeLeft, this.y, this.timeRight);
+            this.ctx.font = "15px Courier";
+            this.ctx.fillText("🕒" + this.min + ":" + this.sec, this.scoreLeft, this.y);
+            this.ctx.font = "22px Courier";
             this.ctx.fillText("⏳" + this.chance, this.chanceLeft, this.y, this.chanceRight);
 
             this.update();

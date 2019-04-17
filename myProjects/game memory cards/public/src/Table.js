@@ -4,8 +4,11 @@ export class Table {
     constructor(parent = document.body, width, height, imgSrc, imgSrc2, alpha = 1) {
         //      DIV
         this.div = document.createElement("div");
-        this.div.style.width = width;
-        this.div.style.height = height;
+        this.width = width;
+        this.height = height;
+
+        this.div.style.width = this.width;
+        this.div.style.height = this.height;
         this.div.style.position = "relative";
 
 
@@ -81,6 +84,7 @@ export class Table {
         this.update = () => {
         };
         this.render = () => {
+            this.ctx.clearRect(0, 0, this.width, this.height);
 
             this.ctx.drawImage(this.img, 0, 0, this.width, this.height);
 

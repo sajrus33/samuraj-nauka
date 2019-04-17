@@ -15,12 +15,38 @@ export class Game {
         this.cardsOption = cardsOption;
         this.resources = resources;
         this.utilities = utilities;
-        this.table = new Table(document.body, "100%", "100%", this.resources.imgs.catedras[2], this.resources.imgs.catedras[0]);
+
+        this.gameWrapper = document.createElement("div");
+        this.gameWrapper.style.width = "100%";
+        this.gameWrapper.style.height = "100%";
+        this.gameWrapper.style.minWidth = "320px";
+        this.gameWrapper.style.minHeight = "320px";
+
+        this.gameSize = (size) => {
+            this.gameWrapper.style.width = size;
+            // this.gameWrapper.style.height = size;
+        };
+        // margin on big screen
+        window.addEventListener("resize", function () {
+            if (innerWidth >= 1024) {
+                // seeing future "game" name
+                game.gameSize("80%");
+            } else {
+                game.gameSize("100%");
+            }
+        });
+
+
+        document.body.appendChild(this.gameWrapper);
+
+        this.table = new Table(this.gameWrapper, "100%", "100%", this.resources.imgs.catedras[2], this.resources.imgs.catedras[0]);
         this.Card = Card;
         this.cards = [];
         this.cardsChecked = [];
         this.needUncheck = false;
         this.run = false;
+
+
 
         this.uncheckCards = () => {
             this.cards.forEach((card) => {
@@ -90,7 +116,10 @@ export class Game {
 
             }
         };
-
+        this.finish = () => {
+            //remove all created HTML textures
+            this.gameWrapper.remove();
+        };
 
         this.init = (cardsOption = this.cardsOption) => {
             this.table.appendTo();
@@ -104,9 +133,10 @@ export class Game {
 }
 
 
+const game = new Game(0);
 
-const game = new Game();
 game.init();
+
 
 
 

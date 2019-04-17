@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  cursor:pointer;
 }
 
 body{
@@ -12,6 +13,8 @@ body{
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  background-image: url("/public/img/ground.jpg");
+  background-size: cover;
 }
 
 div{

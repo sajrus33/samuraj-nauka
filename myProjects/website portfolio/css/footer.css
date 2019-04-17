@@ -237,6 +237,7 @@ align-items: flex-end;
     text-align: center;
     align-self: flex-start;
     font-size: 1.5em;
+    outline-color: var(--orange);
 
 }
 .footer__message{
