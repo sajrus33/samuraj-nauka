@@ -5,9 +5,9 @@
 //     card: [1, 3],
 // }
 export const imgs = {
-    burn: "public/img/burn.jpg",
     faces: ["public/img/sajrus33.jpg"],
     shapes: [""],
+    
     catedras: [
         "public/img/catedras/table1280.png",
         "public/img/catedras/back.jpg",

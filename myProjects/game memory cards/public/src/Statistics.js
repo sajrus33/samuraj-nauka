@@ -28,14 +28,14 @@ export class Statistics {
         this.x = this.canvas.width;
         this.y = Math.round(this.canvas.height / 2 * 1.1);
         // time position
-        this.timeLeft = Math.round(this.x * .14);
+        this.timeLeft = Math.round(this.x * .15);
         this.timeRight = Math.round(this.x * .25);
         // score position
-        this.scoreLeft = Math.round(this.x * .4);
+        this.scoreLeft = Math.round(this.x * .45);
         this.scoreRight = Math.round(this.x * .5);
         //chances position
-        this.chanceLeft = Math.round(this.x * .65);
-        this.chanceRight = Math.round(this.x * .75);
+        this.chanceLeft = Math.round(this.x * .8);
+        this.chanceRight = Math.round(this.x * .9);
 
         // timer resources
         this.ms = "00";
@@ -99,11 +99,11 @@ export class Statistics {
             this.ctx.clearRect(0, 0, this.width, this.height);
             // this.ctx.drawImage(this.img, 0, 0, this.x, this.canvas.height);
             this.ctx.font = "22px Courier";
-            this.ctx.fillText("★" + this.score, this.timeLeft, this.y, this.timeRight);
+            this.ctx.fillText("" + this.score, this.timeLeft, this.y, this.timeRight);
             this.ctx.font = "15px Courier";
-            this.ctx.fillText("🕒" + this.min + ":" + this.sec, this.scoreLeft, this.y);
+            this.ctx.fillText("" + this.min + ":" + this.sec, this.scoreLeft, this.y);
             this.ctx.font = "22px Courier";
-            this.ctx.fillText("⏳" + this.chance, this.chanceLeft, this.y, this.chanceRight);
+            this.ctx.fillText("" + this.chance, this.chanceLeft, this.y, this.chanceRight);
 
             this.update();
             requestAnimationFrame(this.render);
