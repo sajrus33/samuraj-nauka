@@ -78,11 +78,14 @@ export class Statistics {
         };
 
         this.update = () => {
+
             if (this.date) {
-                this.ms = -Math.abs(this.ms);
-                this.ms = this.ms - this.date.getMinutes();
-                this.ms = Math.abs(this.ms);
-                this.sec = Math.floor(this.ms / 1000);
+                // this.ms = -Math.abs(this.ms);
+                this.ms = this.date.getSeconds();
+                // this.ms = Math.abs(this.ms);
+                console.log(this.ms);
+
+                this.sec = Math.floor((this.ms));
                 // console.log(Math.abs(this.ms - this.date.getMinutes()));
                 this.min = Math.floor(this.sec / 60);
                 if (this.min < 10) {

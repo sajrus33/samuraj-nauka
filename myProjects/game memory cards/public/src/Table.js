@@ -14,6 +14,7 @@ export class Table {
 
         //      CANVAS
         this.canvas = document.createElement("canvas");
+        this.canvas.classList.add("table");
         this.canvas.style.height = "80%";
         this.canvas.style.width = "100%";
         this.canvas.style.position = "absolute";

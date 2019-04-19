@@ -2,6 +2,7 @@ export class Card {
     constructor(parent, width, height, imgSrc, imgSrc2, alpha = 1) {
         // CANVAS
         this.canvas = document.createElement("canvas");
+        this.canvas.classList.add("card");
         // CTX
         this.ctx = this.canvas.getContext("2d");
         this.ctx.globalAlpha = alpha;

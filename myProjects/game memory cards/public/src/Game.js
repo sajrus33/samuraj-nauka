@@ -24,17 +24,20 @@ export class Game {
 
         this.gameSize = (size) => {
             this.gameWrapper.style.width = size;
-            // this.gameWrapper.style.height = size;
+            this.gameWrapper.style.height = size;
         };
-        // margin on big screen
-        window.addEventListener("resize", function () {
-            if (innerWidth >= 1024) {
+        this.resize = () => {
+            const width = innerWidth;
+            if (width >= 1024) {
                 // seeing future "game" name
                 game.gameSize("80%");
             } else {
                 game.gameSize("100%");
             }
-        });
+        }
+
+        // margin on big screen
+        window.addEventListener("resize", this.resize);
 
 
         document.body.appendChild(this.gameWrapper);
@@ -127,13 +130,14 @@ export class Game {
             this.cards.forEach(card => {
                 card.canvas.addEventListener("click", this.result);
             });
+            this.resize();
 
         };
     }
 }
 
 
-const game = new Game(0);
+const game = new Game(2);
 
 game.init();
 
