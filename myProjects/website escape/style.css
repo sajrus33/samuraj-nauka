@@ -26,6 +26,7 @@ p{
 .header{
     position: relative;
 
+    min-height: 320px;
     height: 100vh;
     background-image:linear-gradient( rgba(0,0,0,.3)100%, rgba(0,0,0,0) ), url("img/topBackground.png"); 
     background-size: cover;
@@ -133,7 +134,8 @@ p{
 .main__wrapper{
     background-color: white;
 
-    min-height: 160px;
+    min-height: 320px;
+    height: 70vh;
 
     width: 100%;
     /* flex container */
@@ -146,6 +148,7 @@ p{
 }
 .main__wrapper--gray{
     background-color: rgba(250,250,250,1);
+    height: 100vh;
 
 }
 .main__wrapper--black{
