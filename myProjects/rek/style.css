@@ -1,0 +1,11 @@
+/* RESET HYPERLINKS */
+a{
+    display: block;
+    text-decoration: none;
+    color: white;
+    
+}
+a:hover{
+    text-decoration: none;
+    color: white;
+}
