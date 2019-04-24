@@ -137,7 +137,7 @@ export class Game {
 }
 
 
-const game = new Game(2);
+const game = new Game(1);
 
 game.init();
 
