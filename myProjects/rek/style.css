@@ -1,4 +1,8 @@
 /* RESET HYPERLINKS */
+body{
+    height: 100vh;
+    min-height: 640px;
+}
 a{
     display: block;
     text-decoration: none;
