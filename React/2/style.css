@@ -1,0 +1,12 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.click {
+  cursor: pointer;
+  background-color: gray;
+  border: black 1px solid;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+}

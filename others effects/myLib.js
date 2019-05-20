@@ -1,22 +1,7 @@
 
 
-// przykuad
-// class Animal {
-//   constructor(name, ...childs) {
-//     this.name = name;
-//     this.childs = childs;
-//   }
-//   speak() {
-//     console.log(this.childs);
-//     for (let i = 0; i < this.childs.length; i++) {
-//       console.log(this.childs[i]);
-//     }
-//   }
-// }
-// const arr = ["1", "2", "3", "66fds"];
-// const dog = new Animal("reksio", [...arr]);
-// dog.speak();
-const MyLib = {
+
+export const MyLib = {
   time: {
     howMuchLeft: function (arg, since, untill) {
       // return number = how long that's gonna take
