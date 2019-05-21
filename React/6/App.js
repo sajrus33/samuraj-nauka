@@ -1,37 +1,42 @@
-//LESSON 1
-// element w jsx, ale nawias dla pewnosci powinnien byc !
-const header = <header className="title">Pierwszy element React</header>;
+class App extends React.Component {
+  // constructor(p) {
+  //   super(p);
+  //   this.state = {
+  //     ja: "hmm"
+  //   };
+  // }
+  state = {
+    value: ""
+  };
 
-// element w js
-const element2 = React.createElement("div", null, "Pierwszy element React");
+  handleInputChange = () => {
+    console.log(event.target.value);
+    const newValue = event.target.value;
+    this.setState({
+      value: newValue
+    });
+  };
 
-// element w jsx, mozna pisac w jednej lini ale to nie poprawne
-const element3 = (
-  <div>
-    <p id="main" className="red">
-      Tekst
-    </p>
-  </div>
-);
-console.log({ React });
-console.log({ ReactDOM });
+  // reset input xdd
+  handleBtnClick = () => {
+    this.setState({
+      value: ""
+    });
+  };
 
-//LESSON 2
-const classRed = "red";
-
-const main = (
-  <div>
-    <h1 className={classRed}>Pierwszy artykul</h1>
-    <p>Lorem lore loreem</p>
-  </div>
-);
-
-const footer = (
-  <footer>
-    <p>Stopka</p>
-  </footer>
-);
-
-const app = [header, main, footer];
-
-ReactDOM.render(app, document.getElementById("root"));
+  render() {
+    return (
+      <React.Fragment>
+        <input
+          value={this.state.value}
+          placeholder="placeholder jak w html"
+          onChange={this.handleInputChange}
+          type="text"
+        />
+        <button onClick={this.handleBtnClick}>reset</button>
+        <h1 className="title">{this.state.value}</h1>
+      </React.Fragment>
+    );
+  }
+}
+ReactDOM.render(<App />, document.getElementById("root"));

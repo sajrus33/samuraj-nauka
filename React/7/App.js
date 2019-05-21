@@ -1,37 +1,31 @@
-//LESSON 1
-// element w jsx, ale nawias dla pewnosci powinnien byc !
-const header = <header className="title">Pierwszy element React</header>;
+class Message extends React.Component {
+  constructor(p) {
+    super(p);
+    this.state = {
+      messageIsActive: false
+    };
+  }
 
-// element w js
-const element2 = React.createElement("div", null, "Pierwszy element React");
+  handleBtn = () => {
+    console.log(this.state.messageIsActive);
+    debugger;
+    this.setState({
+      messageIsActive: !this.state.messageIsActive
+    });
+  };
 
-// element w jsx, mozna pisac w jednej lini ale to nie poprawne
-const element3 = (
-  <div>
-    <p id="main" className="red">
-      Tekst
-    </p>
-  </div>
-);
-console.log({ React });
-console.log({ ReactDOM });
+  render() {
+    const text =
+      "Lorem srloem lore mitchub ischi lorem lorem looor lrorl opelr?";
 
-//LESSON 2
-const classRed = "red";
+    return (
+      <React.Fragment>
+        <button onClick={this.handleBtn}>switch</button>
+        <p>{this.state.messageIsActive ? text : null}</p>
+        <p>{this.state.messageIsActive ? null : text}</p>
+      </React.Fragment>
+    );
+  }
+}
 
-const main = (
-  <div>
-    <h1 className={classRed}>Pierwszy artykul</h1>
-    <p>Lorem lore loreem</p>
-  </div>
-);
-
-const footer = (
-  <footer>
-    <p>Stopka</p>
-  </footer>
-);
-
-const app = [header, main, footer];
-
-ReactDOM.render(app, document.getElementById("root"));
+ReactDOM.render(<Message />, document.getElementById("root"));
