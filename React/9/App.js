@@ -1,37 +1,47 @@
-//LESSON 1
-// element w jsx, ale nawias dla pewnosci powinnien byc !
-const header = <header className="title">Pierwszy element React</header>;
+class Button extends React.Component {
+  render() {
+    return (
+      <button
+        onClick={() => {
+          debugger;
+          this.props.handleClick(this.props.change);
+        }}
+      >
+        {this.props.change}
+      </button>
+    );
+  }
+}
 
-// element w js
-const element2 = React.createElement("div", null, "Pierwszy element React");
+class ResultPanel extends React.Component {
+  render() {
+    return <p className="red">{this.props.count}</p>;
+  }
+}
 
-// element w jsx, mozna pisac w jednej lini ale to nie poprawne
-const element3 = (
-  <div>
-    <p id="main" className="red">
-      Tekst
-    </p>
-  </div>
-);
-console.log({ React });
-console.log({ ReactDOM });
+class App extends React.Component {
+  state = {
+    count: 0
+  };
+  handleClick = arg => {
+    if (!isNaN(arg)) {
+      this.setState({
+        count: count + arg
+      });
+    }
+  };
 
-//LESSON 2
-const classRed = "red";
+  render() {
+    return (
+      <React.Fragment>
+        <Button handleClick={this.handleClick} change={-10} />
+        <Button handleClick={this.handleClick} change={-1} />
+        <Button handleClick={this.handleClick} change={1} />
+        <Button handleClick={this.handleClick} change={10} />
+        <ResultPanel count={this.state.count} />
+      </React.Fragment>
+    );
+  }
+}
 
-const main = (
-  <div>
-    <h1 className={classRed}>Pierwszy artykul</h1>
-    <p>Lorem lore loreem</p>
-  </div>
-);
-
-const footer = (
-  <footer>
-    <p>Stopka</p>
-  </footer>
-);
-
-const app = [header, main, footer];
-
-ReactDOM.render(app, document.getElementById("root"));
+ReactDOM.render(<App />, document.getElementById("root"));

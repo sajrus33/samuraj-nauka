@@ -417,6 +417,7 @@ canvas:last-of-type {
 }
 
 @keyframes coinRotate {
+    /* animation: coinRotate 1s steps(8) infinite; */
     100% {
         background-position: 128px 0;
     }

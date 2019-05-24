@@ -1,8 +1,12 @@
-.title {
+.red {
+  color: blue;
+
   margin: 50px 0;
   font-size: 2em;
   font-family: "courier";
 }
 .red {
+  font-family: "courier";
+
   color: red;
 }
