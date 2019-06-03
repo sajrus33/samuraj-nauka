@@ -16,7 +16,7 @@ const requestHandler = (req, res) => {
         status: "moje api!"
       })
     );
-    res.end();
+    res.end("thats the over of conection");
   }
 };
 
