@@ -4,7 +4,8 @@ const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 
 const flash = require("connect-flash");
-const routes = require("./routes/index");
+
+const routes = require("./routes/routes");
 
 const app = express();
 console.log({ __dirname });
@@ -19,6 +20,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(cookieParser());
 app.use(flash());
+
 app.use("/", routes);
 
 module.exports = app;
