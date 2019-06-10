@@ -15,74 +15,42 @@ const myDOM = {
   videosContainers: document.querySelectorAll(".video__wrapper"),
   videos: document.querySelectorAll(".iframe"),
 
-  scrollTo: (target = myDOM.header, duration = 200) => {
-    console.log({ target });
-
-    const targetPosition = target.offsetTop; //top of target
-    const startPosition = window.pageYOffset; //window se
-
-    const distance = targetPosition - startPosition;
-    let startTime = null;
-
-    function ease(time, start, distance, duration) {
-      time /= duration / 2;
-      if (time < 1) return (distance / 2) * time * time + start;
-      time--;
-      return (-distance / 2) * (time * (time - 2) - 1) + start;
+  toggleProducts: () => {
+    if (window.scrollY > (mySize.headerHeight * 0.75) / 3) {
+      myDOM.productDescribeFirst.style.animation = "goInRight 1s forwards";
+    } else {
+      myDOM.productDescribeFirst.style.animation = "none";
     }
 
-    function animation(currentTime) {
-      if (startTime === null) startTime = currentTime;
-      const timeElapsed = currentTime - startTime;
-      const newPosition = ease(timeElapsed, startPosition, distance, duration);
-      window.scrollTo(0, newPosition);
-      if (timeElapsed < duration) {
-        requestAnimationFrame(animation);
-      } else {
-        console.log("koniec scrolla");
-      }
+    if (window.scrollY > mySize.headerHeight * 0.75 * 1.3) {
+      myDOM.productDescribeSecond.style.animation = "goInRight 1s forwards";
+    } else {
+      myDOM.productDescribeSecond.style.animation = "none";
     }
-    requestAnimationFrame(animation);
   },
 
-  listen: () => {
-    myDOM.menuLang.addEventListener("click", function() {
+  listen: function() {
+    myDOM.menuLang.addEventListener("click", () => {
       myDOM.menuLangList.classList.toggle("displayNone");
     });
-    myDOM.menuHamb.addEventListener("click", function() {
-      // if (innerWidth < 680) {
+    myDOM.menuHamb.addEventListener("click", () => {
       myDOM.menuHambList.classList.toggle("displayNone");
-      // }
     });
-    window.addEventListener("scroll", function() {
-      if (window.scrollY > (mySize.headerHeight * 0.75) / 3) {
-        myDOM.productDescribeFirst.style.animation = "goInRight 1s forwards";
-      } else {
-        myDOM.productDescribeFirst.style.animation = "none";
-      }
 
-      if (window.scrollY > mySize.headerHeight * 0.75 * 1.3) {
-        myDOM.productDescribeSecond.style.animation = "goInRight 1s forwards";
-      } else {
-        myDOM.productDescribeSecond.style.animation = "none";
-      }
-
-      // const top = describe.previousElementSibling;
-
-      console.log(mySize.headerHeight, mySize.descrbieFirstTop, window.scrollY);
-      // if (x > top)
+    addEventListener("scroll", () => {
+      myDOM.toggleProducts();
     });
-    window.addEventListener("resize", mySize.resize);
+    addEventListener("resize", mySize.resize);
 
     myDOM.videosContainers.forEach(container => {
-      container.addEventListener("click", function() {
+      container.addEventListener("click", () => {
         const videoWrapper = this.childNodes[1];
         const video = videoWrapper.childNodes[1];
         if (video.paused) {
           video.requestFullscreen();
           video.play();
           function listener() {
-            console.log(video);
+            // console.log(video);
             video.webkitExitFullScreen();
             video.pause();
             video.removeEventListener("click", listener);
@@ -102,15 +70,14 @@ let mySize = {
 
   resize: function() {
     mySize.headerHeight = myDOM.header.offsetHeight;
-    (mySize.descrbieFirstTop = myDOM.productDescribeFirst.offsetTop),
-      console.log("resize", mySize.descrbieFirstTop);
+    mySize.descrbieFirstTop = myDOM.productDescribeFirst.offsetTop;
+    //   console.log("resize", mySize.descrbieFirstTop);
   }
 };
 
-function init() {
+(init = () => {
   myDOM.listen();
   mySize.resize();
-}
-init();
+})();
 
 // klasa kropki swiecacej w header "counter__dot--selected"
