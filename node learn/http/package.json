@@ -4,11 +4,14 @@
   "description": "",
   "main": "http.js",
   "dependencies": {
-    "http": "^0.0.0"
+    "fs": "^0.0.1-security",
+    "http": "^0.0.0",
+    "path": "^0.12.7"
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node http",
+    "dev": "nodemon http"
   },
   "keywords": [],
   "author": "",
