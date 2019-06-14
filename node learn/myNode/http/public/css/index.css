@@ -1,0 +1,10 @@
+body {
+  height: 100vh;
+  background-color: #000;
+  color: aqua;
+}
+.div {
+  background-color: tomato;
+  color: cadetblue;
+  height: 50vh;
+}
