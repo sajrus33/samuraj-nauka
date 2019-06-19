@@ -1,0 +1,9 @@
+*{
+margin: 0;
+padding: 0;
+}
+.div{
+    height: 100vh;
+    color:white;
+    background-color: black;
+}

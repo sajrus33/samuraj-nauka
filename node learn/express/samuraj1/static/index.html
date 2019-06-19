@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="/style.css"> -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            margin-top: 5%;
+        }
+
+        .name,
+        .submit {
+            width: 80%;
+            font-size: 32px;
+            font-weight: bold;
+
+            height: 150px;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="" class="form">
+        <input type="text" class="name" placeholder="Imię">
+        <input type="submit" class="submit" value="send">
+
+    </form>
+
+    <script>
+        const a = document.createElement("a");
+        a.innerHTML = "klikajta";
+        document.body.appendChild(a);
+
+
+        document.querySelector(".form").addEventListener("submit", () => {
+            event.preventDefault();
+
+            const name = document.querySelector(".name").value;
+            // hande made
+            // const url = "http://localhost:3000/?name=" + encodeURIComponent(name);
+
+            // u can stragiht write just name param, because the object key 
+            // value and the value variable
+            // is the same "name"
+            const params = new URLSearchParams({
+                name
+            });
+
+            const url = "http://localhost:3000/?name=" + params;
+
+            window.location = url;
+            a.setAttribute("href", url);
+
+
+        });
+    </script>
+</body>
+
+</html>
