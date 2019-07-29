@@ -4,7 +4,7 @@ const path = require("path");
 
 const port = process.env.PORT || 5000;
 
-const server = http
+http
   .createServer((req, res) => {
     // switch (req.url) {
     //   case "/":

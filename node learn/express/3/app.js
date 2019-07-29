@@ -16,6 +16,7 @@ console.log({ __dirname });
 app.use(express.static(path.join(__dirname, "public")));
 
 app.set("views", path.join(__dirname, "views"));
+console.log(app.get("views"));
 // app.set("view engine", "ejs");
 
 app.use(bodyParser.json());
