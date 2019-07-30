@@ -1,0 +1,19 @@
+{
+  "name": "http",
+  "version": "1.0.0",
+  "description": "",
+  "main": "http.js",
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "http": "^0.0.0",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node http",
+    "dev": "nodemon http"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

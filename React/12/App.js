@@ -1,66 +1,37 @@
-// Check box  for horror movie :P with props=2 coops elements
-// outter functionality
-const ValidtaionMessage = (props) => {
-  const { message, title } = props;
-  return (<p>{message + title}</p>)
-};
+//LESSON 1
+// element w jsx, ale nawias dla pewnosci powinnien byc !
+const header = <header className="title">Pierwszy element React</header>;
 
-const displayMessage = (isConfirmed, isFormSubmitted) => {
-  if (isFormSubmitted && isConfirmed) {
-    return <ValidtaionMessage message="mozesz" title="-AutoBot" />
-  } else if (isFormSubmitted) {
-    return <ValidtaionMessage title="-AutoBot" message="nie mozesz" />
-  } else {
-    return null;
-  }
-};
-// forma
-class App extends React.Component {
-  state = {
-    isConfirmed: false,
-    isFormSubmitted: false
-  }
-  handleCheckbox = () => {
-    this.setState({
-      isConfirmed: !this.state.isConfirmed,
-      isFormSubmitted: false
-    })
-  };
-  handleForm = (e) => {
-    e.preventDefault();
-    if (!this.state.isFormSubmitted) {
-      this.setState({
-        isFormSubmitted: true
-      })
-    }
+// element w js
+const element2 = React.createElement("div", null, "Pierwszy element React");
 
-  };
-
-  render() {
-    const { isConfirmed, isFormSubmitted } = this.state;
-    console.log(isConfirmed);
-
-
-    return (
-      <React.Fragment>
-        <h1> Kup bilet na horror roku!</h1>
-        <form onSubmit={this.handleForm}>
-          <input type="checkbox" id="age"
-            onChange={this.handleCheckbox} checked={isConfirmed}
-          />
-          <label htmlForm="age">Mam co najmniej 16 lat</label>
-          <br />
-          <button type="submit" >Kup bilet</button>
-        </form>
-        {displayMessage(isConfirmed, isFormSubmitted)}
-      </React.Fragment>
-    );
-
-
-  }
-}
-ReactDOM.render(
-  <App />,
-  document.getElementById("root")
+// element w jsx, mozna pisac w jednej lini ale to nie poprawne
+const element3 = (
+  <div>
+    <p id="main" className="red">
+      Tekst
+    </p>
+  </div>
 );
-// ReactDOM.render(<checkConfirmMovie />, document.getElementById("root"));
+console.log({ React });
+console.log({ ReactDOM });
+
+//LESSON 2
+const classRed = "red";
+
+const main = (
+  <div>
+    <h1 className={classRed}>Pierwszy artykul</h1>
+    <p>Lorem lore loreem</p>
+  </div>
+);
+
+const footer = (
+  <footer>
+    <p>Stopka</p>
+  </footer>
+);
+
+const app = [header, main, footer];
+
+ReactDOM.render(app, document.getElementById("root"));
