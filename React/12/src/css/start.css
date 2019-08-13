@@ -1,0 +1,73 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+:root {
+  --greyLight: rgba(242, 242, 242, 1);
+  --blueLight: rgba(214, 236, 255, 1);
+  --blue: rgba(147, 215, 251, 1);
+  --orange: rgba(253, 212, 102, 1);
+}
+body {
+  font-family: "Gill Sans", "Gill Sans MT", "Trebuchet MS", sans-serif;
+  background-color: gray;
+}
+
+/* flex Classes */
+
+.flexRow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flexCol {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* widget container */
+
+.modal {
+  position: relative;
+  width: 600px;
+  height: 600px;
+  overflow: hidden;
+  background-color: #fff;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+}
+.calendar {
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+}
+.calendar::-webkit-scrollbar-track
+{
+  border-radius: 10px;
+	background-color: transparent;
+}
+
+.calendar::-webkit-scrollbar
+{
+
+	width: 16px;
+	background-color: transparent;
+}
+
+.calendar::-webkit-scrollbar-thumb
+{
+
+	border-radius: 10px;
+	background-color: rgba(0, 0, 0, 0.4);
+}
+.calendar::-webkit-scrollbar-thumb:hover
+{
+	background-color: rgba(0, 0, 0, 0.6);
+}

@@ -1,0 +1,82 @@
+.main {
+  margin-top: 70px;
+  height: 100%;
+  width: 100%;
+}
+.main__header {
+  display: flex;
+}
+.main__element {
+  min-width: 106px;
+  width: 106px;
+  border: 1px solid grey;
+  border-right: none;
+  border-bottom: none;
+}
+.main__element--header {
+  height: 40px;
+  padding: 10px 25px;
+  font-weight: 600;
+  white-space: nowrap;
+  border-top: none;
+}
+.main__element:last-child {
+  border-right: 1px solid grey;
+}
+.main__main {
+  position: relative;
+  display: flex;
+}
+.main__bookmark {
+  content: "";
+  position: absolute;
+  height: 1px;
+  width: calc(105px * 8);
+  top: calc(130px * 2.516);
+  left: 0;
+  transform: translateY(-50%);
+
+  background-color: rgba(232, 103, 53, 1);
+
+  z-index: 3;
+}
+.main__bookmark::before {
+  content: "10:31";
+  position: absolute;
+  height: 20px;
+  width: 50px;
+  top: 50%;
+  left: 52.5px;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  background-color: rgba(232, 103, 53, 1);
+  border-radius: 50px;
+}
+.main__element--hour:last-child {
+  border-right: none;
+}
+.main__element--hour {
+  min-height: 130px;
+  text-align: center;
+  padding-top: 5px;
+}
+
+.main__element--hour:nth-child(2n + 1),
+.main__element--header:nth-child(3) {
+  background-color: var(--greyLight);
+  background-color: rgba(242, 242, 242, 1);
+}
+.main__day:nth-of-type(7) > .main__element {
+  background-color: transparent;
+}
+.main__day:nth-of-type(7) > .main__element:nth-of-type(2n) {
+  background-color: var(--greyLight);
+  background-color: rgba(242, 242, 242, 1);
+}
+.main__day {
+  position: relative;
+}
+.main__day:last-child > .main__element--hour {
+  border-right: 1px solid grey;
+}
